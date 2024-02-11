@@ -16,7 +16,6 @@ export const fetchCategories = createAsyncThunk('category/fetchCategories', () =
 
 
 
-
 const userSlice = createSlice({
     name: 'category',
     initialState,
@@ -39,5 +38,4 @@ const userSlice = createSlice({
 })
 
 
-
-export default userSlice.reducer
+export default userSlice.reducer;

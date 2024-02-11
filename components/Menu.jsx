@@ -9,6 +9,7 @@ import ProfileUser from "../screens/ProfileUser";
 
 const Tab = createBottomTabNavigator();
 
+
 const Menu = () => {
   return (
     <>
@@ -117,5 +118,6 @@ const Menu = () => {
     </>
   );
 };
+
 
 export default Menu;

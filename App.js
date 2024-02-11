@@ -15,106 +15,87 @@ import ProfileUser from './screens/ProfileUser';
 import MessagesTopics from './screens/MessagesTopics';
 import Topics from './screens/Topics';
 
-
 const Stack = createNativeStackNavigator();
 
-function App() {
 
+function App() {
 
   return (
 
     <Provider store={store}>
+      <NavigationContainer >
+        <Stack.Navigator>
 
+          <Stack.Screen
+            options={{
+              title: null,
+              headerStyle: {
+                backgroundColor: '#1e2226'
+              },
+              headerTintColor: '#fff',
+            }}
+            name="Menu"
+            component={Menu}
+          />
 
-    <NavigationContainer >
+          <Stack.Screen
+            options={{
+              title: null,
+              headerMode: 'none',
+            }}
+            name="Home"
+            component={Home}
+          />
 
-      <Stack.Navigator screenOptions={{ contentStyle: { backgroundColor: 'red' } }}>
+          <Stack.Screen
+            name="InfoAbout"
+            component={InfoAbout}
+          />
 
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="Menu"
-          component={Menu}
-        />
+          <Stack.Screen
+            options={{
+              title: null,
+              headerStyle: {
+                backgroundColor: '#1e2226'
+              },
+              headerTintColor: '#fff',
+            }}
+            name="Login"
+            component={Login}
+          />
 
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="Home"
-          component={Home}
-        />
+          <Stack.Screen
+            name="Register"
+            component={Register}
+          />
 
+          <Stack.Screen
+            name="ProfileUser"
+            component={ProfileUser}
+          />
 
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="InfoAbout"
-          component={InfoAbout}
-        />
+          <Stack.Screen
+            name="MessagesTopics"
+            component={MessagesTopics}
+          />
 
+          <Stack.Screen
+            options={
+              ({ route }) => ({
+                title: "Category: " + route.params.name,
+                headerStyle: {
+                  backgroundColor: '#1e2226',
+                },
+                headerTintColor: '#fff'
+              })
+            }
+            name="Topics"
+            component={Topics}
+          />
 
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="Login"
-          component={Login}
-        />
-
-
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="Register"
-          component={Register}
-        />
-
-
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="ProfileUser"
-          component={ProfileUser}
-        />
-
-
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="MessagesTopics"
-          component={MessagesTopics}
-        />
-
-
-        <Stack.Screen
-          options={{
-            title: null,
-            headerMode: 'none',
-          }}
-          name="Topics"
-          component={Topics}
-        />
-
-      </Stack.Navigator>
-
+        </Stack.Navigator>
       </NavigationContainer>
-      
-      </Provider>
-
-
+    </Provider>
   );
 }
 

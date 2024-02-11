@@ -43,7 +43,6 @@ const Login = () => {
               <View style={styles.inputBox}>
                 <TextInput
                   style={styles.input}
-                  autoCapitalize={false}
                   onChangeText={setLogin}
                   value={Login}
                   placeholder="Login"
@@ -55,7 +54,6 @@ const Login = () => {
               <View style={styles.inputBox}>
                 <TextInput
                   style={styles.input}
-                  autoCapitalize={false}
                   secureTextEntry={true}
                   placeholder="password"
                   onChangeText={setPassword}
