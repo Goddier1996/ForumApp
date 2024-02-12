@@ -6,20 +6,27 @@ import {
   Image,
   FlatList,
 } from "react-native";
+import { useNavigation, useRoute } from '@react-navigation/native';
+
 
 
 const CardTopic = ({ dataTopic }) => {
 
+  const route = useRoute();
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <FlatList
         style={styles.contentList}
-        columnWrapperStyle={styles.listContainer}
         data={dataTopic}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity key={item._id} style={styles.card}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("CommentsTopics", { allDataTopic: item, CategoryName: route.params.name })}
+              key={item._id}
+              style={styles.card}>
               <View>
                 <Image style={styles.image} source={{ uri: item.imageUser }} />
                 <Text style={styles.PublishBy}>

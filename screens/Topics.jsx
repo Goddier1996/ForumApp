@@ -2,7 +2,7 @@ import { Text, ImageBackground } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchTopicsIdCategories } from "../Redux/fetchData/allTopics";
+import { fetchTopicsIdCategories } from "../Redux/fetchData/topicsIdCategory";
 import CardTopic from "../components/topics/showModel/CardTopic";
 import ShowMessageNotHaveTopics from "../components/topics/showModel/ExtrasTools/ShowMessageNotHaveTopics";
 import SignInAddNewTopic from "../components/topics/showModel/ExtrasTools/SignInAddNewTopic";

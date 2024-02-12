@@ -12,7 +12,7 @@ import InfoAbout from './screens/InfoAbout';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import ProfileUser from './screens/ProfileUser';
-import MessagesTopics from './screens/MessagesTopics';
+import CommentsTopics from './screens/CommentsTopics';
 import Topics from './screens/Topics';
 
 const Stack = createNativeStackNavigator();
@@ -75,8 +75,17 @@ function App() {
           />
 
           <Stack.Screen
-            name="MessagesTopics"
-            component={MessagesTopics}
+            options={
+              ({ route }) => ({
+                title: "Topic -> " + route.params.allDataTopic.nameTopic,
+                headerStyle: {
+                  backgroundColor: '#1e2226',
+                },
+                headerTintColor: '#fff'
+              })
+            }
+            name="CommentsTopics"
+            component={CommentsTopics}
           />
 
           <Stack.Screen
