@@ -1,16 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import { View, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../screens/Home";
 import InfoAbout from "../screens/InfoAbout";
 import Login from "../screens/Login";
-import Register from "../screens/Register";
-import ProfileUser from "../screens/ProfileUser";
+import Register from "../screens/register/Register";
+import ProfileUser from "../screens/profile/ProfileUser";
+
 
 const Tab = createBottomTabNavigator();
 
 
-const Menu = () => {
+const Menu = ({ StackScreen }) => {
+
+  const [token, setToken] = useState(() => {});
+
+
   return (
     <>
       <Tab.Navigator
@@ -22,6 +26,7 @@ const Menu = () => {
       >
         <Tab.Screen
           options={{
+            title: null,
             headerShown: false,
             tabBarIcon: ({ focused }) => (
               <View>
@@ -36,12 +41,89 @@ const Menu = () => {
             ),
           }}
           name="Home"
-          component={Home}
+          component={StackScreen}
         />
+
+        {token == null ? (
+          <>
+            <Tab.Screen
+              options={{
+                title: null,
+                headerStyle: {
+                  backgroundColor: "#1e2226",
+                },
+                tabBarIcon: ({ focused }) => (
+                  <View>
+                    <Image
+                      source={{
+                        uri: "https://i.postimg.cc/6QddRVxR/icons8-log-in-64.png",
+                      }}
+                      resizeMode="contain"
+                      style={{ width: 50, height: 50 }}
+                    />
+                  </View>
+                ),
+              }}
+              name="Login"
+              // component={<View><Login setToken={ setToken} /></View>}
+              children={() => <Login setToken={setToken} />}
+            />
+
+            <Tab.Screen
+              options={{
+                title: null,
+                headerStyle: {
+                  backgroundColor: "#1e2226",
+                },
+                tabBarIcon: ({ focused }) => (
+                  <View>
+                    <Image
+                      source={{
+                        uri: "https://i.postimg.cc/1t7d1WgY/Universal-37.png",
+                      }}
+                      resizeMode="contain"
+                      style={{ width: 40, height: 40 }}
+                    />
+                  </View>
+                ),
+              }}
+              name="Register"
+              component={Register}
+            />
+          </>
+        ) : token != null ? (
+          <>
+            <Tab.Screen
+              options={{
+                title: null,
+                headerStyle: {
+                  backgroundColor: "#1e2226",
+                },
+                tabBarIcon: ({ focused }) => (
+                  <View>
+                    <Image
+                      source={{ uri: token.FotoUser }}
+                      resizeMode="contain"
+                      style={{ width: 40, height: 40 }}
+                    />
+                  </View>
+                ),
+              }}
+              name="ProfileUser"
+              // component={ProfileUser}
+              children={() => <ProfileUser setToken={setToken} />}
+            />
+          </>
+        ) : (
+          ""
+        )}
 
         <Tab.Screen
           options={{
-            headerShown: false,
+            title: null,
+            headerStyle: {
+              backgroundColor: "#1e2226",
+            },
             tabBarIcon: ({ focused }) => (
               <View>
                 <Image
@@ -56,63 +138,6 @@ const Menu = () => {
           }}
           name="InfoAbout"
           component={InfoAbout}
-        />
-
-        <Tab.Screen
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused }) => (
-              <View>
-                <Image
-                  source={{
-                    uri: "https://i.postimg.cc/6QddRVxR/icons8-log-in-64.png",
-                  }}
-                  resizeMode="contain"
-                  style={{ width: 50, height: 50 }}
-                />
-              </View>
-            ),
-          }}
-          name="Login"
-          component={Login}
-        />
-
-        <Tab.Screen
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused }) => (
-              <View>
-                <Image
-                  source={{
-                    uri: "https://i.postimg.cc/1t7d1WgY/Universal-37.png",
-                  }}
-                  resizeMode="contain"
-                  style={{ width: 40, height: 40 }}
-                />
-              </View>
-            ),
-          }}
-          name="Register"
-          component={Register}
-        />
-
-        <Tab.Screen
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused }) => (
-              <View>
-                <Image
-                  source={{
-                    uri: "https://i.postimg.cc/1t7d1WgY/Universal-37.png",
-                  }}
-                  resizeMode="contain"
-                  style={{ width: 40, height: 40 }}
-                />
-              </View>
-            ),
-          }}
-          name="ProfileUser"
-          component={ProfileUser}
         />
       </Tab.Navigator>
     </>

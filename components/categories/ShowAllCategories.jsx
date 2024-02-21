@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchCategories } from "../../Redux/fetchData/allCategories";
+import { fetchCategories } from "../../Redux/featuers/category/allCategories";
 import { Text } from "react-native";
 import ModelCategory from "./showModel/ModelCategory";
 import Loading from "../tools/loading/Loading";

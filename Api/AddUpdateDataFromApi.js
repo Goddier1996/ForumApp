@@ -1,6 +1,8 @@
 import { API } from './API';
-import * as Updates from 'expo-updates';
+// import * as Updates from 'expo-updates';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
+
 
 
 // add new data
@@ -149,6 +151,7 @@ export async function ConnectLoginPublicUser(user) {
 
             AsyncStorage.setItem('user', JSON.stringify(storgeUser))
             await Updates.reloadAsync();
+            
         }
 
     } catch (error) {
@@ -157,47 +160,23 @@ export async function ConnectLoginPublicUser(user) {
 }
 
 
-export async function ConnectDemoPublicUser() {
+export async function ConnectDemoPublicUser(setToken) {
 
-    try {
+    const user =
+    {
+        Login: "DemoUser96",
+        Password: "987654321"
+    };
+    const request = await axios.post(API.USERS.LOGIN, user)
+    const response = await request.data;
 
-        let user =
-        {
-            Login: "DemoUser96",
-            Password: "987654321"
-        };
-
-        let res = await fetch(API.USERS.LOGIN, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(user)
-        });
-
-
-        let data = await res.json();
-
-
-        // data from data base , save in AsyncStorage for user id profile user
-        let storgeUser =
-        {
-            LoginUser: data.Login,
-            idUser: data._id,
-            FotoUser: data.FotoUser,
-            NameUser: data.Name,
-            Email: data.Email,
-            Password: data.Password,
-            UserTypeCode: data.UserTypeCode
-        }
-
-        AsyncStorage.setItem('user', JSON.stringify(storgeUser));
-
-        await Updates.reloadAsync();
-
-    } catch (error) {
-        console.log(error);
-    }
+    AsyncStorage.setItem('user', JSON.stringify(response));
+    const savedUser = await AsyncStorage.getItem("user");
+    const currentUser = JSON.parse(savedUser);
+    // console.log(currentUser)
+    setToken(currentUser)
+    
+    return response;
 }
 
 

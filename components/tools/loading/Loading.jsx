@@ -1,29 +1,14 @@
-import { StyleSheet, View, Image } from "react-native";
+import { View } from "react-native";
+import styles from "../style/tools.style";
+import { BarIndicator } from "react-native-indicators";
 
 const Loading = () => {
   return (
     <View style={styles.loadingImage}>
-      <Image
-        style={styles.sizeLoadingImage}
-        source={{
-          uri: "https://i.postimg.cc/vm3V2tNH/Please-Wait-Loading-Image-Gif.gif",
-        }}
-      />
+      <BarIndicator color="#00b23d" size={40} />
     </View>
   );
 };
 
+
 export default Loading;
-
-
-const styles = StyleSheet.create({
-  loadingImage: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  sizeLoadingImage: {
-    width: 400,
-    height: 400,
-  },
-});

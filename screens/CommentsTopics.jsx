@@ -1,34 +1,19 @@
-import {
-  ScrollView,
-  ImageBackground,
-} from "react-native";
-import MainTopicComment from "../components/commentsI/showMainTopic/MainTopicComment";
-import ShowTitleTopic from "../components/commentsI/extrasTools/ShowTitleTopic";
-import AllCommentsThisTopic from "../components/commentsI/showCommentsTopic/AllCommentsThisTopic";
-
+import { ImageBackground } from "react-native";
+import MainTopicComment from "../components/comments/showMainTopic/MainTopicComment";
+import AllCommentsThisTopic from "../components/comments/showCommentsTopic/AllCommentsThisTopic";
 
 
 const MessagesTopics = () => {
-
-
   return (
     <ImageBackground
       source={{ uri: "https://i.postimg.cc/sfKm58XJ/download.jpg" }}
-      style={{ width: "100%", height: "100%",flex: 1 }}
+      style={{ width: "100%", height: "100%" }}
     >
-      <ScrollView >
-        
+      {/* here show main Topic comment */}
+      <MainTopicComment />
 
-        {/* here show title topic */}
-        <ShowTitleTopic />
-        
-        {/* here show main Topic comment */}
-        <MainTopicComment />
-        
-        {/* show all comments this topic */}
-        <AllCommentsThisTopic/>
-
-      </ScrollView>
+      {/* show all comments this topic */}
+      <AllCommentsThisTopic />
     </ImageBackground>
   );
 };

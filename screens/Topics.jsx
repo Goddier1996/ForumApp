@@ -1,13 +1,13 @@
-import { Text, ImageBackground } from "react-native";
+import { Text } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchTopicsIdCategories } from "../Redux/fetchData/topicsIdCategory";
+import { fetchTopicsIdCategories } from "../Redux/featuers/topics/topicsIdCategory";
 import CardTopic from "../components/topics/showModel/CardTopic";
-import ShowMessageNotHaveTopics from "../components/topics/showModel/ExtrasTools/ShowMessageNotHaveTopics";
-import SignInAddNewTopic from "../components/topics/showModel/ExtrasTools/SignInAddNewTopic";
 import Loading from "../components/tools/loading/Loading";
-
+import ShowMessageNotHaveData from "../components/tools/notHaveData/ShowMessageNotHaveData";
+import ShowImgTopic from "../components/topics/extrasTools/ShowImgTopic";
+import MainShowBottomOptionsTopic from "../components/topics/showBottomOptions/MainShowBottomOptionsTopic";
 
 
 const Topics = () => {
@@ -26,29 +26,30 @@ const Topics = () => {
 
   return (
     <>
-      <ImageBackground
-        source={{ uri: "https://i.postimg.cc/sfKm58XJ/download.jpg" }}
-        style={{ width: "100%", height: "100%" }}
-      >
-        {topics.loading ? (
-          <Loading />
-        ) : !topics.loading && topics.error ? (
-          <Text>Error: {topics.error}</Text>
-        ) : null}
+      {/* show img Topic */}
+      <ShowImgTopic backgroundTopic={route.params.topicImage} />
 
-        {!topics.loading ? (
-          <>
-            <SignInAddNewTopic backgroundTopic={route.params.topicImage} />
+      {topics.loading ? (
+        <Loading />
+      ) : !topics.loading && topics.error ? (
+        <Text>Error: {topics.error}</Text>
+      ) : null}
 
-            {topics.Topics.length == 0 ? (
-              <ShowMessageNotHaveTopics />
-            ) : (
-              // show all topics this Category
+      {!topics.loading ? (
+        <>
+          {/* show bottom options count and button add new topic */}
+          <MainShowBottomOptionsTopic countTopic={topics.Topics.length} />
+
+          {topics.Topics.length == 0 ? (
+            <ShowMessageNotHaveData typeData={"topic"} />
+          ) : (
+            <>
+              {/*  show all topics this Category */}
               <CardTopic dataTopic={topics.Topics} />
-            )}
-          </>
-        ) : null}
-      </ImageBackground>
+            </>
+          )}
+        </>
+      ) : null}
     </>
   );
 };
