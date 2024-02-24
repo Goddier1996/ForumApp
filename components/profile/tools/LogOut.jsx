@@ -11,6 +11,7 @@ const LogOut = ({ setToken }) => {
   return (
     <View style={styles.positionLogOut}>
     <TouchableOpacity
+      activeOpacity={0.9}
       style={styles.buttonLogOut}
       onPress={() => logOutFromProfile(setToken, navigation)}
     >

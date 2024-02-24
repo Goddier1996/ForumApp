@@ -17,6 +17,7 @@ const CardTopic = ({ dataTopic }) => {
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
+              activeOpacity={0.9}
               onPress={() =>
                 navigation.navigate("CommentsTopics", {
                   allDataTopic: item,

@@ -48,12 +48,14 @@ const ModelAddNewComment = ({
 
             <View style={styles.buttonClick}>
               <TouchableOpacity
+                activeOpacity={0.9}
                 style={styles.buttonSaveComment}
                 //   onPress={() => checkImputAddNewTopic()}
               >
                 <Text style={styles.textStyle}>Save</Text>
               </TouchableOpacity>
               <TouchableOpacity
+                activeOpacity={0.9}
                 style={styles.buttonExitComment}
                 onPress={() => setModalVisible(!modalVisible)}
               >

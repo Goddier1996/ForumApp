@@ -18,6 +18,7 @@ const ModelCategory = ({ dataCard }) => {
       numColumns={2}
       renderItem={({ item }) => (
         <TouchableOpacity
+          activeOpacity={0.9}
           key={item._id}
           style={[styles.card, { backgroundColor: item.color }]}
           // here send to Topic screen, data category

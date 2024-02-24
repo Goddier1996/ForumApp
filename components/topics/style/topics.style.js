@@ -116,6 +116,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         padding: 12,
     },
+    background: {
+        alignItems: "center",
+        marginTop: 10
+    },
+    imageAddTopic: {
+        width: 85,
+        height: 70,
+    },
 
 
     //  use in SignInAddNewTopic component

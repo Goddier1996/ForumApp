@@ -22,6 +22,7 @@ const SignInAddNewTopic = () => {
         <>
           {/* button add new topic */}
           <TouchableOpacity
+            activeOpacity={0.9}
             onPress={() => userConnect && setModalVisible(true)}
             style={styles.buttonAddNewTopic}
           >

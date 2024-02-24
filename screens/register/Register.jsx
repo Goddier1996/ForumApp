@@ -143,7 +143,7 @@ const Register = () => {
         </TouchableWithoutFeedback>
 
         <View style={styles.buttonClick}>
-          <TouchableOpacity style={styles.loginButton}>
+          <TouchableOpacity activeOpacity={0.9} style={styles.loginButton}>
             <Text style={styles.loginButtonText}>Let's Register</Text>
           </TouchableOpacity>
         </View>

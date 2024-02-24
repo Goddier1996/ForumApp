@@ -69,7 +69,7 @@ const Login = ({setToken}) => {
         </TouchableWithoutFeedback>
 
         <View style={styles.styleClickButton}>
-          <TouchableOpacity style={styles.loginButton}>
+          <TouchableOpacity activeOpacity={0.9} style={styles.loginButton}>
             <Text style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
         </View>

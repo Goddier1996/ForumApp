@@ -3,16 +3,20 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        top: 40,
+        // flex: 1,
+        // justifyContent: "center",
     },
     Control: {
         alignItems: "center",
-        marginTop: 40,
     },
     ControlTitle: {
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: "500",
+        color: "rgba(0, 0, 0, 0.600)"
+    },
+    ControlOption: {
+        fontSize: 13,
+        color: "rgba(0, 0, 0, 0.475)"
     }
 })
 

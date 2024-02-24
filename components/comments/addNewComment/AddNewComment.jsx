@@ -22,6 +22,7 @@ const AddNewComment = ({ nameTopic, background }) => {
       <View style={styles.positionAddComment}>
         {userConnect ? (
           <TouchableOpacity
+            activeOpacity={0.9}
             style={styles.buttonAddNewComment}
             onPress={() => setModalVisible(true)}
           >

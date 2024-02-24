@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Keyboard,
   TouchableWithoutFeedback,
+  ImageBackground,
 } from "react-native";
 import { useState } from "react";
 import styles from "../style/topics.style";
@@ -23,6 +24,13 @@ const ModelAddNewTopic = ({ modalVisible, setModalVisible }) => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
         <View style={styles.outSideBackgroundModel}>
           <View style={styles.outInsideBackgroundModel}>
+
+          <View style={styles.background}>
+              <ImageBackground
+                source={{ uri: "https://i.postimg.cc/jdThhLtb/Pngtree-lotus-topic-602786.png" }}
+                style={styles.imageAddTopic}
+              />
+            </View>
             <SafeAreaView style={styles.authBox}>
               <View style={styles.createFreeSpace}>
                 <TextInput
@@ -48,12 +56,14 @@ const ModelAddNewTopic = ({ modalVisible, setModalVisible }) => {
 
             <View style={styles.buttonClick}>
               <TouchableOpacity
+                activeOpacity={0.9}
                 style={styles.buttonSaveComment}
                 //   onPress={() => checkImputAddNewTopic()}
               >
                 <Text style={styles.textStyle}>Add New Topic</Text>
               </TouchableOpacity>
               <TouchableOpacity
+                activeOpacity={0.9}
                 style={styles.buttonExitComment}
                 onPress={() => setModalVisible(!modalVisible)}
               >
