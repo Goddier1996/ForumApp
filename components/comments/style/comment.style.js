@@ -84,6 +84,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 12,
   },
+  messageUserNeedInputValue: {
+    alignItems:"center"
+  },
+  textUserNeedInputValue: {
+    color: "#e48a33",
+    textAlign:"center"
+  },
 
 
   // use in Card Comment component
@@ -124,10 +131,10 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   time: {
-    fontSize: 10,
+    fontSize: 8,
     color: "rgba(0, 0, 0, 0.475)",
-    marginLeft: "auto",
-    top: 55,
+    // marginLeft: "auto",
+    // top: 55,
   },
   name: {
     textAlign: "center",

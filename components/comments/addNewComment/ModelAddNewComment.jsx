@@ -11,6 +11,10 @@ import {
 } from "react-native";
 import { useState } from "react";
 import styles from "../style/comment.style";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
+import { exitFromModel, saveComment } from "../function/CommentFunction";
+
 
 
 const ModelAddNewComment = ({
@@ -18,9 +22,33 @@ const ModelAddNewComment = ({
   setModalVisible,
   background,
   nameTopic,
+  idTopic,
+  userInfo,
 }) => {
 
-  const [MessageTopic, setMessageTopic] = useState("");
+
+  const navigation = useNavigation();
+
+  // Redux
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.addComment);
+
+  const [comment, setComment] = useState("");
+  const [errors, setErrors] = useState({});
+
+
+
+  // check if user input value
+  const validateForm = () => {
+    let errors = {};
+
+    if (!comment) errors.comment = `Hi ${userInfo.Name}\n Please Input Comment`;
+
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+
 
   return (
     <Modal animationType="fade" transparent={true} visible={modalVisible}>
@@ -40,24 +68,51 @@ const ModelAddNewComment = ({
                 placeholder={"Write Comment About Topic Question " + nameTopic}
                 multiline={true}
                 numberOfLines={10}
-                onChangeText={setMessageTopic}
-                value={MessageTopic}
+                onChangeText={setComment}
+                value={comment}
                 placeholderTextColor={"black"}
               />
+              {/* here show message user need input value */}
+              {errors.comment ? (
+                <View style={styles.messageUserNeedInputValue}>
+                  <Text style={styles.textUserNeedInputValue}>
+                    {errors.comment}
+                  </Text>
+                </View>
+              ) : null}
             </SafeAreaView>
 
             <View style={styles.buttonClick}>
               <TouchableOpacity
                 activeOpacity={0.9}
                 style={styles.buttonSaveComment}
-                //   onPress={() => checkImputAddNewTopic()}
+                onPress={() =>
+                  saveComment(
+                    () => validateForm(),
+                    idTopic,
+                    comment,
+                    userInfo,
+                    dispatch,
+                    navigation,
+                    setErrors,
+                    setComment,
+                    () => setModalVisible(!modalVisible)
+                  )
+                }
               >
-                <Text style={styles.textStyle}>Save</Text>
+                <Text style={styles.textStyle}>
+                  {loading ? "loading" : "save"}
+                </Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
                 style={styles.buttonExitComment}
-                onPress={() => setModalVisible(!modalVisible)}
+                onPress={() =>
+                  exitFromModel(
+                    () => setModalVisible(!modalVisible),
+                    () => setErrors({})
+                  )
+                }
               >
                 <Text style={styles.textStyle}>Exit</Text>
               </TouchableOpacity>

@@ -37,11 +37,17 @@ const CardComment = ({ typeComment, dataComment }) => {
           }}
         />
         <Text style={styles.name}>
-          Publish By{"\n"}
           {typeComment === "Question"
             ? route.params.allDataTopic.NameUser
             : dataComment.NameUser}
         </Text>
+
+          <Text style={styles.time}>
+           
+            {typeComment === "Question"
+              ? route.params.allDataTopic.DatePublished
+              : dataComment.DatePublished}
+          </Text>
       </View>
 
       <View style={styles.content}>
@@ -51,14 +57,14 @@ const CardComment = ({ typeComment, dataComment }) => {
             : dataComment.MessageUser}
         </Text>
 
-        <View style={styles.contentHeader}>
+        {/* <View style={styles.contentHeader}>
           <Text style={styles.time}>
             Date Publish :{" "}
             {typeComment === "Question"
               ? route.params.allDataTopic.DatePublished
               : dataComment.DatePublished}
           </Text>
-        </View>
+        </View> */}
       </View>
     </View>
   );

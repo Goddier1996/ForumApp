@@ -4,7 +4,7 @@ import ShowCountComments from "./ShowCountComments";
 import AddNewComment from "../addNewComment/AddNewComment";
 
 
-const MainShowBottomOptions = ({ countComment, nameTopic, background }) => {
+const MainShowBottomOptions = ({ countComment, nameTopic, background,idTopic }) => {
   return (
     <View style={styles.borderImageAllComments}>
         
@@ -12,7 +12,11 @@ const MainShowBottomOptions = ({ countComment, nameTopic, background }) => {
       <ShowCountComments countComment={countComment} />
 
       {/* add new comments */}
-      <AddNewComment nameTopic={nameTopic} background={background} />
+      <AddNewComment
+        nameTopic={nameTopic}
+        background={background}
+        idTopic={idTopic}
+      />
     </View>
   );
 };

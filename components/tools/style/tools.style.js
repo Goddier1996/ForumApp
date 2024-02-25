@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     notHaveItems: {
-        width: 100,
+        width: 130,
         height: 100,
     },
 });

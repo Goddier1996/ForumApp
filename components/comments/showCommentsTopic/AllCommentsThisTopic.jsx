@@ -45,6 +45,7 @@ const AllCommentsThisTopic = () => {
             countComment={commentTopic.Comments.length}
             nameTopic={route.params.allDataTopic.nameTopic}
             background={route.params.backgroundTopic}
+            idTopic={route.params.allDataTopic._id}
           />
         </>
       ) : null}
