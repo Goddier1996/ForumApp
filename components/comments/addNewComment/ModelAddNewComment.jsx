@@ -42,7 +42,7 @@ const ModelAddNewComment = ({
   const validateForm = () => {
     let errors = {};
 
-    if (!comment) errors.comment = `Hi ${userInfo.Name}\n Please Input Comment`;
+    if (!comment) errors.comment = `Please Input Comment`;
 
     setErrors(errors);
     return Object.keys(errors).length === 0;
