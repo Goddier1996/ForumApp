@@ -14,6 +14,7 @@ import styles from "../style/comment.style";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { exitFromModel, saveComment } from "../function/CommentFunction";
+import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
 
 
 
@@ -37,7 +38,6 @@ const ModelAddNewComment = ({
   const [errors, setErrors] = useState({});
 
 
-
   // check if user input value
   const validateForm = () => {
     let errors = {};
@@ -47,7 +47,6 @@ const ModelAddNewComment = ({
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
-
 
 
   return (
@@ -85,24 +84,32 @@ const ModelAddNewComment = ({
             <View style={styles.buttonClick}>
               <TouchableOpacity
                 activeOpacity={0.9}
-                style={styles.buttonSaveComment}
+                style={
+                  !loading
+                    ? styles.buttonSaveComment
+                    : styles.buttonSaveCommentLoading
+                }
                 onPress={() =>
-                  saveComment(
-                    () => validateForm(),
-                    idTopic,
-                    comment,
-                    userInfo,
-                    dispatch,
-                    navigation,
-                    setErrors,
-                    setComment,
-                    () => setModalVisible(!modalVisible)
-                  )
+                  !loading
+                    ? saveComment(
+                        () => validateForm(),
+                        idTopic,
+                        comment,
+                        userInfo,
+                        dispatch,
+                        navigation,
+                        setErrors,
+                        setComment,
+                        () => setModalVisible(!modalVisible)
+                      )
+                    : null
                 }
               >
-                <Text style={styles.textStyle}>
-                  {loading ? "loading" : "save"}
-                </Text>
+                {loading ? (
+                  <LoadingSmallSize type={"save"} />
+                ) : (
+                  <Text style={styles.textStyle}>save</Text>
+                )}
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
@@ -110,7 +117,8 @@ const ModelAddNewComment = ({
                 onPress={() =>
                   exitFromModel(
                     () => setModalVisible(!modalVisible),
-                    () => setErrors({})
+                    () => setErrors({}),
+                    () => setComment("")
                   )
                 }
               >

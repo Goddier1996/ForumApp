@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
     loadingImageSmallSize: {
         padding: 25
     },
+    loadingImageSmallSizeSave: {
+        marginTop: 8
+    },
 
     //   use in ShowMessageNotHaveData component
     loadingImageDontHave: {

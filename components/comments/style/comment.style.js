@@ -53,6 +53,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
   },
+  buttonSaveCommentLoading: {
+    shadowColor: "#000",
+    borderRadius: 10,
+    padding: 10,
+  },
   buttonExitComment: {
     backgroundColor: "#c11414",
     shadowColor: "#000",
@@ -85,11 +90,11 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   messageUserNeedInputValue: {
-    alignItems:"center"
+    alignItems: "center"
   },
   textUserNeedInputValue: {
     color: "#e48a33",
-    textAlign:"center"
+    textAlign: "center"
   },
 
 
@@ -131,7 +136,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   time: {
-    fontSize: 8,
+    fontSize: 9,
     color: "rgba(0, 0, 0, 0.475)",
     // marginLeft: "auto",
     // top: 55,

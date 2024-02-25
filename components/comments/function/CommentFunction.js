@@ -40,8 +40,9 @@ export async function saveComment(validateForm, idTopic, comment, userInfo, disp
 }
 
 
-export async function exitFromModel(closeModel, clearMessageErrors) {
+export async function exitFromModel(closeModel, clearErrors, clearValueInput) {
 
     closeModel();
-    clearMessageErrors();
+    clearErrors();
+    clearValueInput();
 }
