@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import InfoAbout from "../screens/InfoAbout";
@@ -6,13 +6,36 @@ import Login from "../screens/Login";
 import Register from "../screens/register/Register";
 import ProfileUser from "../screens/profile/ProfileUser";
 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Tab = createBottomTabNavigator();
 
 
 const Menu = ({ StackScreen }) => {
 
+
   const [token, setToken] = useState(() => {});
+
+
+  // this function check if user connect to App
+  // why i create this function here ?
+  // user can close this app and AsyncStorage was save.
+  // and now we can show options at menu, if user open this app but AsyncStorage don't delete(LogOut)
+  const checkIfUserConnect = async () => {
+
+    const deleteUser = await AsyncStorage.getItem("user");
+    const currentUser = JSON.parse(deleteUser);
+
+    if (currentUser) {
+      setToken(currentUser);
+    } else {
+      setToken(null);
+    }
+  };
+
+  useEffect(() => {
+    checkIfUserConnect();
+  });
 
 
   return (
