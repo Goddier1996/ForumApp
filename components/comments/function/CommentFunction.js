@@ -31,7 +31,7 @@ export async function saveComment(validateForm, idTopic, comment, userInfo, disp
                     // console.log("Good");
                     setComment("");
                     setErrors({});
-                    setModalVisible
+                    setModalVisible();
                     navigation.goBack();
                 }
             })

@@ -17,7 +17,6 @@ import { exitFromModel, saveTopic } from "../function/topicFunction";
 import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
 
 
-
 const ModelAddNewTopic = ({
   modalVisible,
   setModalVisible,
@@ -131,13 +130,11 @@ const ModelAddNewTopic = ({
                     : null
                 }
               >
-                <Text>
-                  {loading ? (
-                    <LoadingSmallSize type={"save"} />
-                  ) : (
-                    <Text style={styles.textStyle}>Add New Topic</Text>
-                  )}
-                </Text>
+                {loading ? (
+                  <LoadingSmallSize type={"save"} />
+                ) : (
+                  <Text style={styles.textStyle}>Add New Topic</Text>
+                )}
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
@@ -147,7 +144,7 @@ const ModelAddNewTopic = ({
                     () => setModalVisible(!modalVisible),
                     () => setErrors({}),
                     () => setNewTopic(""),
-                    () => setAnswerTopic("")
+                    () => setQuestionTopic("")
                   )
                 }
               >
