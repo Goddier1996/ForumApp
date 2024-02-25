@@ -2,7 +2,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { addComment } from "../../../Redux/featuers/comments/addComment";
 
 
-
 export async function checkIfUserConnectToApp(setUserConnect) {
 
     const savedUser = await AsyncStorage.getItem("user");

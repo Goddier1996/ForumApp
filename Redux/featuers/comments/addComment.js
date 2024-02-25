@@ -34,4 +34,4 @@ const addCommentsSlice = createSlice({
 })
 
 
-export default addCommentsSlice.reducer
+export default addCommentsSlice.reducer;

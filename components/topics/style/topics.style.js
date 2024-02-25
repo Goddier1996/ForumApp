@@ -68,8 +68,13 @@ const styles = StyleSheet.create({
         borderRadius: 7,
         elevation: 10
     },
-    buttonSaveComment: {
+    buttonSaveTopic: {
         backgroundColor: "#00b23d",
+        shadowColor: "#000",
+        borderRadius: 10,
+        padding: 10,
+    },
+    buttonSaveTopicLoading: {
         shadowColor: "#000",
         borderRadius: 10,
         padding: 10,
@@ -123,6 +128,13 @@ const styles = StyleSheet.create({
     imageAddTopic: {
         width: 85,
         height: 70,
+    },
+    messageUserNeedInputValue: {
+        alignItems: "center"
+    },
+    textUserNeedInputValue: {
+        color: "#e48a33",
+        textAlign: "center"
     },
 
 

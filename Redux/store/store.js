@@ -9,7 +9,8 @@ import userLoginReducer from '../featuers/users/userSliceLogin';
 import userIdReducer from "../featuers/users/infoIdUser";
 import topicsUserIdReducer from "../featuers/topics/topicsIdUser";
 import commentsUserIdReducer from "../featuers/comments/commentsIdUser";
-import addCommentUserReducer from "../featuers/comments/addComment"
+import addCommentUserReducer from "../featuers/comments/addComment";
+import addTopicUserReducer from "../featuers/topics/addTopic";
 
 
 const store = configureStore({
@@ -24,7 +25,8 @@ const store = configureStore({
         userIdData: userIdReducer,
         topicsUserId: topicsUserIdReducer,
         commentsUserId: commentsUserIdReducer,
-        addComment:addCommentUserReducer
+        addComment: addCommentUserReducer,
+        addTopic: addTopicUserReducer
     }
 });
 

@@ -12,12 +12,12 @@ import MainShowBottomOptionsTopic from "../components/topics/showBottomOptions/M
 
 const Topics = () => {
 
+
   const route = useRoute();
 
   // use redux
   const topics = useSelector((state) => state.topics);
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     dispatch(fetchTopicsIdCategories(route.params.id));
@@ -38,7 +38,11 @@ const Topics = () => {
       {!topics.loading ? (
         <>
           {/* show bottom options count and button add new topic */}
-          <MainShowBottomOptionsTopic countTopic={topics.Topics.length} />
+          <MainShowBottomOptionsTopic
+            countTopic={topics.Topics.length}
+            idCategory={route.params.id}
+            titleCategory={route.params.name}
+          />
 
           {topics.Topics.length == 0 ? (
             <ShowMessageNotHaveData typeData={"topic"} />

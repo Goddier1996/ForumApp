@@ -6,7 +6,8 @@ import { checkIfUserConnectToApp } from "../function/CommentFunction";
 
 
 
-const AddNewComment = ({ nameTopic, background ,idTopic}) => {
+const AddNewComment = ({ nameTopic, background, idTopic }) => {
+
 
   const [modalVisible, setModalVisible] = useState(false);
   const [userConnect, setUserConnect] = useState({});
