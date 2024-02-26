@@ -1,15 +1,9 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Modal,
-  FlatList,
-  Image,
-} from "react-native";
+import { View, Text, Modal, FlatList } from "react-native";
 import styles from "../../../style/profile.style";
 import { DotIndicator } from "react-native-indicators";
 import { DataTable } from "react-native-paper";
 import CloseButton from "../tools/CloseButton";
+import ButtonDelete from "../tools/ButtonDelete";
 
 
 const ListTopics = ({
@@ -17,7 +11,6 @@ const ListTopics = ({
   modalVisibleTopic,
   setModalVisibleTopic,
 }) => {
-
 
   return (
     <Modal animationType="fade" transparent={true} visible={modalVisibleTopic}>
@@ -71,17 +64,13 @@ const ListTopics = ({
                           {item.DatePublished}
                         </DataTable.Cell>
                         <DataTable.Cell style={styles.tablePosition}>
-                          <TouchableOpacity
-                            activeOpacity={0.9}
-                            // onPress={() => DeleteTopic(item._id)}
-                          >
-                            <Image
-                              style={styles.icon}
-                              source={{
-                                uri: "https://i.postimg.cc/nVg1pYzV/icons8-recycle-bin-64.png",
-                              }}
-                            />
-                          </TouchableOpacity>
+
+                          {/* delete button */}
+                          <ButtonDelete
+                            data={item}
+                            setModalVisible={setModalVisibleTopic}
+                            type={"delete topic"}
+                          />
                         </DataTable.Cell>
                       </DataTable.Row>
                     );

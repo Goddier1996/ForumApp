@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import { TouchableOpacity, Image } from "react-native";
 import styles from "../../../style/profile.style";
 import { useSelector, useDispatch } from "react-redux";
-import { userDeleteComment } from "../../../function/FunctionProfile";
+import {
+  userDeleteComment,
+  userDeleteTopic,
+} from "../../../function/FunctionProfile";
 import CustomAlert from "../../../../tools/customAlert/CustomAlert";
 import LoadingSmallSize from "../../../../tools/loading/LoadingSmallSize";
 
 
 
-const ButtonDelete = ({ dataComment, setModalVisible }) => {
+// this button delete, user in profile screen.
+// use can delete topic or comment
+const ButtonDelete = ({ data, setModalVisible, type }) => {
+
 
   // Redux
   const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.userDeleteComment);
+  const { loadingComment } = useSelector((state) => state.userDeleteComment);
+  const { loadingTopic } = useSelector((state) => state.userDeleteTopic);
 
   const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
     useState(false);
@@ -20,31 +27,61 @@ const ButtonDelete = ({ dataComment, setModalVisible }) => {
   
   return (
     <>
-      {!loading ? (
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() =>
-            userDeleteComment(
-              dispatch,
-              dataComment._id,
-              setShowInfoHaveThisUserPopup
-            )
-          }
-        >
-          <Image
-            style={styles.icon}
-            source={{
-              uri: "https://i.postimg.cc/nVg1pYzV/icons8-recycle-bin-64.png",
-            }}
-          />
-        </TouchableOpacity>
+      {type === "delete comment" ? (
+        !loadingComment ? (
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() =>
+              userDeleteComment(
+                dispatch,
+                data._id,
+                setShowInfoHaveThisUserPopup
+              )
+            }
+          >
+            <Image
+              style={styles.icon}
+              source={{
+                uri: "https://i.postimg.cc/nVg1pYzV/icons8-recycle-bin-64.png",
+              }}
+            />
+          </TouchableOpacity>
+        ) : (
+          <LoadingSmallSize type={"save"} />
+        )
+      ) : type === "delete topic" ? (
+        !loadingTopic ? (
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() =>
+              userDeleteTopic(dispatch, data._id, setShowInfoHaveThisUserPopup)
+            }
+          >
+            <Image
+              style={styles.icon}
+              source={{
+                uri: "https://i.postimg.cc/nVg1pYzV/icons8-recycle-bin-64.png",
+              }}
+            />
+          </TouchableOpacity>
+        ) : (
+          <LoadingSmallSize type={"save"} />
+        )
       ) : (
-        <LoadingSmallSize type={"save"} />
+        ""
       )}
 
+      
+      {/* this alert show when user delete topic or comment in profile screen */}
       <CustomAlert
         displayMode={"delete"}
-        displayMsg={`Comment successfully deleted\nRefresh your profile screen after deleting`}
+        displayMsg={
+          type === "delete comment"
+            ? `Comment successfully deleted\nRefresh your profile pull down screen`
+            : type === "delete topic"
+            ? `Topic successfully deleted\nRefresh your profile pull down screen`
+            : ""
+        }
         visibility={showInfoHaveThisUserPopup}
         dismissAlert={setShowInfoHaveThisUserPopup}
         setModalVisible={setModalVisible}

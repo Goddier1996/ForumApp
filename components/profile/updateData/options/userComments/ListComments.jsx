@@ -11,14 +11,11 @@ import CloseButton from "../tools/CloseButton";
 import ButtonDelete from "../tools/ButtonDelete";
 
 
-
 const ListComments = ({
   DataComment,
   modalVisibleMessages,
   setModalVisibleMessages,
 }) => {
-
-  
 
   return (
     <Modal
@@ -76,8 +73,9 @@ const ListComments = ({
                             </Text>
 
                             <ButtonDelete
-                              dataComment={item}
+                              data={item}
                               setModalVisible={setModalVisibleMessages}
+                              type={"delete comment"}
                             />
                           </View>
                         </>

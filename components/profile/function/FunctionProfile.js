@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { userIdDeleteComment } from "../../../Redux/featuers/comments/userDeleteComment";
+import { userIdDeleteTopic } from "../../../Redux/featuers/topics/userDeleteTopic";
 
 
 export async function logOutFromProfile(setToken, navigation) {
@@ -10,7 +11,7 @@ export async function logOutFromProfile(setToken, navigation) {
 }
 
 
-export async function userDeleteComment(dispatch, id, setShowInfoHaveThisUserPopup) {
+export function userDeleteComment(dispatch, id, setShowInfoHaveThisUserPopup) {
 
     dispatch(userIdDeleteComment(id))
         .then((result) => {
@@ -20,3 +21,13 @@ export async function userDeleteComment(dispatch, id, setShowInfoHaveThisUserPop
         })
 }
 
+
+export function userDeleteTopic(dispatch, id, setShowInfoHaveThisUserPopup) {
+
+    dispatch(userIdDeleteTopic(id))
+        .then((result) => {
+            if (result) {
+                setShowInfoHaveThisUserPopup(true);
+            }
+        })
+}

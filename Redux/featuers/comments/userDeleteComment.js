@@ -3,7 +3,7 @@ import { DeleteFromDataBaseMessage } from '../../../Api/DeleteDataFromApi';
 
 
 const initialState = {
-    loading: false,
+    loadingComment: false,
     error: ''
 }
 
@@ -19,15 +19,15 @@ const userDeleteCommentsSlice = createSlice({
 
     extraReducers: builder => {
         builder.addCase(userIdDeleteComment.pending, state => {
-            state.loading = true
+            state.loadingComment = true
             state.error = ''
         })
         builder.addCase(userIdDeleteComment.fulfilled, (state, action) => {
-            state.loading = false
+            state.loadingComment = false
             state.error = ''
         })
         builder.addCase(userIdDeleteComment.rejected, (state, action) => {
-            state.loading = false
+            state.loadingComment = false
             state.error = action.error.message
         })
     }
