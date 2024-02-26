@@ -1,13 +1,22 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { userIdDeleteComment } from "../../../Redux/featuers/comments/userDeleteComment";
 
 
 export async function logOutFromProfile(setToken, navigation) {
 
-    // const deleteUser = await AsyncStorage.getItem("user");
-    // const currentUser = JSON.parse(deleteUser);
     await setToken(null)
-    // navigation?.goBack();
     AsyncStorage.clear();
     navigation.navigate("HomePage", { screen: "HomePage" });
-    // AsyncStorage.removeItem("user");
 }
+
+
+export async function userDeleteComment(dispatch, id, setShowInfoHaveThisUserPopup) {
+
+    dispatch(userIdDeleteComment(id))
+        .then((result) => {
+            if (result) {
+                setShowInfoHaveThisUserPopup(true);
+            }
+        })
+}
+

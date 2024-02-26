@@ -1,15 +1,14 @@
 import {
   View,
   Text,
-  TouchableOpacity,
   Modal,
   FlatList,
-  Image,
 } from "react-native";
 import styles from "../../../style/profile.style";
 import { DotIndicator } from "react-native-indicators";
 import { DataTable } from "react-native-paper";
 import CloseButton from "../tools/CloseButton";
+import ButtonDelete from "../tools/ButtonDelete";
 
 
 
@@ -18,6 +17,8 @@ const ListComments = ({
   modalVisibleMessages,
   setModalVisibleMessages,
 }) => {
+
+  
 
   return (
     <Modal
@@ -73,17 +74,11 @@ const ListComments = ({
                             <Text style={styles.dateComment}>
                               Date Publish: {item.DatePublished}
                             </Text>
-                            <TouchableOpacity
-                              activeOpacity={0.9}
-                              // onPress={() => DeleteTopic(item._id)}
-                            >
-                              <Image
-                                style={styles.icon}
-                                source={{
-                                  uri: "https://i.postimg.cc/nVg1pYzV/icons8-recycle-bin-64.png",
-                                }}
-                              />
-                            </TouchableOpacity>
+
+                            <ButtonDelete
+                              dataComment={item}
+                              setModalVisible={setModalVisibleMessages}
+                            />
                           </View>
                         </>
                       );

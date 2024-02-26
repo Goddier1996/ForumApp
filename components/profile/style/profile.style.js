@@ -7,13 +7,13 @@ const styles = StyleSheet.create({
     // use in LogOut component
     positionLogOut: {
         alignItems: "flex-end",
-        padding: 30,
+        padding: 25,
     },
     buttonLogOut: {
-        width: 62,
-        height: 62,
+        width: 55,
+        height: 55,
         backgroundColor: "red",
-        borderRadius: 62 / 2,
+        borderRadius: 55 / 2,
         justifyContent: "center",
     },
     caption: {
@@ -25,9 +25,7 @@ const styles = StyleSheet.create({
     // use in InfoUser component
     userInfoSection: {
         marginBottom: 50,
-        // marginTop: -150
     },
-
     title: {
         fontSize: 22,
         fontWeight: "500",
@@ -90,7 +88,8 @@ const styles = StyleSheet.create({
     menuWrapperPersonalUserDate: {
         flexDirection: "row",
         justifyContent: "center",
-        marginTop: 30
+        marginTop: 30,
+        marginBottom: 30
     },
 
 
@@ -168,7 +167,6 @@ const styles = StyleSheet.create({
         color: "rgba(0, 0, 0, 0.475)",
         fontSize: 10,
     },
-
     description: {
         fontSize: 15,
         color: "rgba(0, 0, 0, 0.475)",
@@ -234,6 +232,16 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     },
+
+
+    // use in TitlePullDownRefreshScreen component
+    titlePosition: {
+        alignItems: "center",
+    },
+    titlePositionStyle: {
+        fontSize: 13,
+        color: "#1e2226"
+    }
 });
 
 

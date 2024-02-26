@@ -11,6 +11,7 @@ import topicsUserIdReducer from "../featuers/topics/topicsIdUser";
 import commentsUserIdReducer from "../featuers/comments/commentsIdUser";
 import addCommentUserReducer from "../featuers/comments/addComment";
 import addTopicUserReducer from "../featuers/topics/addTopic";
+import userDeleteCommentsReducer from "../featuers/comments/userDeleteComment";
 
 
 const store = configureStore({
@@ -26,7 +27,8 @@ const store = configureStore({
         topicsUserId: topicsUserIdReducer,
         commentsUserId: commentsUserIdReducer,
         addComment: addCommentUserReducer,
-        addTopic: addTopicUserReducer
+        addTopic: addTopicUserReducer,
+        userDeleteComment: userDeleteCommentsReducer
     }
 });
 

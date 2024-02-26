@@ -1,79 +1,65 @@
 import { Modal, Text, View, TouchableOpacity } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import styles from "../style/tools.style";
+
+const CustomAlert = ({
+  displayMode,
+  displayMsg,
+  visibility,
+  dismissAlert,
+  setModalVisible,
+}) => {
 
 
-const CustomAlert = ({ displayMode, displayMsg, visibility, dismissAlert }) => {
+  const closeModel = () => {
+    dismissAlert(false);
+
+    // and close model delete in user profile
+    if (setModalVisible) {
+      setModalVisible(false);
+    }
+  };
+
   return (
-    <View>
-      <Modal
-        visible={visibility}
-        animationType={"fade"}
-        transparent={true}
-      >
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: "rgba(52, 52, 52, 0.8)",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <View
-            style={{
-              alignItems: "center",
-              backgroundColor: "white",
-              height: 200,
-              width: "90%",
-              borderWidth: 1,
-              borderColor: "#fff",
-              borderRadius: 7,
-              elevation: 10,
-            }}
-          >
-            <View style={{ alignItems: "center", margin: 10 }}>
-              {displayMode == "info" ? (
-                <>
-                  <Ionicons
-                    name="information-circle"
-                    color={"#e48a33"}
-                    size={80}
-                  />
-                </>
-              ) : (
-                <>
-                  <MaterialIcons name="cancel" color={"red"} size={80} />
-                </>
-              )}
-              <Text style={{ fontSize: 18, marginTop: 5 }}>{displayMsg}</Text>
-            </View>
-
-            <TouchableOpacity
-              activeOpacity={0.9}
-              onPress={() => dismissAlert(false)}
-              style={{
-                width: "30%",
-                borderRadius: 0,
-                alignItems: "center",
-                justifyContent: "center",
-                position: "absolute",
-                backgroundColor: "#00b23d",
-                borderColor: "#ddd",
-                borderBottomWidth: 0,
-                borderRadius: 5,
-                bottom: 0,
-                marginBottom: 10,
-              }}
-            >
-              <Text style={{ color: "white", margin: 15, fontSize: 16 }}>
-                Try Again
-              </Text>
-            </TouchableOpacity>
+    <Modal visible={visibility} animationType={"fade"} transparent={true}>
+      <View style={styles.mainModel}>
+        <View style={styles.inSite}>
+          <View style={styles.showIcon}>
+            {displayMode == "info" ? (
+              <>
+                <Ionicons
+                  name="information-circle"
+                  color={"#e48a33"}
+                  size={80}
+                />
+              </>
+            ) : displayMode == "delete" ? (
+              <>
+                <Ionicons name="checkmark-done-outline" color={"#00b23d"} size={80} />
+              </>
+            ) : (
+              <>
+                <MaterialIcons name="cancel" color={"red"} size={80} />
+              </>
+            )}
+            <Text style={styles.messageInAlert}>{displayMsg}</Text>
           </View>
+
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => closeModel()}
+            style={styles.buttonAlert}
+          >
+            <Text style={styles.textInButtonAlert}>
+              {displayMode == "delete" ? "Ok" : "Try Again"}
+            </Text>
+          </TouchableOpacity>
         </View>
-      </Modal>
-    </View>
+      </View>
+    </Modal>
   );
 };
+
 
 export default CustomAlert;
