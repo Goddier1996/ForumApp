@@ -17,7 +17,7 @@
     "@rneui/base": "^4.0.0-rc.8",
     "@rneui/themed": "^4.0.0-rc.8",
     "axios": "^1.6.7",
-    "expo": "^50.0.7",
+    "expo": "^50.0.8",
     "expo-linear-gradient": "~12.7.2",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",

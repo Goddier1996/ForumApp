@@ -37,11 +37,24 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         width: 120,
     },
+    loginButtonLoading: {
+        marginTop: 15,
+        paddingVertical: 8,
+        borderRadius: 4,
+        width: 120,
+    },
     loginButtonText: {
         color: "white",
         textAlign: "center",
         fontSize: 18,
         fontWeight: "bold",
+    },
+    messageUserNeedInputValue: {
+        alignItems: "center"
+    },
+    textUserNeedInputValue: {
+        color: "#e48a33",
+        textAlign: "center"
     },
 
 

@@ -118,45 +118,15 @@ export async function NewPasswordUser(user, idUser) {
 
 export async function ConnectLoginPublicUser(user) {
 
-    try {
+    const request = await axios.post(API.USERS.LOGIN, user)
+    const response = await request.data;
 
-        let res = await fetch(API.USERS.LOGIN, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(user)
-        });
+    AsyncStorage.setItem('user', JSON.stringify(response));
+    const savedUser = await AsyncStorage.getItem("user");
+    const currentUser = JSON.parse(savedUser);
+    // console.log(currentUser)
 
-        let data = await res.json();
-
-        // if dont have this user
-        if (data == null) {
-
-            return '';
-        }
-
-        else {
-
-            let storgeUser =
-            {
-                LoginUser: data.Login,
-                idUser: data._id,
-                FotoUser: data.FotoUser,
-                NameUser: data.Name,
-                Email: data.Email,
-                Password: data.Password,
-                UserTypeCode: data.UserTypeCode
-            }
-
-            AsyncStorage.setItem('user', JSON.stringify(storgeUser))
-            await Updates.reloadAsync();
-            
-        }
-
-    } catch (error) {
-        console.log(error);
-    }
+    return response;
 }
 
 
@@ -175,7 +145,7 @@ export async function ConnectDemoPublicUser(setToken) {
     const currentUser = JSON.parse(savedUser);
     // console.log(currentUser)
     setToken(currentUser)
-    
+
     return response;
 }
 

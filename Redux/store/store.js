@@ -13,6 +13,7 @@ import addCommentUserReducer from "../featuers/comments/addComment";
 import addTopicUserReducer from "../featuers/topics/addTopic";
 import userDeleteCommentsReducer from "../featuers/comments/userDeleteComment";
 import userDeleteTopicsReducer from "../featuers/topics/userDeleteTopic";
+import signInUser from "../featuers/users/loginUser"
 
 
 const store = configureStore({
@@ -30,7 +31,8 @@ const store = configureStore({
         addComment: addCommentUserReducer,
         addTopic: addTopicUserReducer,
         userDeleteComment: userDeleteCommentsReducer,
-        userDeleteTopic: userDeleteTopicsReducer
+        userDeleteTopic: userDeleteTopicsReducer,
+        connectUser: signInUser
     }
 });
 

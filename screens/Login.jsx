@@ -13,13 +13,44 @@ import ForgetPassword from "../components/signIn/forgetPassword/ForgetPassword";
 import DontHaveAccount from "../components/signIn/dontHaveAccount/DontHaveAccount";
 import ConnectDemoUser from "../components/signIn/connectDemoUser/ConnectDemoUser";
 import styles from "../components/signIn/style/login.style";
+import { signInUser } from "../components/signIn/function/login";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
+import CustomAlert from "../components/tools/customAlert/CustomAlert";
+import LoadingSmallSize from "../components/tools/loading/LoadingSmallSize";
 
 
 
-const Login = ({setToken}) => {
+const Login = ({ setToken }) => {
+
 
   const [Login, setLogin] = useState("");
   const [Password, setPassword] = useState("");
+
+  const navigation = useNavigation();
+
+  const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
+    useState(false);
+
+  
+  // Redux
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.connectUser);
+
+
+  const [errors, setErrors] = useState({});
+
+  // check if user input value
+  const validateForm = () => {
+    let errors = {};
+
+    if (!Login) errors.Login = `Please Input Login`;
+    if (!Password) errors.Password = `Please Input Password`;
+
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
 
 
   return (
@@ -52,6 +83,14 @@ const Login = ({setToken}) => {
                 keyboardType="default"
                 placeholderTextColor={"black"}
               />
+              {/* here show message user need input value */}
+              {errors.Login ? (
+                <View style={styles.messageUserNeedInputValue}>
+                  <Text style={styles.textUserNeedInputValue}>
+                    {errors.Login}
+                  </Text>
+                </View>
+              ) : null}
             </View>
 
             <View style={styles.inputBox}>
@@ -64,13 +103,52 @@ const Login = ({setToken}) => {
                 keyboardType="numeric"
                 placeholderTextColor={"black"}
               />
+
+              {/* here show message user need input value */}
+              {errors.Password ? (
+                <View style={styles.messageUserNeedInputValue}>
+                  <Text style={styles.textUserNeedInputValue}>
+                    {errors.Password}
+                  </Text>
+                </View>
+              ) : null}
             </View>
           </View>
         </TouchableWithoutFeedback>
 
         <View style={styles.styleClickButton}>
-          <TouchableOpacity activeOpacity={0.9} style={styles.loginButton}>
-            <Text style={styles.loginButtonText}>Login</Text>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            style={!loading ? styles.loginButton : styles.loginButtonLoading}
+            onPress={() =>
+              signInUser(
+                () => validateForm(),
+                setToken,
+                Login,
+                Password,
+                dispatch,
+                navigation,
+                setShowInfoHaveThisUserPopup
+              )
+            }
+          >
+            {!loading ? (
+              <Text style={styles.loginButtonText}>Login</Text>
+            ) : (
+              <LoadingSmallSize type={"save"} />
+            )}
+
+            {error ? (
+              <CustomAlert
+                displayMode={"info"}
+                displayMsg={error}
+                visibility={showInfoHaveThisUserPopup}
+                dismissAlert={setShowInfoHaveThisUserPopup}
+                setModalVisible={null}
+              />
+            ) : (
+              ""
+            )}
           </TouchableOpacity>
         </View>
 
@@ -82,6 +160,7 @@ const Login = ({setToken}) => {
 
         {/* component forget password */}
         <ForgetPassword />
+
       </View>
     </ImageBackground>
   );
