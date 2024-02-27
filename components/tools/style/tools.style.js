@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     buttonAlert: {
-        width: "30%",
+        width: "40%",
         alignItems: "center",
         justifyContent: "center",
         position: "absolute",

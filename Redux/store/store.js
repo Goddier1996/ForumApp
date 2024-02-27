@@ -13,7 +13,8 @@ import addCommentUserReducer from "../featuers/comments/addComment";
 import addTopicUserReducer from "../featuers/topics/addTopic";
 import userDeleteCommentsReducer from "../featuers/comments/userDeleteComment";
 import userDeleteTopicsReducer from "../featuers/topics/userDeleteTopic";
-import signInUser from "../featuers/users/loginUser"
+import signInUser from "../featuers/users/loginUser";
+import userRegister from "../featuers/users/registerUser";
 
 
 const store = configureStore({
@@ -32,7 +33,8 @@ const store = configureStore({
         addTopic: addTopicUserReducer,
         userDeleteComment: userDeleteCommentsReducer,
         userDeleteTopic: userDeleteTopicsReducer,
-        connectUser: signInUser
+        connectUser: signInUser,
+        register: userRegister
     }
 });
 

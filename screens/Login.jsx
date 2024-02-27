@@ -126,7 +126,7 @@ const Login = ({ setToken }) => {
             }
           >
             {!loading ? (
-              <Text style={styles.loginButtonText}>Login</Text>
+              <Text style={styles.loginButtonText}>Sign In</Text>
             ) : (
               <LoadingSmallSize type={"save"} />
             )}
@@ -148,11 +148,12 @@ const Login = ({ setToken }) => {
         {/* connect demo user to check how app working */}
         <ConnectDemoUser setToken={setToken} />
 
+        {/* component forget password */}
+        <ForgetPassword />
+
         {/* if user don't register this app move to register screen */}
         <DontHaveAccount />
 
-        {/* component forget password */}
-        <ForgetPassword />
       </View>
     </ImageBackground>
   );

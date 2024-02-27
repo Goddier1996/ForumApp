@@ -2,6 +2,7 @@ import { API } from './API';
 // import * as Updates from 'expo-updates';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+import { checkIfHaveThisEmailInDataBase, checkIfHaveThisLoginInDataBase } from './LoadDataFromApi';
 
 
 
@@ -41,9 +42,13 @@ export async function AddTopic(topic) {
 }
 
 
+
 export async function AddNewUSer(user) {
 
-    try {
+    if (await checkIfHaveThisEmailInDataBase(user.Email) || await checkIfHaveThisLoginInDataBase(user.Login)) {
+        return null;
+    }
+    else {
         await fetch(API.USERS.POST, {
             method: 'POST',
             headers: {
@@ -51,10 +56,9 @@ export async function AddNewUSer(user) {
             },
             body: JSON.stringify(user)
         });
-
-    } catch (error) {
-        console.log(error);
+        return "save";
     }
+
 }
 
 
