@@ -45,8 +45,14 @@ const Login = ({ setToken }) => {
   const validateForm = () => {
     let errors = {};
 
-    if (!Login) errors.Login = `Please Input Login`;
-    if (!Password) errors.Password = `Please Input Password`;
+    if (!Login)
+      errors.Login = (
+        <Ionicons name="information-circle" color={"#e48a33"} size={30} />
+      );
+    if (!Password)
+      errors.Password = (
+        <Ionicons name="information-circle" color={"#e48a33"} size={30} />
+      );
 
     setErrors(errors);
     return Object.keys(errors).length === 0;
@@ -84,13 +90,7 @@ const Login = ({ setToken }) => {
                 placeholderTextColor={"black"}
               />
               {/* here show message user need input value */}
-              {errors.Login ? (
-                <Ionicons
-                  name="information-circle"
-                  color={"#e48a33"}
-                  size={30}
-                />
-              ) : null}
+              {errors.Login ? errors.Login : null}
             </View>
 
             <View style={styles.inputBox}>
@@ -103,15 +103,8 @@ const Login = ({ setToken }) => {
                 keyboardType="numeric"
                 placeholderTextColor={"black"}
               />
-
               {/* here show message user need input value */}
-              {errors.Password ? (
-                <Ionicons
-                  name="information-circle"
-                  color={"#e48a33"}
-                  size={30}
-                />
-              ) : null}
+              {errors.Password ? errors.Password : null}
             </View>
           </View>
         </TouchableWithoutFeedback>

@@ -44,13 +44,18 @@ const ModelAddNewTopic = ({
   const validateForm = () => {
     let errors = {};
 
-    if (!newTopic) errors.newTopic = `Please Input Title Topic`;
-    if (!questionTopic) errors.questionTopic = `Please Input Your Question`;
+    if (!newTopic)
+      errors.newTopic = (
+        <Ionicons name="information-circle" color={"#e48a33"} size={30} />
+      );
+    if (!questionTopic)
+      errors.questionTopic = (
+        <Ionicons name="information-circle" color={"#e48a33"} size={30} />
+      );
 
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
-
 
 
   return (
@@ -75,15 +80,8 @@ const ModelAddNewTopic = ({
                   placeholder="Write Title Topic"
                   placeholderTextColor={"black"}
                 />
-
                 {/* here show title topic user need input value */}
-                {errors.newTopic ? (
-                  <Ionicons
-                    name="information-circle"
-                    color={"#e48a33"}
-                    size={30}
-                  />
-                ) : null}
+                {errors.newTopic ? errors.newTopic : null}
               </View>
 
               <View style={styles.createFreeSpace}>
@@ -97,15 +95,8 @@ const ModelAddNewTopic = ({
                   value={questionTopic}
                   placeholderTextColor={"black"}
                 />
-
                 {/* here show message user need input value */}
-                {errors.questionTopic ? (
-                  <Ionicons
-                    name="information-circle"
-                    color={"#e48a33"}
-                    size={30}
-                  />
-                ) : null}
+                {errors.questionTopic ? errors.questionTopic : null}
               </View>
             </SafeAreaView>
 

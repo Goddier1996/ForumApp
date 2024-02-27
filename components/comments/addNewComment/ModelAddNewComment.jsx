@@ -36,18 +36,23 @@ const ModelAddNewComment = ({
   const { loading } = useSelector((state) => state.addComment);
 
   const [comment, setComment] = useState("");
-  const [errors, setErrors] = useState({});
 
+
+  const [errors, setErrors] = useState({});
 
   // check if user input value
   const validateForm = () => {
     let errors = {};
 
-    if (!comment) errors.comment = `Please Input Comment`;
+    if (!comment)
+      errors.comment = (
+        <Ionicons name="information-circle" color={"#e48a33"} size={30} />
+      );
 
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
+
 
 
   return (
@@ -73,13 +78,7 @@ const ModelAddNewComment = ({
                 placeholderTextColor={"black"}
               />
               {/* here show message user need input value */}
-              {errors.comment ? (
-                <Ionicons
-                name="information-circle"
-                color={"#e48a33"}
-                size={30}
-              />
-              ) : null}
+              {errors.comment ? errors.comment : null}
             </SafeAreaView>
 
             <View style={styles.buttonClick}>
