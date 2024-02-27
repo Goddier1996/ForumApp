@@ -18,6 +18,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import CustomAlert from "../components/tools/customAlert/CustomAlert";
 import LoadingSmallSize from "../components/tools/loading/LoadingSmallSize";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 
 
@@ -52,7 +53,6 @@ const Login = ({ setToken }) => {
   };
 
 
-
   return (
     <ImageBackground
       source={{ uri: "https://i.postimg.cc/sfKm58XJ/download.jpg" }}
@@ -85,11 +85,11 @@ const Login = ({ setToken }) => {
               />
               {/* here show message user need input value */}
               {errors.Login ? (
-                <View style={styles.messageUserNeedInputValue}>
-                  <Text style={styles.textUserNeedInputValue}>
-                    {errors.Login}
-                  </Text>
-                </View>
+                <Ionicons
+                  name="information-circle"
+                  color={"#e48a33"}
+                  size={30}
+                />
               ) : null}
             </View>
 
@@ -106,11 +106,11 @@ const Login = ({ setToken }) => {
 
               {/* here show message user need input value */}
               {errors.Password ? (
-                <View style={styles.messageUserNeedInputValue}>
-                  <Text style={styles.textUserNeedInputValue}>
-                    {errors.Password}
-                  </Text>
-                </View>
+                <Ionicons
+                  name="information-circle"
+                  color={"#e48a33"}
+                  size={30}
+                />
               ) : null}
             </View>
           </View>
@@ -160,7 +160,6 @@ const Login = ({ setToken }) => {
 
         {/* component forget password */}
         <ForgetPassword />
-
       </View>
     </ImageBackground>
   );

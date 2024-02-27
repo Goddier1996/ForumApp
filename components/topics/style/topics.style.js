@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     },
     createFreeSpace: {
         paddingBottom: 12,
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems:"center"
     },
     authBox: {
         width: "90%",
@@ -105,9 +108,10 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 50,
         textAlign: "center",
+        width: "90%",
     },
     input: {
-        width: "100%",
+        width: "90%",
         height: 40,
         backgroundColor: "rgba(128, 128, 128, 0.200)",
         borderRadius: 10,

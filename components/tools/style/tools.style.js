@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
 
 
     // use in CustomAlert component
-
     mainModel: {
         flex: 1,
         backgroundColor: "rgba(52, 52, 52, 0.8)",

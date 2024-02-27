@@ -15,6 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { exitFromModel, saveComment } from "../function/CommentFunction";
 import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 
 
@@ -73,11 +74,11 @@ const ModelAddNewComment = ({
               />
               {/* here show message user need input value */}
               {errors.comment ? (
-                <View style={styles.messageUserNeedInputValue}>
-                  <Text style={styles.textUserNeedInputValue}>
-                    {errors.comment}
-                  </Text>
-                </View>
+                <Ionicons
+                name="information-circle"
+                color={"#e48a33"}
+                size={30}
+              />
               ) : null}
             </SafeAreaView>
 
@@ -108,7 +109,7 @@ const ModelAddNewComment = ({
                 {loading ? (
                   <LoadingSmallSize type={"save"} />
                 ) : (
-                  <Text style={styles.textStyle}>save</Text>
+                  <Text style={styles.textStyle}>Save</Text>
                 )}
               </TouchableOpacity>
               <TouchableOpacity

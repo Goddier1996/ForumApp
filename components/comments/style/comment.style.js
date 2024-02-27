@@ -70,14 +70,16 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   authBox: {
-    width: "90%",
     borderRadius: 20,
     alignSelf: "center",
-    paddingHorizontal: 15,
     shadowColor: "#000",
-    marginTop: 10
+    marginTop: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
   },
   textArea: {
+    width: "80%",
     height: 200,
     backgroundColor: "rgba(128, 128, 128, 0.200)",
     borderRadius: 10,
@@ -138,8 +140,6 @@ const styles = StyleSheet.create({
   time: {
     fontSize: 9,
     color: "rgba(0, 0, 0, 0.475)",
-    // marginLeft: "auto",
-    // top: 55,
   },
   name: {
     textAlign: "center",

@@ -19,10 +19,13 @@ const styles = StyleSheet.create({
     },
     inputBox: {
         marginTop: 10,
+        justifyContent: "space-evenly",
+        flexDirection: "row",
+        alignItems: "center"
     },
     input: {
-        width: "100%",
-        height: 50,
+        width: "85%",
+        height: 40,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderRadius: 4,
         paddingHorizontal: 10,

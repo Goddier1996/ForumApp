@@ -15,6 +15,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { exitFromModel, saveTopic } from "../function/topicFunction";
 import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
+import Ionicons from "react-native-vector-icons/Ionicons";
+
 
 
 const ModelAddNewTopic = ({
@@ -35,8 +37,8 @@ const ModelAddNewTopic = ({
   const [newTopic, setNewTopic] = useState("");
   const [questionTopic, setQuestionTopic] = useState("");
 
-  const [errors, setErrors] = useState({});
 
+  const [errors, setErrors] = useState({});
 
   // check if user input value
   const validateForm = () => {
@@ -48,6 +50,7 @@ const ModelAddNewTopic = ({
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
+
 
 
   return (
@@ -63,7 +66,7 @@ const ModelAddNewTopic = ({
                 style={styles.imageAddTopic}
               />
             </View>
-            <SafeAreaView style={[styles.authBox]}>
+            <SafeAreaView style={styles.authBox}>
               <View style={styles.createFreeSpace}>
                 <TextInput
                   style={styles.input}
@@ -75,32 +78,35 @@ const ModelAddNewTopic = ({
 
                 {/* here show title topic user need input value */}
                 {errors.newTopic ? (
-                  <View style={styles.messageUserNeedInputValue}>
-                    <Text style={styles.textUserNeedInputValue}>
-                      {errors.newTopic}
-                    </Text>
-                  </View>
+                  <Ionicons
+                    name="information-circle"
+                    color={"#e48a33"}
+                    size={30}
+                  />
                 ) : null}
               </View>
-              <TextInput
-                style={styles.textArea}
-                keyboardType="default"
-                placeholder="Write Your Question"
-                multiline={true}
-                numberOfLines={10}
-                onChangeText={setQuestionTopic}
-                value={questionTopic}
-                placeholderTextColor={"black"}
-              />
 
-              {/* here show message user need input value */}
-              {errors.questionTopic ? (
-                <View style={styles.messageUserNeedInputValue}>
-                  <Text style={styles.textUserNeedInputValue}>
-                    {errors.questionTopic}
-                  </Text>
-                </View>
-              ) : null}
+              <View style={styles.createFreeSpace}>
+                <TextInput
+                  style={styles.textArea}
+                  keyboardType="default"
+                  placeholder="Write Your Question"
+                  multiline={true}
+                  numberOfLines={10}
+                  onChangeText={setQuestionTopic}
+                  value={questionTopic}
+                  placeholderTextColor={"black"}
+                />
+
+                {/* here show message user need input value */}
+                {errors.questionTopic ? (
+                  <Ionicons
+                    name="information-circle"
+                    color={"#e48a33"}
+                    size={30}
+                  />
+                ) : null}
+              </View>
             </SafeAreaView>
 
             <View style={styles.buttonClick}>
