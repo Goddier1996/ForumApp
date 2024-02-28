@@ -54,16 +54,14 @@ const styles = StyleSheet.create({
 
 
     // use in ShowTitle component
+    TitleForum: {
+        paddingBottom: 15,
+        alignItems: "center"
+    },
     infoTitle: {
         height: 75,
         width: 75,
-    },
-    TitleForum: {
-        paddingBottom: 15,
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center",
-    },
+    }
 });
 
 

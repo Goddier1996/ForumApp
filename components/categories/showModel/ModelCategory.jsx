@@ -34,10 +34,14 @@ const ModelCategory = ({ dataCard }) => {
             <Text style={styles.title}>{item.title}</Text>
           </View>
 
+          <View style={styles.positionCardImage}>
+
           <ImageBlurLoading
             style={styles.cardImage}
             source={{ uri: item.image }}
           />
+          </View>
+
         </TouchableOpacity>
       )}
     />

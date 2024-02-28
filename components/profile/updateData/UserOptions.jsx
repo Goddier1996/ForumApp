@@ -19,7 +19,7 @@ const UserOptions = ({ dataUser }) => {
   useEffect(() => {
     dispatch(userIdTopics(dataUser.UserId._id));
     dispatch(userIdComments(dataUser.UserId._id));
-  }, [dataUser]);
+  }, [dataUser.UserId._id]);
 
   
   return (

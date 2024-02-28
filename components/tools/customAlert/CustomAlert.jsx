@@ -3,30 +3,19 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import styles from "../style/tools.style";
 
-const CustomAlert = ({
-  displayMode,
-  displayMsg,
-  visibility,
-  dismissAlert,
-  setModalVisible,
-}) => {
 
-
+const CustomAlert = ({ displayMode, displayMsg, visibility, dismissAlert }) => {
   const closeModel = () => {
     dismissAlert(false);
-
-    // and close model delete in user profile
-    // if (setModalVisible) {
-    //   setModalVisible(false);
-    // }
   };
+
 
   return (
     <Modal visible={visibility} animationType={"fade"} transparent={true}>
       <View style={styles.mainModel}>
         <View style={styles.inSite}>
           <View style={styles.showIcon}>
-            {displayMode == "info" ? (
+            {displayMode == "info" || displayMode == "infoProfileUser" ? (
               <>
                 <Ionicons
                   name="information-circle"
@@ -36,7 +25,11 @@ const CustomAlert = ({
               </>
             ) : displayMode == "delete" ? (
               <>
-                <Ionicons name="checkmark-done-outline" color={"#00b23d"} size={80} />
+                <Ionicons
+                  name="checkmark-done-outline"
+                  color={"#00b23d"}
+                  size={80}
+                />
               </>
             ) : (
               <>
@@ -52,7 +45,9 @@ const CustomAlert = ({
             style={styles.buttonAlert}
           >
             <Text style={styles.textInButtonAlert}>
-              {displayMode == "delete" ? "Ok" : "Try Again"}
+              {displayMode == "delete" || displayMode == "infoProfileUser"
+                ? "Ok"
+                : "Try Again"}
             </Text>
           </TouchableOpacity>
         </View>

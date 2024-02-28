@@ -44,7 +44,7 @@ const ListComments = ({
               ) : null}
 
               {!DataComment.loading ? (
-                DataComment.length == 0 ? (
+                DataComment.length === 0 ? (
                   <View style={styles.notHaveItems}>
                     <Text>You Don't Have Comment's!☹️</Text>
                   </View>
@@ -74,7 +74,6 @@ const ListComments = ({
 
                             <ButtonDelete
                               data={item}
-                              setModalVisible={setModalVisibleMessages}
                               type={"delete comment"}
                             />
                           </View>

@@ -232,7 +232,6 @@ const Register = () => {
               displayMsg={error}
               visibility={showInfoHaveThisUserPopup}
               dismissAlert={setShowInfoHaveThisUserPopup}
-              setModalVisible={null}
             />
           ) : (
             ""

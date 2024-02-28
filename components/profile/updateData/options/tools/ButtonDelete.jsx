@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { TouchableOpacity, Image } from "react-native";
 import styles from "../../../style/profile.style";
 import { useSelector, useDispatch } from "react-redux";
@@ -6,38 +6,28 @@ import {
   userDeleteComment,
   userDeleteTopic,
 } from "../../../function/FunctionProfile";
-import CustomAlert from "../../../../tools/customAlert/CustomAlert";
 import LoadingSmallSize from "../../../../tools/loading/LoadingSmallSize";
 
 
 
 // this button delete, user in profile screen.
 // use can delete topic or comment
-const ButtonDelete = ({ data, setModalVisible, type }) => {
+const ButtonDelete = ({ data, type }) => {
 
 
   // Redux
   const dispatch = useDispatch();
   const { loadingDelete } = useSelector((state) => state.commentsUserId);
-  const { loadingTopic } = useSelector((state) => state.userDeleteTopic);
+  const { loadingDeleteTopic } = useSelector((state) => state.topicsUserId);
 
-  const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
-    useState(false);
 
-  
   return (
     <>
       {type === "delete comment" ? (
         !loadingDelete ? (
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() =>
-              userDeleteComment(
-                dispatch,
-                data,
-                setShowInfoHaveThisUserPopup
-              )
-            }
+            onPress={() => userDeleteComment(dispatch, data)}
           >
             <Image
               style={styles.icon}
@@ -50,12 +40,10 @@ const ButtonDelete = ({ data, setModalVisible, type }) => {
           <LoadingSmallSize type={"save"} />
         )
       ) : type === "delete topic" ? (
-        !loadingTopic ? (
+        !loadingDeleteTopic ? (
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() =>
-              userDeleteTopic(dispatch, data._id, setShowInfoHaveThisUserPopup)
-            }
+            onPress={() => userDeleteTopic(dispatch, data)}
           >
             <Image
               style={styles.icon}
@@ -70,22 +58,6 @@ const ButtonDelete = ({ data, setModalVisible, type }) => {
       ) : (
         ""
       )}
-
-      
-      {/* this alert show when user delete topic or comment in profile screen */}
-      <CustomAlert
-        displayMode={"delete"}
-        displayMsg={
-          type === "delete comment"
-            ? `Comment successfully deleted\nRefresh your profile pull down screen`
-            : type === "delete topic"
-            ? `Topic successfully deleted\nRefresh your profile pull down screen`
-            : ""
-        }
-        visibility={showInfoHaveThisUserPopup}
-        dismissAlert={setShowInfoHaveThisUserPopup}
-        setModalVisible={setModalVisible}
-      />
     </>
   );
 };

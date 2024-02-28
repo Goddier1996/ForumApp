@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     },
     caption: {
         textAlign: "center",
-        color: "white"
+        color: "white",
+        fontSize: 12
     },
 
 
@@ -173,7 +174,6 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     notHaveItems: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         color: "rgba(0, 0, 0, 0.475)",
@@ -182,6 +182,7 @@ const styles = StyleSheet.create({
         height: "82%",
         width: "100%",
     },
+
 
 
     // Update User Data

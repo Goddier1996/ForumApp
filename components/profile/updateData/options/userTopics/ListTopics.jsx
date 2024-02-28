@@ -42,7 +42,7 @@ const ListTopics = ({
             {!DataTopicsUser.loading ? (
               DataTopicsUser.length == 0 ? (
                 <View style={styles.notHaveItems}>
-                  <Text>You Don't Have Topic's!☹️</Text>
+                  <Text>You Don't Have Topic's!</Text>
                 </View>
               ) : (
                 <FlatList

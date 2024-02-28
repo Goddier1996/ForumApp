@@ -136,7 +136,6 @@ const Login = ({ setToken }) => {
                 displayMsg={error}
                 visibility={showInfoHaveThisUserPopup}
                 dismissAlert={setShowInfoHaveThisUserPopup}
-                setModalVisible={null}
               />
             ) : (
               ""

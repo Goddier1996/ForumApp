@@ -1,18 +1,27 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { LoadTopicsIdUser } from "../../../Api/LoadDataFromApi";
+import { API } from '../../../Api/API';
+import axios from 'axios';
 
 
 const initialState = {
     loading: false,
+    loadingDeleteTopic: false,
     TopicsIdUser: [],
     error: ''
 }
 
 
-export const userIdTopics = createAsyncThunk('topicsUserID/fetchTopicsUser', (id) => {
-    return LoadTopicsIdUser(id);
+export const userIdTopics = createAsyncThunk('topicsUserID/fetchTopicsUser', async (id) => {
+    const res = await axios.get(`${API.TOPICS.GET}/PublishBy/${id}`)
+    return res.data
 })
 
+
+export const userIdDeleteTopic = createAsyncThunk('topicsUserID/userDeleteTopics', async (id, { dispatch }) => {
+    const res = await axios.delete(`${API.TOPICS.GET}/${id._id}`)
+    dispatch(userIdTopics(id.Publish_by))
+    return res.data
+})
 
 
 const TopicsUserIdSlice = createSlice({
@@ -20,6 +29,8 @@ const TopicsUserIdSlice = createSlice({
     initialState,
 
     extraReducers: builder => {
+
+        // show all user topics
         builder.addCase(userIdTopics.pending, state => {
             state.loading = true
             state.TopicsIdUser = []
@@ -33,6 +44,22 @@ const TopicsUserIdSlice = createSlice({
         builder.addCase(userIdTopics.rejected, (state, action) => {
             state.loading = false
             state.TopicsIdUser = []
+            state.error = action.error.message
+        })
+
+
+        // delete user comment
+        builder.addCase(userIdDeleteTopic.pending, state => {
+            state.loadingDeleteTopic = true
+            state.error = null
+        })
+        builder.addCase(userIdDeleteTopic.fulfilled, (state, action) => {
+            state.loadingDeleteTopic = false
+            state.TopicsIdUser = [...state.TopicsIdUser, action.payload];
+            state.error = null
+        })
+        builder.addCase(userIdDeleteTopic.rejected, (state, action) => {
+            state.loadingDeleteTopic = false
             state.error = action.error.message
         })
     }

@@ -35,7 +35,7 @@ const userRegisterSlice = createSlice({
             state.loading = false;
             console.log(action.error.message);
             if (action.error.message === "Cannot read property 'data' of null") {
-                state.error = "Have This Login or Email\nin DataBase !";
+                state.error = "Have This Login or Email in DataBase";
             }
             else {
                 state.error = null;

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     inSite: {
         alignItems: "center",
         backgroundColor: "white",
-        height: 230,
+        height: 205,
         width: "90%",
         borderWidth: 1,
         borderColor: "#fff",

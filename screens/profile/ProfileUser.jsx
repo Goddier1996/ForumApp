@@ -18,6 +18,7 @@ import { fetchUserId } from "../../Redux/featuers/users/infoIdUser";
 import TitlePullDownRefreshScreen from "../../components/profile/tools/TitlePullDownRefreshScreen";
 
 
+
 const ProfileUser = ({ setToken }) => {
 
 
@@ -64,7 +65,6 @@ const ProfileUser = ({ setToken }) => {
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }
         >
-
           {/* show info user */}
           <InfoUser dataUser={userIdData} />
 
@@ -79,12 +79,11 @@ const ProfileUser = ({ setToken }) => {
 
           {/* show user options updated data and remove topics and comments */}
           <UserOptions dataUser={userIdData} />
-          
+
+          {/* here show title use can pull down to refresh data */}
+          <TitlePullDownRefreshScreen />
         </ScrollView>
       </SafeAreaView>
-
-      {/* here show title use can pull down to refresh data */}
-      <TitlePullDownRefreshScreen />
     </ImageBackground>
   );
 };

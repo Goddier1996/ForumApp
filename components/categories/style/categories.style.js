@@ -6,8 +6,7 @@ const styles = StyleSheet.create({
 
   // use in ModelCategory component
   list: {
-    paddingHorizontal: 5,
-    marginTop: 20,
+    marginTop: 10,
   },
   listContainer: {
     alignItems: "center",
@@ -16,33 +15,25 @@ const styles = StyleSheet.create({
     marginHorizontal: 7,
     marginVertical: 7,
     flexBasis: "45%",
-    paddingTop: 12.5,
-    paddingBottom: 25,
+    paddingVertical: 20,
     borderRadius: 10,
   },
   cardHeader: {
-    paddingVertical: 17,
+    paddingVertical: 5,
     paddingHorizontal: 16,
-    borderTopLeftRadius: 1,
-    borderTopRightRadius: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  cardContent: {
-    paddingVertical: 12.5,
-    paddingHorizontal: 16,
-  },
-  cardImage: {
-    height: 60,
-    width: 60,
-    alignSelf: "center",
   },
   title: {
     fontSize: 16,
     flex: 1,
     color: "#FFFFFF",
     fontWeight: "bold",
+  },
+  positionCardImage: {
+    alignItems: "center"
+  },
+  cardImage: {
+    height: 60,
+    width: 60,
   },
 });
 
