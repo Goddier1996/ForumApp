@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { addComment } from "../../../Redux/featuers/comments/addComment";
+import { addComment } from "../../../Redux/featuers/comments/commentsIdTopic";
 
 
 export async function checkIfUserConnectToApp(setUserConnect) {
@@ -10,7 +10,7 @@ export async function checkIfUserConnectToApp(setUserConnect) {
 }
 
 
-export async function saveComment(validateForm, idTopic, comment, userInfo, dispatch, navigation, setErrors, setComment, setModalVisible) {
+export async function saveComment(validateForm, idTopic, comment, userInfo, dispatch, setErrors, setComment, setModalVisible) {
 
     if (validateForm()) {
 
@@ -25,14 +25,12 @@ export async function saveComment(validateForm, idTopic, comment, userInfo, disp
             FotoUser: userInfo.FotoUser
         };
 
-        dispatch(addComment(message))
+        dispatch(addComment(message)).unwrap()
             .then((result) => {
                 if (result) {
-                    // console.log("Good");
                     setComment("");
                     setErrors({});
                     setModalVisible();
-                    navigation.goBack();
                 }
             })
     }

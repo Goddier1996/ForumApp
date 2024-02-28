@@ -12,11 +12,9 @@ import {
 import { useState } from "react";
 import styles from "../style/comment.style";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigation } from "@react-navigation/native";
 import { exitFromModel, saveComment } from "../function/CommentFunction";
 import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
 
 
 const ModelAddNewComment = ({
@@ -29,11 +27,9 @@ const ModelAddNewComment = ({
 }) => {
 
 
-  const navigation = useNavigation();
-
   // Redux
   const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.addComment);
+  const { loading } = useSelector((state) => state.commentTopic);
 
   const [comment, setComment] = useState("");
 
@@ -52,7 +48,6 @@ const ModelAddNewComment = ({
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
-
 
 
   return (
@@ -97,7 +92,6 @@ const ModelAddNewComment = ({
                         comment,
                         userInfo,
                         dispatch,
-                        navigation,
                         setErrors,
                         setComment,
                         () => setModalVisible(!modalVisible)

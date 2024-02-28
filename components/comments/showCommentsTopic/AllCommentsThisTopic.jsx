@@ -13,13 +13,14 @@ const AllCommentsThisTopic = () => {
 
   const route = useRoute();
 
+  // Redux
   const commentTopic = useSelector((state) => state.commentTopic);
   const dispatch = useDispatch();
 
 
   useEffect(() => {
     dispatch(fetchCommentsIdTopics(route.params.allDataTopic._id));
-  }, [route.params.allDataTopic._id]);
+  }, [dispatch]);
 
 
   return (
@@ -52,5 +53,6 @@ const AllCommentsThisTopic = () => {
     </>
   );
 };
+
 
 export default AllCommentsThisTopic;
