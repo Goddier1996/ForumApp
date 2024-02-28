@@ -5,6 +5,7 @@ import { API } from "../../../Api/API";
 
 const initialState = {
     loading: false,
+    loadingAdd: false,
     Comments: [],
     error: null
 }
@@ -45,16 +46,16 @@ const CommentsSlice = createSlice({
 
         // add new comment
         builder.addCase(addComment.pending, state => {
-            state.loading = true
+            state.loadingAdd = true
             state.error = null
         })
         builder.addCase(addComment.fulfilled, (state, { payload }) => {
-            state.loading = false
+            state.loadingAdd = false
             state.Comments = [...state.Comments, payload];
             state.error = null
         })
         builder.addCase(addComment.rejected, (state, action) => {
-            state.loading = false
+            state.loadingAdd = false
             state.error = action.error.message
         })
     }

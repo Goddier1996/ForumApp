@@ -29,7 +29,7 @@ const ModelAddNewComment = ({
 
   // Redux
   const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.commentTopic);
+  const { loadingAdd } = useSelector((state) => state.commentTopic);
 
   const [comment, setComment] = useState("");
 
@@ -80,12 +80,12 @@ const ModelAddNewComment = ({
               <TouchableOpacity
                 activeOpacity={0.9}
                 style={
-                  !loading
+                  !loadingAdd
                     ? styles.buttonSaveComment
                     : styles.buttonSaveCommentLoading
                 }
                 onPress={() =>
-                  !loading
+                  !loadingAdd
                     ? saveComment(
                         () => validateForm(),
                         idTopic,
@@ -99,7 +99,7 @@ const ModelAddNewComment = ({
                     : null
                 }
               >
-                {loading ? (
+                {loadingAdd ? (
                   <LoadingSmallSize type={"save"} />
                 ) : (
                   <Text style={styles.textStyle}>Save</Text>

@@ -9,7 +9,6 @@ import userLoginReducer from '../featuers/users/userSliceLogin';
 import userIdReducer from "../featuers/users/infoIdUser";
 import topicsUserIdReducer from "../featuers/topics/topicsIdUser";
 import commentsUserIdReducer from "../featuers/comments/commentsIdUser";
-// import addTopicUserReducer from "../featuers/topics/addTopic";
 import userDeleteCommentsReducer from "../featuers/comments/userDeleteComment";
 import userDeleteTopicsReducer from "../featuers/topics/userDeleteTopic";
 import signInUser from "../featuers/users/loginUser";
@@ -28,7 +27,6 @@ const store = configureStore({
         userIdData: userIdReducer,
         topicsUserId: topicsUserIdReducer,
         commentsUserId: commentsUserIdReducer,
-        // addTopic: addTopicUserReducer,
         userDeleteComment: userDeleteCommentsReducer,
         userDeleteTopic: userDeleteTopicsReducer,
         connectUser: signInUser,
