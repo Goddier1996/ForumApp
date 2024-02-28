@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { addTopic } from "../../../Redux/featuers/topics/addTopic";
+import { addTopic } from "../../../Redux/featuers/topics/topicsIdCategory";
 
 
 export async function checkIfUserConnectToApp(setUserConnect) {
@@ -16,7 +16,6 @@ export async function saveTopic(
     answerTopic,
     userInfo,
     dispatch,
-    navigation,
     setErrors,
     setNewTopic,
     setAnswerTopic,
@@ -42,12 +41,10 @@ export async function saveTopic(
         dispatch(addTopic(Topic))
             .then((result) => {
                 if (result) {
-                    // console.log("Good");
                     setNewTopic("");
                     setAnswerTopic("");
                     setErrors({});
                     setModalVisible()
-                    navigation.goBack();
                 }
             })
     }

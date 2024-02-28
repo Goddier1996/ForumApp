@@ -25,7 +25,7 @@ export async function saveComment(validateForm, idTopic, comment, userInfo, disp
             FotoUser: userInfo.FotoUser
         };
 
-        dispatch(addComment(message)).unwrap()
+        dispatch(addComment(message))
             .then((result) => {
                 if (result) {
                     setComment("");

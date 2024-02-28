@@ -12,11 +12,9 @@ import {
 import { useState } from "react";
 import styles from "../style/topics.style";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigation } from "@react-navigation/native";
 import { exitFromModel, saveTopic } from "../function/topicFunction";
 import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
 
 
 const ModelAddNewTopic = ({
@@ -28,11 +26,9 @@ const ModelAddNewTopic = ({
 }) => {
 
 
-  const navigation = useNavigation();
-
   // Redux
   const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.addTopic);
+  const { loadingAdd } = useSelector((state) => state.topics);
 
   const [newTopic, setNewTopic] = useState("");
   const [questionTopic, setQuestionTopic] = useState("");
@@ -56,6 +52,7 @@ const ModelAddNewTopic = ({
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
+
 
 
   return (
@@ -104,19 +101,18 @@ const ModelAddNewTopic = ({
               <TouchableOpacity
                 activeOpacity={0.9}
                 style={
-                  !loading
+                  !loadingAdd
                     ? styles.buttonSaveTopic
                     : styles.buttonSaveTopicLoading
                 }
                 onPress={() =>
-                  !loading
+                  !loadingAdd
                     ? saveTopic(
                         () => validateForm(),
                         newTopic,
                         questionTopic,
                         userInfo,
                         dispatch,
-                        navigation,
                         setErrors,
                         setNewTopic,
                         setQuestionTopic,
@@ -127,7 +123,7 @@ const ModelAddNewTopic = ({
                     : null
                 }
               >
-                {loading ? (
+                {loadingAdd ? (
                   <LoadingSmallSize type={"save"} />
                 ) : (
                   <Text style={styles.textStyle}>Add New Topic</Text>

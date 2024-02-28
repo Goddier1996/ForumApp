@@ -21,7 +21,7 @@ const Topics = () => {
 
   useEffect(() => {
     dispatch(fetchTopicsIdCategories(route.params.id));
-  }, [route.params.id]);
+  }, [dispatch]);
 
 
   return (
