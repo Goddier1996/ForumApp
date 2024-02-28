@@ -11,7 +11,6 @@ import ImageBlurLoading from "react-native-image-blur-loading";
 import { useState } from "react";
 import ForgetPassword from "../components/signIn/forgetPassword/ForgetPassword";
 import DontHaveAccount from "../components/signIn/dontHaveAccount/DontHaveAccount";
-import ConnectDemoUser from "../components/signIn/connectDemoUser/ConnectDemoUser";
 import styles from "../components/signIn/style/login.style";
 import { signInUser } from "../components/signIn/function/login";
 import { useSelector, useDispatch } from "react-redux";
@@ -97,7 +96,7 @@ const Login = ({ setToken }) => {
               <TextInput
                 style={styles.input}
                 secureTextEntry={true}
-                placeholder="password"
+                placeholder="Password"
                 onChangeText={setPassword}
                 value={Password}
                 keyboardType="numeric"
@@ -144,9 +143,6 @@ const Login = ({ setToken }) => {
             )}
           </TouchableOpacity>
         </View>
-
-        {/* connect demo user to check how app working */}
-        <ConnectDemoUser setToken={setToken} />
 
         {/* component forget password */}
         <ForgetPassword />

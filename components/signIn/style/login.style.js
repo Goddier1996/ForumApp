@@ -61,19 +61,6 @@ const styles = StyleSheet.create({
     },
 
 
-
-    // use in ConnectDemoUser component
-    connectDemoUser: {
-        alignItems: "center",
-        marginTop: 30,
-    },
-    connectClick: {
-        fontWeight: "bold",
-        fontSize: 16,
-        color: "rgba(0, 0, 0, 0.575)",
-    },
-
-
     // use in DontHaveAccount component
     registerText: {
         textAlign: "center",
