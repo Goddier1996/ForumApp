@@ -18,7 +18,7 @@ const ButtonDelete = ({ data, setModalVisible, type }) => {
 
   // Redux
   const dispatch = useDispatch();
-  const { loadingComment } = useSelector((state) => state.userDeleteComment);
+  const { loadingDelete } = useSelector((state) => state.commentsUserId);
   const { loadingTopic } = useSelector((state) => state.userDeleteTopic);
 
   const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
@@ -28,13 +28,13 @@ const ButtonDelete = ({ data, setModalVisible, type }) => {
   return (
     <>
       {type === "delete comment" ? (
-        !loadingComment ? (
+        !loadingDelete ? (
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() =>
               userDeleteComment(
                 dispatch,
-                data._id,
+                data,
                 setShowInfoHaveThisUserPopup
               )
             }

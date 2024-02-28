@@ -16,9 +16,9 @@ const CustomAlert = ({
     dismissAlert(false);
 
     // and close model delete in user profile
-    if (setModalVisible) {
-      setModalVisible(false);
-    }
+    // if (setModalVisible) {
+    //   setModalVisible(false);
+    // }
   };
 
   return (

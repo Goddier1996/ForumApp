@@ -8,7 +8,6 @@ import allUsersReducer from '../featuers/users/allUsers';
 import userIdReducer from "../featuers/users/infoIdUser";
 import topicsUserIdReducer from "../featuers/topics/topicsIdUser";
 import commentsUserIdReducer from "../featuers/comments/commentsIdUser";
-import userDeleteCommentsReducer from "../featuers/comments/userDeleteComment";
 import userDeleteTopicsReducer from "../featuers/topics/userDeleteTopic";
 import signInUser from "../featuers/users/loginUser";
 import userRegister from "../featuers/users/registerUser";
@@ -25,7 +24,6 @@ const store = configureStore({
         userIdData: userIdReducer,
         topicsUserId: topicsUserIdReducer,
         commentsUserId: commentsUserIdReducer,
-        userDeleteComment: userDeleteCommentsReducer,
         userDeleteTopic: userDeleteTopicsReducer,
         connectUser: signInUser,
         register: userRegister

@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { userIdDeleteComment } from "../../../Redux/featuers/comments/userDeleteComment";
+import { userIdDeleteComment } from "../../../Redux/featuers/comments/commentsIdUser";
 import { userIdDeleteTopic } from "../../../Redux/featuers/topics/userDeleteTopic";
 
 
