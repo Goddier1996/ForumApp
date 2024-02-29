@@ -17,12 +17,12 @@ import { useNavigation } from "@react-navigation/native";
 import { registerUser, validateEmailInput } from "./registerFunction";
 import LoadingSmallSize from "../../components/tools/loading/LoadingSmallSize";
 import CustomAlert from "../../components/tools/customAlert/CustomAlert";
-import ShowInfoTitle from "../../components/register/ShowInfoTitle";
+import ShowButtonInfoTitle from "../../components/register/ShowButtonInfoTitle";
+import ShowHeaterTitle from "../../components/register/showHeaterTitle";
 
 
 
 const Register = () => {
-
 
   const navigation = useNavigation();
 
@@ -57,8 +57,6 @@ const Register = () => {
     setGender("Female");
   };
 
-
-
   const [errors, setErrors] = useState({});
 
   // check if user input value
@@ -77,7 +75,7 @@ const Register = () => {
       errors.Password = (
         <Ionicons name="information-circle" color={"#e48a33"} size={30} />
       );
-    if (!Email||!validateEmailInput(Email))
+    if (!Email || !validateEmailInput(Email))
       errors.Email = (
         <Ionicons name="information-circle" color={"#e48a33"} size={30} />
       );
@@ -99,14 +97,7 @@ const Register = () => {
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
           <View style={styles.authBox}>
-            <View style={{ alignItems: "center" }}>
-              <ImageBlurLoading
-                style={{ height: 150, width: 150 }}
-                source={{
-                  uri: "https://i.postimg.cc/Z54mCW5F/Pngtree-transparent-register-now-button-8709661.png",
-                }}
-              />
-            </View>
+            <ShowHeaterTitle />
 
             <View style={styles.inputBox}>
               <TextInput
@@ -237,8 +228,7 @@ const Register = () => {
             ""
           )}
         </View>
-        <ShowInfoTitle/>
-
+        <ShowButtonInfoTitle />
       </View>
     </ImageBackground>
   );

@@ -70,6 +70,16 @@ const styles = StyleSheet.create({
     },
     infoRegisterBoldText: {
         color: "#e48a33"
+    },
+
+
+    // use in showHeaterTitle component
+    titleHeater: {
+        alignItems: "center"
+    },
+    titleHeaterImg: {
+        height: 150,
+        width: 150
     }
 });
 
