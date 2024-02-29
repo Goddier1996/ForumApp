@@ -18,7 +18,7 @@ import { registerUser, validateEmailInput } from "./registerFunction";
 import LoadingSmallSize from "../../components/tools/loading/LoadingSmallSize";
 import CustomAlert from "../../components/tools/customAlert/CustomAlert";
 import ShowButtonInfoTitle from "../../components/register/ShowButtonInfoTitle";
-import ShowHeaterTitle from "../../components/register/showHeaterTitle";
+import ShowHeaterTitle from "../../components/register/ShowHeaterTitle";
 
 
 

@@ -8,6 +8,7 @@ const MainShowBottomOptionsTopic = ({
   countTopic,
   idCategory,
   titleCategory,
+  backgroundTopic
 }) => {
 
   return (
@@ -16,6 +17,7 @@ const MainShowBottomOptionsTopic = ({
       <SignInAddNewTopic
         idCategory={idCategory}
         titleCategory={titleCategory}
+        backgroundTopic={backgroundTopic}
       />
     </View>
   );

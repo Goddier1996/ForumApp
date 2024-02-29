@@ -4,6 +4,7 @@ import { DotIndicator } from "react-native-indicators";
 import { DataTable } from "react-native-paper";
 import CloseButton from "../tools/CloseButton";
 import ButtonDelete from "../tools/ButtonDelete";
+import MoveToTopicScreenUser from "../tools/MoveToTopicScreenUser";
 
 
 const ListTopics = ({
@@ -16,7 +17,6 @@ const ListTopics = ({
     <Modal animationType="fade" transparent={true} visible={modalVisibleTopic}>
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-
           {/* close Model */}
           <CloseButton setModalVisible={setModalVisibleTopic} />
 
@@ -27,9 +27,6 @@ const ListTopics = ({
               </DataTable.Title>
               <DataTable.Title style={styles.tablePosition}>
                 Date Publish
-              </DataTable.Title>
-              <DataTable.Title style={styles.tablePosition}>
-                Delete
               </DataTable.Title>
             </DataTable.Header>
 
@@ -51,28 +48,36 @@ const ListTopics = ({
                   data={DataTopicsUser}
                   renderItem={({ item }) => {
                     return (
-                      <DataTable.Row
-                        key={item._id}
-                        style={styles.notificationBox}
-                      >
-                        <DataTable.Cell style={styles.tablePosition}>
-                          <Text style={styles.tablePosition}>
+                      <>
+                        <DataTable.Row
+                          key={item._id}
+                          style={styles.notificationBoxComments}
+                        >
+                          <DataTable.Cell style={styles.tablePosition}>
                             {item.nameTopic}
-                          </Text>
-                        </DataTable.Cell>
-                        <DataTable.Cell style={styles.tablePosition}>
-                          {item.DatePublished}
-                        </DataTable.Cell>
-                        <DataTable.Cell style={styles.tablePosition}>
+                          </DataTable.Cell>
+                          <DataTable.Cell style={styles.tablePosition}>
+                            {item.DatePublished}
+                          </DataTable.Cell>
+                        </DataTable.Row>
 
-                          {/* delete button */}
+                        <View
+                          style={styles.showOptionsDeleteAndMoveToInfoScreen}
+                        >
+                          {/* user can click and move to Topic */}
+                          <MoveToTopicScreenUser
+                            data={item}
+                            setModalVisible={setModalVisibleTopic}
+                          />
+
+                          {/* delete Topic */}
                           <ButtonDelete
                             data={item}
                             setModalVisible={setModalVisibleTopic}
                             type={"delete topic"}
                           />
-                        </DataTable.Cell>
-                      </DataTable.Row>
+                        </View>
+                      </>
                     );
                   }}
                 />

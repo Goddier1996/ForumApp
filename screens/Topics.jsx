@@ -42,6 +42,7 @@ const Topics = () => {
             countTopic={topics.Topics.length}
             idCategory={route.params.id}
             titleCategory={route.params.name}
+            backgroundTopic={route.params.topicImage}
           />
 
           {topics.Topics.length == 0 ? (

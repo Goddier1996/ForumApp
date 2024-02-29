@@ -5,7 +5,7 @@ import styles from "../style/topics.style";
 import { checkIfUserConnectToApp } from "../function/topicFunction";
 
 
-const SignInAddNewTopic = ({ idCategory, titleCategory }) => {
+const SignInAddNewTopic = ({ idCategory, titleCategory,backgroundTopic }) => {
 
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -41,6 +41,7 @@ const SignInAddNewTopic = ({ idCategory, titleCategory }) => {
         userInfo={userConnect}
         idCategory={idCategory}
         titleCategory={titleCategory}
+        backgroundTopic={backgroundTopic}
       />
     </>
   );

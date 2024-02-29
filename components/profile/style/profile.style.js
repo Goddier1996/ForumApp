@@ -145,14 +145,21 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
     },
-    icon: {
-        width: 30,
-        height: 30,
-    },
     showOptionsDeleteAndShowDate: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
+        backgroundColor: "rgba(128, 128, 128, 0.140)",
+        borderBottomColor: "#69B753",
+        borderBottomWidth: 2,
+        marginBottom: 12,
+        paddingVertical: 8,
+        padding: 16
+    },
+    showOptionsDeleteAndMoveToInfoScreen: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around",
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderBottomColor: "#69B753",
         borderBottomWidth: 2,

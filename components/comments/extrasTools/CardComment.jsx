@@ -57,14 +57,6 @@ const CardComment = ({ typeComment, dataComment }) => {
             : dataComment.MessageUser}
         </Text>
 
-        {/* <View style={styles.contentHeader}>
-          <Text style={styles.time}>
-            Date Publish :{" "}
-            {typeComment === "Question"
-              ? route.params.allDataTopic.DatePublished
-              : dataComment.DatePublished}
-          </Text>
-        </View> */}
       </View>
     </View>
   );

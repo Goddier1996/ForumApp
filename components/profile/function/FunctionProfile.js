@@ -12,10 +12,20 @@ export async function logOutFromProfile(setToken, navigation) {
 
 
 export function userDeleteComment(dispatch, id) {
-    dispatch(userIdDeleteComment(id))
+    dispatch(userIdDeleteComment(id));
 }
 
 
 export function userDeleteTopic(dispatch, id) {
     dispatch(userIdDeleteTopic(id));
+}
+
+
+export function moveToUserTopicScreen(data, setModalVisibleTopic, navigation) {
+    setModalVisibleTopic(false);
+    navigation.navigate("CommentsTopics", {
+        allDataTopic: data,
+        CategoryName: data.titleCategory,
+        backgroundTopic: data.backgroundTopic,
+    });
 }

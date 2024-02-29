@@ -23,6 +23,7 @@ const ModelAddNewTopic = ({
   userInfo,
   idCategory,
   titleCategory,
+  backgroundTopic,
 }) => {
 
 
@@ -33,8 +34,8 @@ const ModelAddNewTopic = ({
   const [newTopic, setNewTopic] = useState("");
   const [questionTopic, setQuestionTopic] = useState("");
 
-
   const [errors, setErrors] = useState({});
+
 
   // check if user input value
   const validateForm = () => {
@@ -52,7 +53,6 @@ const ModelAddNewTopic = ({
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
-
 
 
   return (
@@ -118,7 +118,8 @@ const ModelAddNewTopic = ({
                         setQuestionTopic,
                         () => setModalVisible(!modalVisible),
                         idCategory,
-                        titleCategory
+                        titleCategory,
+                        backgroundTopic
                       )
                     : null
                 }

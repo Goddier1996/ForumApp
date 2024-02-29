@@ -1,19 +1,18 @@
 import React from "react";
-import { TouchableOpacity, Image } from "react-native";
-import styles from "../../../style/profile.style";
+import { TouchableOpacity } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import {
   userDeleteComment,
   userDeleteTopic,
 } from "../../../function/FunctionProfile";
 import LoadingSmallSize from "../../../../tools/loading/LoadingSmallSize";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 
 
 // this button delete, user in profile screen.
 // use can delete topic or comment
 const ButtonDelete = ({ data, type }) => {
-
 
   // Redux
   const dispatch = useDispatch();
@@ -29,12 +28,7 @@ const ButtonDelete = ({ data, type }) => {
             activeOpacity={0.9}
             onPress={() => userDeleteComment(dispatch, data)}
           >
-            <Image
-              style={styles.icon}
-              source={{
-                uri: "https://i.postimg.cc/nVg1pYzV/icons8-recycle-bin-64.png",
-              }}
-            />
+            <Ionicons name="trash-outline" color={"red"} size={35} />
           </TouchableOpacity>
         ) : (
           <LoadingSmallSize type={"save"} />
@@ -45,12 +39,7 @@ const ButtonDelete = ({ data, type }) => {
             activeOpacity={0.9}
             onPress={() => userDeleteTopic(dispatch, data)}
           >
-            <Image
-              style={styles.icon}
-              source={{
-                uri: "https://i.postimg.cc/nVg1pYzV/icons8-recycle-bin-64.png",
-              }}
-            />
+            <Ionicons name="trash-outline" color={"red"} size={35} />
           </TouchableOpacity>
         ) : (
           <LoadingSmallSize type={"save"} />

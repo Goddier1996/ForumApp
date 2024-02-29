@@ -21,7 +21,9 @@ export async function saveTopic(
     setAnswerTopic,
     setModalVisible,
     idCategory,
-    titleCategory) {
+    titleCategory,
+    backgroundTopic
+) {
 
     if (validateForm()) {
 
@@ -35,7 +37,8 @@ export async function saveTopic(
             imageUser: userInfo.FotoUser,
             codeCategory: idCategory,
             NameUser: userInfo.Name,
-            titleCategory: titleCategory
+            titleCategory: titleCategory,
+            backgroundTopic: backgroundTopic
         };
 
         dispatch(addTopic(Topic))
