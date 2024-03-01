@@ -105,7 +105,7 @@ const ModelChangeToNewPassword = ({
                 style={styles.input}
                 onChangeText={setPassword}
                 value={password}
-                placeholder="Input New Password (minimum length 6)"
+                placeholder="Input New Password- min length 6"
                 keyboardType="default"
                 placeholderTextColor={"black"}
               />

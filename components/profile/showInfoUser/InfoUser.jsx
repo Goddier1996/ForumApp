@@ -14,6 +14,7 @@ const InfoUser = ({ dataUser }) => {
             <Image
               style={styles.imgProfileUser}
               source={{ uri: dataUser.UserId.FotoUser }}
+              alt={dataUser.UserId.Name}
             />
           </View>
 

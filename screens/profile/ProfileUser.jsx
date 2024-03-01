@@ -52,7 +52,7 @@ const ProfileUser = ({ setToken }) => {
 
   return (
     <ImageBackground
-      source={{ uri: "https://i.postimg.cc/sfKm58XJ/download.jpg" }}
+      source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
       style={{ width: "100%", height: "100%" }}
     >
       {/* Log out from profile user */}

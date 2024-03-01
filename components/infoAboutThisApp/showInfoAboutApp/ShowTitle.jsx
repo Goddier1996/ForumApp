@@ -1,16 +1,16 @@
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import styles from "../style/info.style";
-import ImageBlurLoading from "react-native-image-blur-loading";
 
 
 const ShowTitle = () => {
   return (
     <View style={styles.TitleForum}>
-      <ImageBlurLoading
+      <Image
         style={styles.infoTitle}
         source={{
-          uri: "https://i.postimg.cc/k40848cj/information-5296156.png",
+          uri: "https://i.postimg.cc/rshww4hz/55.webp",
         }}
+        alt="info"
       />
     </View>
   );

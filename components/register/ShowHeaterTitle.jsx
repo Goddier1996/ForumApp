@@ -1,16 +1,16 @@
-import { View } from "react-native";
-import ImageBlurLoading from "react-native-image-blur-loading";
+import { View, Image } from "react-native";
 import styles from "../../screens/register/register.style";
 
-
 const ShowHeaterTitle = () => {
+
   return (
     <View style={styles.titleHeater}>
-      <ImageBlurLoading
-              style={styles.titleHeaterImg}
+      <Image
+        style={styles.titleHeaterImg}
         source={{
-          uri: "https://i.postimg.cc/Z54mCW5F/Pngtree-transparent-register-now-button-8709661.png",
+          uri: "https://i.postimg.cc/WpmrPfTf/44.webp",
         }}
+        alt="register"
       />
     </View>
   );

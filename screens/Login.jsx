@@ -7,7 +7,6 @@ import {
   ImageBackground,
   TouchableWithoutFeedback,
 } from "react-native";
-import ImageBlurLoading from "react-native-image-blur-loading";
 import { useState } from "react";
 import ForgetPassword from "../components/signIn/forgetPassword/ForgetPassword";
 import DontHaveAccount from "../components/signIn/dontHaveAccount/DontHaveAccount";
@@ -18,11 +17,11 @@ import { useNavigation } from "@react-navigation/native";
 import CustomAlert from "../components/tools/customAlert/CustomAlert";
 import LoadingSmallSize from "../components/tools/loading/LoadingSmallSize";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import ShowHeaterTitle from "../components/signIn/ShowHeaterTitle";
 
 
 
 const Login = ({ setToken }) => {
-
 
   const [Login, setLogin] = useState("");
   const [Password, setPassword] = useState("");
@@ -32,11 +31,9 @@ const Login = ({ setToken }) => {
   const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
     useState(false);
 
-  
   // Redux
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.connectUser);
-
 
   const [errors, setErrors] = useState({});
 
@@ -60,7 +57,7 @@ const Login = ({ setToken }) => {
 
   return (
     <ImageBackground
-      source={{ uri: "https://i.postimg.cc/sfKm58XJ/download.jpg" }}
+      source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
       style={{ width: "100%", height: "100%" }}
     >
       <View style={styles.container}>
@@ -70,14 +67,8 @@ const Login = ({ setToken }) => {
           accessible={true}
         >
           <View style={styles.authBox}>
-            <View style={{ alignItems: "center" }}>
-              <ImageBlurLoading
-                style={{ height: 200, width: 200 }}
-                source={{
-                  uri: "https://i.postimg.cc/3xGnb8C6/Lovepik-com-450124259-An-icon-of-account-login-in-hand-drawn-style.png",
-                }}
-              />
-            </View>
+
+            <ShowHeaterTitle />
 
             <View style={styles.inputBox}>
               <TextInput
@@ -148,7 +139,6 @@ const Login = ({ setToken }) => {
 
         {/* if user don't register this app move to register screen */}
         <DontHaveAccount />
-
       </View>
     </ImageBackground>
   );

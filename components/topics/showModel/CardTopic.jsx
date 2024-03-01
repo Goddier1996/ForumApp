@@ -29,7 +29,7 @@ const CardTopic = ({ dataTopic }) => {
               style={styles.card}
             >
               <View>
-                <Image style={styles.image} source={{ uri: item.imageUser }} />
+                <Image style={styles.image} source={{ uri: item.imageUser }} alt={item.NameUser} />
                 <Text style={styles.PublishBy}>
                   Created by: {item.NameUser}
                 </Text>

@@ -1,11 +1,9 @@
-import { Text, View, TouchableOpacity, FlatList } from "react-native";
+import { Text, View, TouchableOpacity, FlatList,Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../style/categories.style";
-import ImageBlurLoading from "react-native-image-blur-loading";
 
 
 const ModelCategory = ({ dataCard }) => {
-
 
   const navigation = useNavigation();
 
@@ -35,13 +33,12 @@ const ModelCategory = ({ dataCard }) => {
           </View>
 
           <View style={styles.positionCardImage}>
-
-          <ImageBlurLoading
-            style={styles.cardImage}
-            source={{ uri: item.image }}
-          />
+            <Image
+              style={styles.cardImage}
+              source={{ uri: item.image }}
+              alt={item.title}
+            />
           </View>
-
         </TouchableOpacity>
       )}
     />

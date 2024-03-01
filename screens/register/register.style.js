@@ -55,6 +55,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    PasswordsLengthText: {
+        color: "red",
+        textAlign: "center"
+    },
 
 
     // use in ShowInfoTitle component

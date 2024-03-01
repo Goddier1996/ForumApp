@@ -35,6 +35,7 @@ const CardComment = ({ typeComment, dataComment }) => {
                 ? route.params.allDataTopic.imageUser
                 : dataComment.FotoUser,
           }}
+          alt={"user img"}
         />
         <Text style={styles.name}>
           {typeComment === "Question"

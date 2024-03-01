@@ -6,8 +6,6 @@ const styles = StyleSheet.create({
 
     startImage: {
         height: 350,
-        // borderBottomLeftRadius: 50,
-        // borderBottomRightRadius: 50
     }
 });
 

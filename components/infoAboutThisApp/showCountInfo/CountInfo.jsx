@@ -1,16 +1,19 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { BarIndicator } from "react-native-indicators";
 import styles from "../style/info.style";
-import ImageBlurLoading from "react-native-image-blur-loading";
 
 
 const CountInfo = ({ imgCount, typeCount, type }) => {
   return (
     <View style={styles.menuBox}>
-      <ImageBlurLoading style={styles.icon} source={{ uri: imgCount }} />
+      <Image style={styles.icon} source={{ uri: imgCount }} alt={imgCount} />
       <Text style={styles.info}>{type}</Text>
       {typeCount.loading || typeCount === 0 ? (
-        <BarIndicator color="#00b23d" style={styles.loadingCountInfo} size={10} />
+        <BarIndicator
+          color="#00b23d"
+          style={styles.loadingCountInfo}
+          size={10}
+        />
       ) : !typeCount.loading && typeCount.error ? (
         <Text>Error: {typeCount.error}</Text>
       ) : null}

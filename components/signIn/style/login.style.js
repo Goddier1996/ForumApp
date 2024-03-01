@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     // use in ForgetPassword component
     forgotPasswordText: {
         textAlign: "center",
-        marginTop: 12,
+        marginTop: 32,
         fontSize: 16,
         color: "rgba(0, 0, 0, 0.475)",
     },

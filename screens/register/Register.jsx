@@ -43,6 +43,9 @@ const Register = () => {
   const [female, setFemale] = useState(false);
   const [gender, setGender] = useState("");
 
+  const [PasswordsLength] = useState("");
+
+
   // select a gender
   const genderMale = () => {
     setMale(true);
@@ -55,6 +58,7 @@ const Register = () => {
     setFemale(true);
     setGender("Female");
   };
+
 
   const [errors, setErrors] = useState({});
 
@@ -82,6 +86,12 @@ const Register = () => {
       errors.gender = (
         <Ionicons name="information-circle" color={"#e48a33"} size={30} />
       );
+    if (Password.length < 6 && Password)
+      errors.PasswordsLength = (
+        <Text style={styles.PasswordsLengthText}>
+          Password length is less than 6
+        </Text>
+      );
 
     setErrors(errors);
     return Object.keys(errors).length === 0;
@@ -90,7 +100,7 @@ const Register = () => {
 
   return (
     <ImageBackground
-      source={{ uri: "https://i.postimg.cc/sfKm58XJ/download.jpg" }}
+      source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
       style={{ width: "100%", height: "100%" }}
     >
       <View style={styles.container}>
@@ -137,6 +147,9 @@ const Register = () => {
               />
               {/* here show message user need input value */}
               {errors.Password ? errors.Password : null}
+            </View>
+            <View style={styles.PasswordsNotSame}>
+              {errors.PasswordsLength ? errors.PasswordsLength : null}
             </View>
 
             <View style={styles.inputBox}>
@@ -197,19 +210,20 @@ const Register = () => {
               !loading ? styles.registerButton : styles.registerButtonLoading
             }
             onPress={() =>
-              !loading ?
-              registerUser(
-                () => validateForm(),
-                Login,
-                Name,
-                Password,
-                Email,
-                LinkFileFoto,
-                gender,
-                dispatch,
-                navigation,
-                setShowInfoHaveThisUserPopup
-              ):null
+              !loading
+                ? registerUser(
+                    () => validateForm(),
+                    Login,
+                    Name,
+                    Password,
+                    Email,
+                    LinkFileFoto,
+                    gender,
+                    dispatch,
+                    navigation,
+                    setShowInfoHaveThisUserPopup
+                  )
+                : null
             }
           >
             {!loading ? (

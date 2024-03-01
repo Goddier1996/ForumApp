@@ -7,7 +7,6 @@ import {
   SafeAreaView,
   Keyboard,
   TouchableWithoutFeedback,
-  ImageBackground,
 } from "react-native";
 import { useState } from "react";
 import styles from "../style/topics.style";
@@ -15,6 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { exitFromModel, saveTopic } from "../function/topicFunction";
 import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import ShowHeaterTitleAddTopic from "./ShowHeaterTitleAddTopic";
 
 
 const ModelAddNewTopic = ({
@@ -60,14 +60,9 @@ const ModelAddNewTopic = ({
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
         <View style={styles.outSideBackgroundModel}>
           <View style={styles.outInsideBackgroundModel}>
-            <View style={styles.background}>
-              <ImageBackground
-                source={{
-                  uri: "https://i.postimg.cc/jdThhLtb/Pngtree-lotus-topic-602786.png",
-                }}
-                style={styles.imageAddTopic}
-              />
-            </View>
+
+            <ShowHeaterTitleAddTopic/>
+
             <SafeAreaView style={styles.authBox}>
               <View style={styles.createFreeSpace}>
                 <TextInput

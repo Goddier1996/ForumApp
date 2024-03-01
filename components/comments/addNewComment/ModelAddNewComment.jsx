@@ -5,7 +5,6 @@ import {
   Modal,
   TextInput,
   SafeAreaView,
-  ImageBackground,
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
@@ -15,6 +14,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { exitFromModel, saveComment } from "../function/CommentFunction";
 import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import ImageBlurLoading from "react-native-image-blur-loading";
+
 
 
 const ModelAddNewComment = ({
@@ -56,9 +57,10 @@ const ModelAddNewComment = ({
         <View style={styles.outSideBackgroundModel}>
           <View style={styles.outInsideBackgroundModel}>
             <View style={styles.background}>
-              <ImageBackground
+              <ImageBlurLoading
                 source={{ uri: background }}
                 style={styles.image}
+                alt={nameTopic}
               />
             </View>
             <SafeAreaView style={styles.authBox}>
