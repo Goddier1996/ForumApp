@@ -162,42 +162,13 @@ export async function ConnectDemoPublicUser(setToken) {
 
 // forget password
 
-export async function ConnectForgetPassword(user) {
+export async function ConnectForgetPassword(Email) {
 
-    try {
-
-        let res = await fetch(API.USERS.FORGET, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(user)
-        });
-
-
-        let data = await res.json();
-
-
-        // if dont have this email in data base show alert
-        if (data == null) {
-
-            return '';
-        }
-
-        else {
-
-            // data from data base , save in AsyncStorage for chnage to new password user
-            let storgeUser =
-            {
-                idUser: data._id,
-                NameUser: data.Name,
-                Password: data.Password
-            }
-
-            AsyncStorage.setItem('userForgetPassword', JSON.stringify(storgeUser))
-        }
-
-    } catch (error) {
-        console.log(error);
-    }
+    let user =
+    {
+        Email: Email,
+    };
+    const request = await axios.post(API.USERS.FORGET, user)
+    const response = await request.data;
+    return response;
 }
