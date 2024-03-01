@@ -10,6 +10,7 @@ import topicsUserIdReducer from "../featuers/topics/topicsIdUser";
 import commentsUserIdReducer from "../featuers/comments/commentsIdUser";
 import signInUser from "../featuers/users/loginUser";
 import userRegister from "../featuers/users/registerUser";
+import updatePersonalDataUser from "../featuers/users/updatePersonalDataUser";
 
 
 const store = configureStore({
@@ -24,7 +25,8 @@ const store = configureStore({
         topicsUserId: topicsUserIdReducer,
         commentsUserId: commentsUserIdReducer,
         connectUser: signInUser,
-        register: userRegister
+        register: userRegister,
+        updateUserData:updatePersonalDataUser
     }
 });
 

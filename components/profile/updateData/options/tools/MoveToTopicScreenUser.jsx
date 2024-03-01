@@ -12,7 +12,7 @@ const MoveToTopicScreenUser = ({ data, setModalVisible }) => {
     <TouchableOpacity
       onPress={() => moveToUserTopicScreen(data, setModalVisible, navigation)}
     >
-      <Ionicons name="arrow-undo-outline" color={"#e48a33"} size={37} />
+      <Ionicons name="arrow-undo-outline" color={"#e48a33"} size={30} />
     </TouchableOpacity>
   );
 };

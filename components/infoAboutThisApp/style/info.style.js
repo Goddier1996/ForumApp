@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     // use in ShowTitle component
     TitleForum: {
         paddingBottom: 15,
-        alignItems: "center"
+        alignItems: "center",
+        justifyContent:"center"
     },
     infoTitle: {
         height: 75,

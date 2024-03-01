@@ -10,7 +10,6 @@ import {
 import { useState } from "react";
 import { CheckBox } from "@rneui/themed";
 import styles from "./register.style";
-import ImageBlurLoading from "react-native-image-blur-loading";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
@@ -97,6 +96,7 @@ const Register = () => {
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
           <View style={styles.authBox}>
+            
             <ShowHeaterTitle />
 
             <View style={styles.inputBox}>
@@ -197,6 +197,7 @@ const Register = () => {
               !loading ? styles.registerButton : styles.registerButtonLoading
             }
             onPress={() =>
+              !loading ?
               registerUser(
                 () => validateForm(),
                 Login,
@@ -208,7 +209,7 @@ const Register = () => {
                 dispatch,
                 navigation,
                 setShowInfoHaveThisUserPopup
-              )
+              ):null
             }
           >
             {!loading ? (

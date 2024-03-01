@@ -7,7 +7,7 @@ import store from './Redux/store/store';
 
 // import all screen this app
 import Home from './screens/home/Home';
-import Menu from "./components/Menu"
+import Menu from "./components/menu/Menu"
 import InfoAbout from './screens/InfoAbout';
 import Login from './screens/Login';
 import Register from './screens/register/Register';
@@ -52,16 +52,16 @@ function StackScreen() {
       <Stack.Screen
         name="ProfileUser"
         component={ProfileUser}
-      /> 
+      />
 
       <Stack.Screen
         options={
           ({ route }) => ({
             title: route.params.allDataTopic.nameTopic,
             headerStyle: {
-              backgroundColor: '#1e2226',
+              backgroundColor: '#212123',
             },
-            headerTintColor: '#fff'
+            headerTintColor: '#7c7c7e'
           })
         }
         name="CommentsTopics"
@@ -72,9 +72,9 @@ function StackScreen() {
         options={
           ({ route }) => ({
             title: route.params.name,
-            headerTintColor: '#fff',
+            headerTintColor: '#7c7c7e',
             headerStyle: {
-              backgroundColor: '#1e2226'
+              backgroundColor: '#212123',
             }
           })
         }
@@ -91,11 +91,9 @@ function App() {
 
   return (
     <Provider store={store}>
-
       <NavigationContainer >
         <Menu StackScreen={StackScreen} />
       </NavigationContainer>
-
     </Provider>
   );
 }

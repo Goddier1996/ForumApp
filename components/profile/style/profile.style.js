@@ -10,18 +10,8 @@ const styles = StyleSheet.create({
         padding: 25,
     },
     buttonLogOut: {
-        width: 55,
-        height: 55,
-        backgroundColor: "red",
-        borderRadius: 55 / 2,
-        justifyContent: "center",
+        alignItems: "center"
     },
-    caption: {
-        textAlign: "center",
-        color: "white",
-        fontSize: 12
-    },
-
 
     // use in InfoUser component
     userInfoSection: {
@@ -64,7 +54,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     menuItemPersonalUserDate: {
-        width: 185,
+        width: 195,
         height: 50,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderBottomColor: "#e48a33",
@@ -194,12 +184,13 @@ const styles = StyleSheet.create({
 
     // Update User Data
     modalViewUserDAta: {
-        padding: 20,
+        padding: 15,
         backgroundColor: "white",
+        height: "auto",
+        width: "90%",
         borderWidth: 1,
         borderColor: "#fff",
         borderRadius: 7,
-        justifyContent: "center"
     },
     positionInputValue: {
         alignItems: "center"
@@ -214,14 +205,17 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     input: {
-        width: 300,
+        width: "85%",
         height: 45,
-        backgroundColor: 'rgba(128, 128, 128, 0.140)',
+        backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderRadius: 4,
         paddingHorizontal: 10,
     },
     inputBox: {
         marginTop: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-evenly"
     },
     buttonClick: {
         justifyContent: 'center',
@@ -229,6 +223,12 @@ const styles = StyleSheet.create({
     },
     ChangeButton: {
         backgroundColor: '#69B753',
+        marginTop: 50,
+        paddingVertical: 8,
+        borderRadius: 4,
+        width: 140,
+    },
+    ChangeButtonLoading: {
         marginTop: 50,
         paddingVertical: 8,
         borderRadius: 4,

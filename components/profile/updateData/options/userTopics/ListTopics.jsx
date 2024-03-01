@@ -54,7 +54,7 @@ const ListTopics = ({
                           style={styles.notificationBoxComments}
                         >
                           <DataTable.Cell style={styles.tablePosition}>
-                            {item.nameTopic}
+                            <Text>{item.nameTopic}</Text>
                           </DataTable.Cell>
                           <DataTable.Cell style={styles.tablePosition}>
                             {item.DatePublished}

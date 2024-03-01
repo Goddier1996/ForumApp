@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
-    backgroundColor: "#1e2226",
+    backgroundColor: "#212123",
     alignItems: "center",
     height: 55,
     justifyContent: "space-around",

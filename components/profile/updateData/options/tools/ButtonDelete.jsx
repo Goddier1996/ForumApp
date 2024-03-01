@@ -28,7 +28,7 @@ const ButtonDelete = ({ data, type }) => {
             activeOpacity={0.9}
             onPress={() => userDeleteComment(dispatch, data)}
           >
-            <Ionicons name="trash-outline" color={"red"} size={35} />
+            <Ionicons name="trash-outline" color={"red"} size={30} />
           </TouchableOpacity>
         ) : (
           <LoadingSmallSize type={"save"} />
@@ -39,7 +39,7 @@ const ButtonDelete = ({ data, type }) => {
             activeOpacity={0.9}
             onPress={() => userDeleteTopic(dispatch, data)}
           >
-            <Ionicons name="trash-outline" color={"red"} size={35} />
+            <Ionicons name="trash-outline" color={"red"} size={30} />
           </TouchableOpacity>
         ) : (
           <LoadingSmallSize type={"save"} />

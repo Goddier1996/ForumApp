@@ -142,10 +142,9 @@ const styles = StyleSheet.create({
 
     //  use in SignInAddNewTopic component
     positionShowAddAndCount: {
-        // marginTop: 5,
         borderBottomLeftRadius: 50,
         borderBottomRightRadius: 50,
-        backgroundColor: "#1e2226",
+        backgroundColor: "#212123",
         alignItems: "center",
         height: 55,
         justifyContent: "space-around",

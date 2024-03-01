@@ -46,7 +46,7 @@ const ListComments = ({
               {!DataComment.loading ? (
                 DataComment.length === 0 ? (
                   <View style={styles.notHaveItems}>
-                    <Text>You Don't Have Comment's!☹️</Text>
+                    <Text>You Don't Have Comment's!</Text>
                   </View>
                 ) : (
                   <FlatList

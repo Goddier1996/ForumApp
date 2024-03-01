@@ -4,7 +4,7 @@ import { useState } from "react";
 import InputValueUpdateUserInfo from "./InputValueUpdateUserInfo";
 
 
-const UpdateUserData = ({infoUser}) => {
+const UpdateUserData = ({infoUser,setToken}) => {
 
   const [modalVisibleDemoUserCantUpdate, setModalVisibleDemoUserCantUpdate] =
     useState(false);
@@ -25,6 +25,7 @@ const UpdateUserData = ({infoUser}) => {
         modalVisibleDemoUserCantUpdate={modalVisibleDemoUserCantUpdate}
         setModalVisibleDemoUserCantUpdate={setModalVisibleDemoUserCantUpdate}
         infoUser={infoUser}
+        setToken={setToken}
       />
     </>
   );

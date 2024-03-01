@@ -21,7 +21,6 @@ import TitlePullDownRefreshScreen from "../../components/profile/tools/TitlePull
 
 const ProfileUser = ({ setToken }) => {
 
-
   // use redux
   const userIdData = useSelector((state) => state.userIdData);
   const dispatch = useDispatch();
@@ -78,10 +77,14 @@ const ProfileUser = ({ setToken }) => {
           </View>
 
           {/* show user options updated data and remove topics and comments */}
-          <UserOptions dataUser={userIdData} />
+          <UserOptions
+            dataUser={userIdData}
+            setToken={setToken}
+          />
 
           {/* here show title use can pull down to refresh data */}
           <TitlePullDownRefreshScreen />
+
         </ScrollView>
       </SafeAreaView>
     </ImageBackground>

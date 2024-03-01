@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { Text, ImageBackground } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,7 +12,6 @@ import MainShowBottomOptionsTopic from "../components/topics/showBottomOptions/M
 
 const Topics = () => {
 
-
   const route = useRoute();
 
   // use redux
@@ -25,7 +24,10 @@ const Topics = () => {
 
 
   return (
-    <>
+    <ImageBackground
+      source={{ uri: "https://i.postimg.cc/sfKm58XJ/download.jpg" }}
+      style={{ width: "100%", height: "100%" }}
+    >
       {/* show img Topic */}
       <ShowImgTopic backgroundTopic={route.params.topicImage} />
 
@@ -55,7 +57,7 @@ const Topics = () => {
           )}
         </>
       ) : null}
-    </>
+    </ImageBackground>
   );
 };
 

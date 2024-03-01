@@ -82,20 +82,25 @@ export async function AddCategoryToDataBase(category) {
 
 // Update info 
 
-export async function updateDateUserFromDataBase(user, idUser) {
+export async function updateDateUserFromDataBase(dataUser) {
 
-    try {
-        await fetch(`${API.USERS.GET}/${idUser}`, {
+    if (dataUser.typeChange === 'newEmail' && await checkIfHaveThisEmailInDataBase(dataUser.userData.Email)) {
+        return null;
+    }
+
+    if (dataUser.typeChange === 'newLogin' && await checkIfHaveThisLoginInDataBase(dataUser.userData.Login)) {
+        return null;
+    }
+
+    else {
+        await fetch(`${API.USERS.GET}/${dataUser.idUser}`, {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(dataUser.userData)
         });
-
-    } catch (error) {
-
-        console.log(error)
+        return "save";
     }
 }
 

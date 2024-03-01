@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
         width: 120,
     },
     registerButtonLoading: {
-        // marginTop: 15,
         paddingVertical: 8,
         borderRadius: 4,
         width: 120,

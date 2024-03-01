@@ -9,7 +9,7 @@ import { userIdComments } from "../../../Redux/featuers/comments/commentsIdUser"
 import { useEffect } from "react";
 
 
-const UserOptions = ({ dataUser }) => {
+const UserOptions = ({ dataUser,setToken }) => {
 
   // use redux
   const topicsUserId = useSelector((state) => state.topicsUserId);
@@ -30,7 +30,10 @@ const UserOptions = ({ dataUser }) => {
       </View>
 
       <View style={styles.menuWrapperPersonalUserDate}>
-        <UpdateUserData infoUser={dataUser} />
+        <UpdateUserData
+          infoUser={dataUser}
+          setToken={setToken}
+        />
       </View>
     </>
   );
