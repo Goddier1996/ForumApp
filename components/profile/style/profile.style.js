@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 
     // use in InfoUser component
     userInfoSection: {
-        marginBottom: 50,
+        marginBottom: 30,
     },
     title: {
         fontSize: 22,
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     menuWrapper: {
         flexDirection: "row",
         justifyContent: "space-evenly",
+        marginTop: 30,
     },
     menuWrapperPersonalUserDate: {
         flexDirection: "row",
@@ -249,6 +250,24 @@ const styles = StyleSheet.create({
     titlePositionStyle: {
         fontSize: 13,
         color: "#1e2226"
+    },
+
+
+    // use in ButtonDeleteAccount
+    buttonClickRemoveAccount: {
+        alignItems: "center"
+    },
+    ChangeButtonRemoveAccount: {
+        backgroundColor: 'red',
+        marginTop: 5,
+        marginBottom: 30,
+        paddingVertical: 4,
+        borderRadius: 4,
+        width: 140,
+    },
+    RemoveAccountText: {
+        textAlign: "center",
+        color: "white"
     }
 });
 

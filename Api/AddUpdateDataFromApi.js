@@ -62,21 +62,21 @@ export async function AddNewUSer(user) {
 }
 
 
-export async function AddCategoryToDataBase(category) {
+// export async function AddCategoryToDataBase(category) {
 
-    try {
-        await fetch(API.CATEGORY.POST, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(category)
-        });
+//     try {
+//         await fetch(API.CATEGORY.POST, {
+//             method: 'POST',
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(category)
+//         });
 
-    } catch (error) {
-        console.log(error);
-    }
-}
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
 
 
@@ -139,24 +139,24 @@ export async function ConnectLoginPublicUser(user) {
 }
 
 
-export async function ConnectDemoPublicUser(setToken) {
+// export async function ConnectDemoPublicUser(setToken) {
 
-    const user =
-    {
-        Login: "DemoUser96",
-        Password: "987654321"
-    };
-    const request = await axios.post(API.USERS.LOGIN, user)
-    const response = await request.data;
+//     const user =
+//     {
+//         Login: "DemoUser96",
+//         Password: "987654321"
+//     };
+//     const request = await axios.post(API.USERS.LOGIN, user)
+//     const response = await request.data;
 
-    AsyncStorage.setItem('user', JSON.stringify(response));
-    const savedUser = await AsyncStorage.getItem("user");
-    const currentUser = JSON.parse(savedUser);
-    // console.log(currentUser)
-    setToken(currentUser)
+//     AsyncStorage.setItem('user', JSON.stringify(response));
+//     const savedUser = await AsyncStorage.getItem("user");
+//     const currentUser = JSON.parse(savedUser);
+//     // console.log(currentUser)
+//     setToken(currentUser)
 
-    return response;
-}
+//     return response;
+// }
 
 
 

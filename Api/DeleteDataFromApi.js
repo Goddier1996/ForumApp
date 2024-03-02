@@ -2,10 +2,10 @@ import { API } from './API';
 
 
 
-export async function DeleteFromDataBaseCategory(id) {
+// export async function DeleteFromDataBaseCategory(id) {
 
-    await fetch(`${API.CATEGORY.GET}/${id}`, { method: 'DELETE' });
-}
+//     await fetch(`${API.CATEGORY.GET}/${id}`, { method: 'DELETE' });
+// }
 
 
 export async function DeleteFromDataBaseMessage(id) {
