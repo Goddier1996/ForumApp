@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API } from '../../../Api/API';
 import axios from 'axios';
+import { userIdComments } from '../comments/commentsIdUser';
 
 
 const initialState = {
@@ -11,6 +12,11 @@ const initialState = {
 }
 
 
+export const userIdTopicsDeleteComments = createAsyncThunk('topicsUserID/deleteTopicUserComments', async (id) => {
+    await axios.delete(`${API.MESSAGES.GET}/deleteCommentsTopic/${id}`)
+})
+
+
 export const userIdTopics = createAsyncThunk('topicsUserID/fetchTopicsUser', async (id) => {
     const res = await axios.get(`${API.TOPICS.GET}/PublishBy/${id}`)
     return res.data
@@ -19,9 +25,15 @@ export const userIdTopics = createAsyncThunk('topicsUserID/fetchTopicsUser', asy
 
 export const userIdDeleteTopic = createAsyncThunk('topicsUserID/userDeleteTopics', async (id, { dispatch }) => {
     const res = await axios.delete(`${API.TOPICS.GET}/${id._id}`)
-    dispatch(userIdTopics(id.Publish_by))
+    // after user delete topic, delete all comments this topic
+    dispatch(await userIdTopicsDeleteComments(id._id))
+
+    // refresh after delete topic and topics comments
+    dispatch(await userIdTopics(id.Publish_by))
+    dispatch(userIdComments(id.Publish_by))
     return res.data
 })
+
 
 
 const TopicsUserIdSlice = createSlice({

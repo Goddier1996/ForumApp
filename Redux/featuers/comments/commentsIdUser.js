@@ -18,7 +18,7 @@ export const userIdComments = createAsyncThunk('commentsUserID/fetchCommentsUser
 
 
 export const userIdDeleteComment = createAsyncThunk('commentsUserID/userDeleteComments', async (id, { dispatch }) => {
-    const res = await axios.delete(`${API.MESSAGES.GET}/${id._id}`)
+    const res = await axios.delete(`${API.MESSAGES.GET}/deleteComment/${id._id}`)
     dispatch(userIdComments(id.Publish_by))
     return res.data
 })

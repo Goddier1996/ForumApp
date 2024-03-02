@@ -3,8 +3,8 @@ import { userIdDeleteComment } from "../../../Redux/featuers/comments/commentsId
 import { userIdDeleteTopic } from "../../../Redux/featuers/topics/topicsIdUser";
 import { userUpdate } from "../../../Redux/featuers/users/updatePersonalDataUser";
 
-export async function logOutFromProfile(setToken, navigation) {
 
+export async function logOutFromProfile(setToken, navigation) {
     await setToken(null)
     AsyncStorage.clear();
     navigation.navigate("HomePage", { screen: "HomePage" });
