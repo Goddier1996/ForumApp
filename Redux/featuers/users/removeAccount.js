@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API } from '../../../Api/API';
 import axios from 'axios';
-import { userIdComments } from '../comments/commentsIdUser';
 
 
 const initialState = {

@@ -23,6 +23,7 @@ import ShowHeaterTitle from "../../components/register/ShowHeaterTitle";
 
 const Register = () => {
 
+
   const navigation = useNavigation();
 
   // Redux
@@ -32,6 +33,7 @@ const Register = () => {
   const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
     useState(false);
 
+  
   const [Login, setLogin] = useState("");
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
@@ -44,7 +46,6 @@ const Register = () => {
   const [gender, setGender] = useState("");
 
   const [PasswordsLength] = useState("");
-
 
   // select a gender
   const genderMale = () => {
@@ -59,8 +60,8 @@ const Register = () => {
     setGender("Female");
   };
 
-
   const [errors, setErrors] = useState({});
+
 
   // check if user input value
   const validateForm = () => {
@@ -106,7 +107,6 @@ const Register = () => {
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
           <View style={styles.authBox}>
-            
             <ShowHeaterTitle />
 
             <View style={styles.inputBox}>
@@ -138,11 +138,11 @@ const Register = () => {
             <View style={styles.inputBox}>
               <TextInput
                 style={styles.input}
-                secureTextEntry={true}
                 placeholder="password"
                 onChangeText={setPassword}
                 value={Password}
-                keyboardType="numeric"
+                keyboardType="default"
+                secureTextEntry={true}
                 placeholderTextColor={"black"}
               />
               {/* here show message user need input value */}
@@ -221,7 +221,14 @@ const Register = () => {
                     gender,
                     dispatch,
                     navigation,
-                    setShowInfoHaveThisUserPopup
+                    setShowInfoHaveThisUserPopup,
+                    setLogin,
+                    setName,
+                    setPassword,
+                    setEmail,
+                    setLinkFileFoto,
+                    setMale,
+                    setFemale
                   )
                 : null
             }

@@ -10,7 +10,14 @@ export function registerUser(validateForm,
     gender,
     dispatch,
     navigation,
-    setShowInfoHaveThisUserPopup
+    setShowInfoHaveThisUserPopup,
+    setLogin,
+    setName,
+    setPassword,
+    setEmail,
+    setLinkFileFoto,
+    setMale,
+    setFemale
 ) {
     if (validateForm()) {
         let user = {
@@ -27,6 +34,13 @@ export function registerUser(validateForm,
         dispatch(userRegister(user))
             .then(async (result) => {
                 if (result.payload) {
+                    setLogin("")
+                    setName("")
+                    setPassword("")
+                    setEmail("")
+                    setLinkFileFoto("")
+                    setMale(false)
+                    setFemale(false)
                     navigation.navigate("HomePage", { screen: "HomePage" });
                 }
                 else {

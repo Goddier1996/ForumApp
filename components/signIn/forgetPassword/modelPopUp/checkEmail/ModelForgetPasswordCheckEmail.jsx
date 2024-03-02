@@ -81,7 +81,7 @@ const ModelForgetPasswordCheckEmail = ({
                   onChangeText={setEmail}
                   value={Email}
                   placeholder="Please Input Email"
-                  keyboardType="default"
+                  keyboardType="email-address"
                   placeholderTextColor={"black"}
                 />
                 {/* here show message user need input value */}

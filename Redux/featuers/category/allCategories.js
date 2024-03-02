@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { LoadCategors } from "../../../Api/LoadDataFromApi";
+import { LoadCategories } from "../../../Api/LoadDataFromApi";
 
 
 const initialState = {
@@ -11,7 +11,7 @@ const initialState = {
 
 // Generates pending, fulfilled and rejected action types
 export const fetchCategories = createAsyncThunk('category/fetchCategories', () => {
-    return LoadCategors();
+    return LoadCategories();
 })
 
 

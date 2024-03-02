@@ -108,6 +108,7 @@ const ModelChangeToNewPassword = ({
                 placeholder="Input New Password- min length 6"
                 keyboardType="default"
                 placeholderTextColor={"black"}
+                secureTextEntry={true}
               />
               {/* here show message user need input value */}
               {errors.password ? errors.password : null}
@@ -124,6 +125,7 @@ const ModelChangeToNewPassword = ({
                 placeholder="Confirm Password"
                 keyboardType="default"
                 placeholderTextColor={"black"}
+                secureTextEntry={true}
               />
               {/* here show message user need input value */}
               {errors.confirmPassword ? errors.confirmPassword : null}

@@ -1,16 +1,16 @@
 import { Text, View, Image } from "react-native";
 import styles from "../style/tools.style";
-import ImageBlurLoading from "react-native-image-blur-loading";
 
 
 const ShowMessageNotHaveData = ({ typeData }) => {
   return (
     <View style={styles.loadingImageDontHave}>
-      <ImageBlurLoading
+      <Image
         style={styles.notHaveItems}
         source={{
           uri: "https://media.tenor.com/IbZePZ2opZkAAAAi/rascal-nothing-to-see-here.gif",
         }}
+        alt="message not have"
       />
       <Text style={styles.message}>
         {"\n"}

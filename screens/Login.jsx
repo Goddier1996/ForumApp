@@ -86,11 +86,11 @@ const Login = ({ setToken }) => {
             <View style={styles.inputBox}>
               <TextInput
                 style={styles.input}
-                secureTextEntry={true}
                 placeholder="Password"
                 onChangeText={setPassword}
                 value={Password}
-                keyboardType="numeric"
+                keyboardType="default"
+                secureTextEntry={true}
                 placeholderTextColor={"black"}
               />
               {/* here show message user need input value */}
