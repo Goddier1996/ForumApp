@@ -18,7 +18,9 @@ const ListTopics = ({
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           {/* close Model */}
-          <CloseButton setModalVisible={setModalVisibleTopic} />
+          {!DataTopicsUser.loading ? (
+            <CloseButton setModalVisible={setModalVisibleTopic} />
+          ) : null}
 
           <DataTable>
             <DataTable.Header style={styles.tableHeader}>

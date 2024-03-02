@@ -20,6 +20,7 @@ import { useSelector, useDispatch } from "react-redux";
 import LoadingSmallSize from "../../../../tools/loading/LoadingSmallSize";
 
 
+
 const ModelChangeToNewPassword = ({
   modalVisible,
   setModalVisible,
@@ -36,12 +37,11 @@ const ModelChangeToNewPassword = ({
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+
   const [errors, setErrors] = useState({});
   const [PasswordsNotSame] = useState("");
   const [PasswordsLength] = useState("");
   const [samePasswords] = useState("");
-
-
 
   // check if user input value
   const validateForm = () => {
@@ -88,7 +88,7 @@ const ModelChangeToNewPassword = ({
     return Object.keys(errors).length === 0;
   };
 
-
+  
   return (
     <Modal animationType="fade" transparent={true} visible={modalVisible}>
       <TouchableWithoutFeedback
@@ -166,14 +166,16 @@ const ModelChangeToNewPassword = ({
                 )}
               </TouchableOpacity>
 
-              <TouchableOpacity
-                style={styles.closeForgetPassword}
-                onPress={() =>
-                  closeModelPassword(setModalVisible, setPassword, setErrors)
-                }
-              >
-                <Text style={styles.closeForgetText}>Exit</Text>
-              </TouchableOpacity>
+              {!loading ? (
+                <TouchableOpacity
+                  style={styles.closeForgetPassword}
+                  onPress={() =>
+                    closeModelPassword(setModalVisible, setPassword, setErrors)
+                  }
+                >
+                  <Text style={styles.closeForgetText}>Exit</Text>
+                </TouchableOpacity>
+              ) : null}
             </View>
           </View>
         </View>

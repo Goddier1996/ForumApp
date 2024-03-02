@@ -35,6 +35,7 @@ const ModelAddNewComment = ({
   const [comment, setComment] = useState("");
 
 
+
   const [errors, setErrors] = useState({});
 
   // check if user input value
@@ -107,19 +108,22 @@ const ModelAddNewComment = ({
                   <Text style={styles.textStyle}>Save</Text>
                 )}
               </TouchableOpacity>
-              <TouchableOpacity
-                activeOpacity={0.9}
-                style={styles.buttonExitComment}
-                onPress={() =>
-                  exitFromModel(
-                    () => setModalVisible(!modalVisible),
-                    () => setErrors({}),
-                    () => setComment("")
-                  )
-                }
-              >
-                <Text style={styles.textStyle}>Exit</Text>
-              </TouchableOpacity>
+
+              {!loadingAdd ? (
+                <TouchableOpacity
+                  activeOpacity={0.9}
+                  style={styles.buttonExitComment}
+                  onPress={() =>
+                    exitFromModel(
+                      () => setModalVisible(!modalVisible),
+                      () => setErrors({}),
+                      () => setComment("")
+                    )
+                  }
+                >
+                  <Text style={styles.textStyle}>Exit</Text>
+                </TouchableOpacity>
+              ) : null}
             </View>
           </View>
         </View>

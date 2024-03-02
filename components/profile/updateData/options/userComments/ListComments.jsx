@@ -1,9 +1,4 @@
-import {
-  View,
-  Text,
-  Modal,
-  FlatList,
-} from "react-native";
+import { View, Text, Modal, FlatList } from "react-native";
 import styles from "../../../style/profile.style";
 import { DotIndicator } from "react-native-indicators";
 import { DataTable } from "react-native-paper";
@@ -11,11 +6,13 @@ import CloseButton from "../tools/CloseButton";
 import ButtonDelete from "../tools/ButtonDelete";
 
 
+
 const ListComments = ({
   DataComment,
   modalVisibleMessages,
   setModalVisibleMessages,
 }) => {
+
 
   return (
     <Modal
@@ -26,9 +23,10 @@ const ListComments = ({
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <View>
-
             {/* close model */}
-            <CloseButton setModalVisible={setModalVisibleMessages} />
+            {!DataComment.loading ? (
+              <CloseButton setModalVisible={setModalVisibleMessages} />
+            ) : null}
 
             <DataTable>
               <DataTable.Header style={styles.tableHeader}>
@@ -72,10 +70,7 @@ const ListComments = ({
                               Date Publish: {item.DatePublished}
                             </Text>
 
-                            <ButtonDelete
-                              data={item}
-                              type={"delete comment"}
-                            />
+                            <ButtonDelete data={item} type={"delete comment"} />
                           </View>
                         </>
                       );

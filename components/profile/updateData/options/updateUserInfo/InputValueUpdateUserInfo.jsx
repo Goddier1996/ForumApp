@@ -27,6 +27,7 @@ const InputValueUpdateUserInfo = ({
   setToken,
 }) => {
 
+
   const navigation = useNavigation();
 
   // Redux
@@ -41,6 +42,7 @@ const InputValueUpdateUserInfo = ({
   const [Password, setPassword] = useState("");
   const [Email, setEmail] = useState("");
   const [LinkFileFoto, setLinkFileFoto] = useState("");
+
 
 
   const [errors, setErrors] = useState({});
@@ -88,7 +90,12 @@ const InputValueUpdateUserInfo = ({
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
         <View style={styles.centeredView}>
           <View style={styles.modalViewUserDAta}>
-            <CloseButton setModalVisible={setModalVisibleDemoUserCantUpdate} />
+            {!loading ? (
+              <CloseButton
+                setModalVisible={setModalVisibleDemoUserCantUpdate}
+              />
+            ) : null}
+
             <View style={styles.titleUpdate}>
               <Text style={styles.userUpdate}>
                 {infoUser.UserId.Name} Update

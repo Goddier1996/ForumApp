@@ -13,16 +13,21 @@ import { validateEmailInput } from "../../../../../screens/register/registerFunc
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ModelChangeToNewPassword from "../newPassword/ModelChangeToNewPassword";
 import { useSelector, useDispatch } from "react-redux";
-import { closeModelCheckEmail, closeModelPassword } from "../../../function/login";
+import {
+  closeModelCheckEmail,
+  closeModelPassword,
+} from "../../../function/login";
 import CustomAlert from "../../../../tools/customAlert/CustomAlert";
 import LoadingSmallSize from "../../../../tools/loading/LoadingSmallSize";
 import ShowTitleCheckEmail from "./ShowTitleCheckEmail";
+
 
 
 const ModelForgetPasswordCheckEmail = ({
   modalVisibleTopic,
   setModalVisibleTopic,
 }) => {
+
 
   const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
     useState(false);
@@ -35,7 +40,9 @@ const ModelForgetPasswordCheckEmail = ({
 
   const [Email, setEmail] = useState("");
 
+
   const [errors, setErrors] = useState({});
+
 
   // check if user input value
   const validateForm = () => {
@@ -50,7 +57,8 @@ const ModelForgetPasswordCheckEmail = ({
     return Object.keys(errors).length === 0;
   };
 
-  
+
+
   return (
     <>
       <Modal
@@ -107,18 +115,20 @@ const ModelForgetPasswordCheckEmail = ({
                   )}
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={styles.closeForgetPassword}
-                  onPress={() =>
-                    closeModelPassword(
-                      setModalVisibleTopic,
-                      setEmail,
-                      setErrors
-                    )
-                  }
-                >
-                  <Text style={styles.closeForgetText}>Close</Text>
-                </TouchableOpacity>
+                {!dataUser.loading ? (
+                  <TouchableOpacity
+                    style={styles.closeForgetPassword}
+                    onPress={() =>
+                      closeModelPassword(
+                        setModalVisibleTopic,
+                        setEmail,
+                        setErrors
+                      )
+                    }
+                  >
+                    <Text style={styles.closeForgetText}>Close</Text>
+                  </TouchableOpacity>
+                ) : null}
               </View>
             </View>
 
@@ -137,7 +147,6 @@ const ModelForgetPasswordCheckEmail = ({
         </TouchableWithoutFeedback>
       </Modal>
 
-      
       {/* this model popup where change to new password, active this popup when email this find! */}
       <ModelChangeToNewPassword
         modalVisible={modalVisible}
@@ -147,5 +156,6 @@ const ModelForgetPasswordCheckEmail = ({
     </>
   );
 };
+
 
 export default ModelForgetPasswordCheckEmail;

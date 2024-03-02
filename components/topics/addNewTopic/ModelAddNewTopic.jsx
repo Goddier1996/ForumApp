@@ -17,6 +17,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import ShowHeaterTitleAddTopic from "./ShowHeaterTitleAddTopic";
 
 
+
 const ModelAddNewTopic = ({
   modalVisible,
   setModalVisible,
@@ -34,8 +35,9 @@ const ModelAddNewTopic = ({
   const [newTopic, setNewTopic] = useState("");
   const [questionTopic, setQuestionTopic] = useState("");
 
-  const [errors, setErrors] = useState({});
 
+
+  const [errors, setErrors] = useState({});
 
   // check if user input value
   const validateForm = () => {
@@ -60,8 +62,7 @@ const ModelAddNewTopic = ({
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
         <View style={styles.outSideBackgroundModel}>
           <View style={styles.outInsideBackgroundModel}>
-
-            <ShowHeaterTitleAddTopic/>
+            <ShowHeaterTitleAddTopic />
 
             <SafeAreaView style={styles.authBox}>
               <View style={styles.createFreeSpace}>
@@ -125,20 +126,23 @@ const ModelAddNewTopic = ({
                   <Text style={styles.textStyle}>Add New Topic</Text>
                 )}
               </TouchableOpacity>
-              <TouchableOpacity
-                activeOpacity={0.9}
-                style={styles.buttonExitComment}
-                onPress={() =>
-                  exitFromModel(
-                    () => setModalVisible(!modalVisible),
-                    () => setErrors({}),
-                    () => setNewTopic(""),
-                    () => setQuestionTopic("")
-                  )
-                }
-              >
-                <Text style={styles.textStyle}>Exit</Text>
-              </TouchableOpacity>
+
+              {!loadingAdd ? (
+                <TouchableOpacity
+                  activeOpacity={0.9}
+                  style={styles.buttonExitComment}
+                  onPress={() =>
+                    exitFromModel(
+                      () => setModalVisible(!modalVisible),
+                      () => setErrors({}),
+                      () => setNewTopic(""),
+                      () => setQuestionTopic("")
+                    )
+                  }
+                >
+                  <Text style={styles.textStyle}>Exit</Text>
+                </TouchableOpacity>
+              ) : null}
             </View>
           </View>
         </View>
