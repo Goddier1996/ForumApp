@@ -5,9 +5,9 @@ module.exports = function (api) {
     plugins: [
       ['module:react-native-dotenv',
         {
-          envName: 'APP_ENV',
+          envName: 'REACT_APP_API',
           moduleName: '@env',
-          path: '.env',
+          path: '.env.local',
         },]
     ]
   };
