@@ -12,6 +12,7 @@ import signInUser from "../featuers/users/loginUser";
 import userRegister from "../featuers/users/registerUser";
 import updatePersonalDataUser from "../featuers/users/updatePersonalDataUser";
 import forgetPassword from '../featuers/users/forgetPasswordCheckEmail';
+import removeUserId from "../featuers/users/removeAccount";
 
 
 const store = configureStore({
@@ -28,7 +29,8 @@ const store = configureStore({
         connectUser: signInUser,
         register: userRegister,
         updateUserData: updatePersonalDataUser,
-        forget:forgetPassword
+        forget: forgetPassword,
+        removeAccount:removeUserId
     }
 });
 

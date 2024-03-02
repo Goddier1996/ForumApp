@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { userIdDeleteComment } from "../../../Redux/featuers/comments/commentsIdUser";
 import { userIdDeleteTopic } from "../../../Redux/featuers/topics/topicsIdUser";
 import { userUpdate } from "../../../Redux/featuers/users/updatePersonalDataUser";
+import { deleteUser } from "../../../Redux/featuers/users/removeAccount";
 
 
 export async function logOutFromProfile(setToken, navigation) {
@@ -77,4 +78,22 @@ export async function updatePersonalDataUser(
                 }
             })
     }
+}
+
+
+export async function deleteAccountUser(
+    dispatch,
+    navigation,
+    setToken,
+    idUser
+) {
+    dispatch(deleteUser(idUser))
+        .then(async (result) => {
+            if (result.payload) {
+                await setToken(null)
+                AsyncStorage.clear();
+                navigation.navigate("HomePage", { screen: "HomePage" });
+            }
+
+        })
 }

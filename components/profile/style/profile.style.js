@@ -265,6 +265,13 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         width: 140,
     },
+    ChangeButtonRemoveAccountLoading: {
+        marginTop: 5,
+        marginBottom: 30,
+        paddingVertical: 4,
+        borderRadius: 4,
+        width: 140,
+    },
     RemoveAccountText: {
         textAlign: "center",
         color: "white"

@@ -39,6 +39,7 @@ const ProfileUser = ({ setToken }) => {
     dispatch(userIdComments(currentUser._id));
   };
 
+
   // refresh screen
   const [refreshing, setRefreshing] = useState(false);
 
@@ -50,11 +51,12 @@ const ProfileUser = ({ setToken }) => {
     }, 1000);
   });
 
+
   useEffect(() => {
     getUserData();
   }, []);
 
-  
+
   return (
     <ImageBackground
       source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
@@ -88,7 +90,10 @@ const ProfileUser = ({ setToken }) => {
           />
 
           {/* here user can delete account */}
-          <ButtonDeleteAccount />
+          <ButtonDeleteAccount
+            idUser={userIdData.UserId._id}
+            setToken={setToken}
+          />
 
           {/* here show title use can pull down to refresh data */}
           <TitlePullDownRefreshScreen />
