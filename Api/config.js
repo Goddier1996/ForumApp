@@ -1,6 +1,9 @@
+import {REACT_APP_API} from'@env'
+
 // load a server , nodejs user mongoDB
+
 export const Config = {
     API: {
-        BASE: process.env.REACT_APP_API
+        BASE: REACT_APP_API
     }
 }
