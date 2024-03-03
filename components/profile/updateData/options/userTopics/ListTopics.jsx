@@ -76,7 +76,7 @@ const ListTopics = ({
                           <ButtonDelete
                             data={item}
                             setModalVisible={setModalVisibleTopic}
-                            type={"delete topic"}
+                            type={"delete topic"} 
                           />
                         </View>
                       </>

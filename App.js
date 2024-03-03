@@ -11,7 +11,7 @@ import Menu from "./components/menu/Menu"
 import InfoAbout from './screens/InfoAbout';
 import Login from './screens/Login';
 import Register from './screens/register/Register';
-import ProfileUser from './screens/profile/ProfileUser';
+import ProfileUser from './screens/ProfileUser';
 import CommentsTopics from './screens/CommentsTopics';
 import Topics from './screens/Topics';
 

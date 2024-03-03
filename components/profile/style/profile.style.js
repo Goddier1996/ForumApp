@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     // use in UpdateUserData component
     menuItem: {
         width: 125,
-        height: 70,
+        height: 110,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderBottomColor: "#00b23d",
         borderBottomWidth: 4,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     },
     menuItemPersonalUserDate: {
         width: 195,
-        height: 50,
+        height: 90,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderBottomColor: "#e48a33",
         borderBottomWidth: 4,
@@ -66,8 +66,11 @@ const styles = StyleSheet.create({
     },
     menuItemText: {
         color: "gray",
-        fontSize: 15,
-        lineHeight: 22,
+        fontSize: 14,
+    },
+    iconComments: {
+        width: 45,
+        height: 45
     },
 
 
@@ -75,7 +78,6 @@ const styles = StyleSheet.create({
     menuWrapper: {
         flexDirection: "row",
         justifyContent: "space-evenly",
-        marginTop: 30,
     },
     menuWrapperPersonalUserDate: {
         flexDirection: "row",

@@ -1,9 +1,10 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "../../../style/profile.style";
 import { useState } from "react";
 import ListComments from "./ListComments";
 import LoadingSmallSize from "../../../../tools/loading/LoadingSmallSize";
 import CustomAlert from "../../../../tools/customAlert/CustomAlert";
+
 
 
 const ShowCommentsUser = ({ commentsUserId }) => {
@@ -25,18 +26,27 @@ const ShowCommentsUser = ({ commentsUserId }) => {
         }
       >
         <View style={styles.menuItem}>
-          <Text style={styles.menuItemText}>
-            {commentsUserId.loading ? null : "My Comments"}
-          </Text>
-          <Text style={styles.menuItemText}>
-            {commentsUserId.loading ? (
-              <LoadingSmallSize type={"text"} />
-            ) : commentsUserId.CommentsIdUser.length === 0 ? (
-              "0"
-            ) : (
-              commentsUserId.CommentsIdUser.length
-            )}
-          </Text>
+           {!commentsUserId.loading ? (
+            <>
+              <Image
+                style={styles.iconComments}
+                source={{
+                  uri: "https://i.postimg.cc/RZc1rLHK/talk.png",
+                }}
+                alt="comments user"
+              />
+
+              <Text style={styles.menuItemText}>My Topic</Text>
+
+              <Text style={styles.menuItemText}>
+                {commentsUserId.CommentsIdUser.length === 0
+                  ? "0"
+                  : commentsUserId.CommentsIdUser.length}
+              </Text>
+            </>
+          ) : (
+            <LoadingSmallSize type={"text"} />
+          )}
         </View>
       </TouchableOpacity>
 

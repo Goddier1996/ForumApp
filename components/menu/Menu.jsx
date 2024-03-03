@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import InfoAbout from "../../screens/InfoAbout";
 import Login from "../../screens/Login";
 import Register from "../../screens/register/Register";
-import ProfileUser from "../../screens/profile/ProfileUser";
+import ProfileUser from "../../screens/ProfileUser";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { View, Text } from "react-native";

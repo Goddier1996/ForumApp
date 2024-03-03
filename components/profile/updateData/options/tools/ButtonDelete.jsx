@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -7,7 +7,7 @@ import {
 } from "../../../function/FunctionProfile";
 import LoadingSmallSize from "../../../../tools/loading/LoadingSmallSize";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
+import CustomAlert from "../../../../tools/customAlert/CustomAlert";
 
 
 // this button delete, user in profile screen.
@@ -19,7 +19,10 @@ const ButtonDelete = ({ data, type }) => {
   const { loadingDelete } = useSelector((state) => state.commentsUserId);
   const { loadingDeleteTopic } = useSelector((state) => state.topicsUserId);
 
+  const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
+    useState(false);
 
+  
   return (
     <>
       {type === "delete comment" ? (
@@ -34,19 +37,24 @@ const ButtonDelete = ({ data, type }) => {
           <LoadingSmallSize type={"save"} />
         )
       ) : type === "delete topic" ? (
-        !loadingDeleteTopic ? (
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={() => userDeleteTopic(dispatch, data)}
+            onPress={() => setShowInfoHaveThisUserPopup(true)}
           >
             <Ionicons name="trash-outline" color={"red"} size={30} />
           </TouchableOpacity>
-        ) : (
-          <LoadingSmallSize type={"save"} />
-        )
       ) : (
         ""
       )}
+
+      <CustomAlert
+        displayMode={"infoDelete"}
+        displayMsg={`Are you sure you want to delete?\n The Topic ${data.nameTopic}\nAll comments this topic will be deleted.`}
+        visibility={showInfoHaveThisUserPopup}
+        dismissAlert={setShowInfoHaveThisUserPopup}
+        funcDelete={() => userDeleteTopic(dispatch, data)}
+        loading={loadingDeleteTopic}
+      />
     </>
   );
 };

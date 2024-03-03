@@ -1,23 +1,20 @@
 import {
-  View,
   SafeAreaView,
-  Text,
   ImageBackground,
   ScrollView,
   RefreshControl,
 } from "react-native";
-import LogOut from "../../components/profile/tools/LogOut";
-import InfoUser from "../../components/profile/showInfoUser/InfoUser";
-import UserOptions from "../../components/profile/updateData/UserOptions";
-import styles from "../profile/profile.style";
+import LogOut from "../components/profile/tools/LogOut";
+import InfoUser from "../components/profile/showInfoUser/InfoUser";
+import UserOptions from "../components/profile/updateData/UserOptions";
 import { useCallback, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserId } from "../../Redux/featuers/users/infoIdUser";
-import TitlePullDownRefreshScreen from "../../components/profile/tools/TitlePullDownRefreshScreen";
-import ButtonDeleteAccount from "../../components/profile/deleteAccount/ButtonDeleteAccount";
-import { userIdTopics } from "../../Redux/featuers/topics/topicsIdUser";
-import { userIdComments } from "../../Redux/featuers/comments/commentsIdUser";
+import { fetchUserId } from "../Redux/featuers/users/infoIdUser";
+import TitlePullDownRefreshScreen from "../components/profile/tools/TitlePullDownRefreshScreen";
+import ButtonDeleteAccount from "../components/profile/deleteAccount/ButtonDeleteAccount";
+import { userIdTopics } from "../Redux/featuers/topics/topicsIdUser";
+import { userIdComments } from "../Redux/featuers/comments/commentsIdUser";
 
 
 
@@ -74,12 +71,6 @@ const ProfileUser = ({ setToken }) => {
           {/* show info user */}
           <InfoUser dataUser={userIdData} />
 
-          <View style={styles.Control}>
-            <Text style={styles.ControlTitle}>
-              Here You Can Control Your Data
-            </Text>
-            <Text style={styles.ControlTitle}>In This App</Text>
-          </View>
 
           {/* show user options updated data and remove topics and comments */}
           <UserOptions

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         padding: 25
     },
     loadingImageSmallSizeSave: {
-        marginTop: 8
+        marginTop: 10
     },
 
     //   use in ShowMessageNotHaveData component
@@ -49,6 +49,16 @@ const styles = StyleSheet.create({
         borderRadius: 7,
         elevation: 10,
     },
+    inSiteDeleteTopic: {
+        alignItems: "center",
+        backgroundColor: "white",
+        height: 250,
+        width: "90%",
+        borderWidth: 1,
+        borderColor: "#fff",
+        borderRadius: 7,
+        elevation: 10,
+    },
     showIcon: {
         alignItems: "center",
         margin: 10
@@ -58,12 +68,42 @@ const styles = StyleSheet.create({
         marginTop: 5,
         textAlign: "center"
     },
+
+    positionButtons: {
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        marginTop:10
+    },
     buttonAlert: {
-        width: "40%",
+        width: "60%",
         alignItems: "center",
         justifyContent: "center",
-        position: "absolute",
+        // position: "absolute",
         backgroundColor: "#00b23d",
+        borderColor: "#ddd",
+        borderBottomWidth: 0,
+        borderRadius: 5,
+        bottom: 0,
+        marginBottom: 10,
+    },
+    buttonAlertDeleteTopic: {
+        width: "35%",
+        alignItems: "center",
+        justifyContent: "center",
+        // position: "absolute",
+        backgroundColor: "#00b23d",
+        borderColor: "#ddd",
+        borderBottomWidth: 0,
+        borderRadius: 5,
+        bottom: 0,
+        marginBottom: 10,
+    },
+    closeAlert: {
+        width: "35%",
+        alignItems: "center",
+        justifyContent: "center",
+        // position: "absolute",
+        backgroundColor: "red",
         borderColor: "#ddd",
         borderBottomWidth: 0,
         borderRadius: 5,
@@ -73,7 +113,7 @@ const styles = StyleSheet.create({
     textInButtonAlert: {
         color: "white",
         margin: 15,
-        fontSize: 18
+        fontSize: 15
     }
 });
 

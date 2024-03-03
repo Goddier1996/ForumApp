@@ -3,7 +3,8 @@ import styles from "../style/profile.style";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { deleteAccountUser } from "../function/FunctionProfile";
-import LoadingSmallSize from "../../tools/loading/LoadingSmallSize";
+import CustomAlert from "../../tools/customAlert/CustomAlert";
+import { useState } from "react";
 
 
 const ButtonDeleteAccount = ({ idUser, setToken }) => {
@@ -15,28 +16,30 @@ const ButtonDeleteAccount = ({ idUser, setToken }) => {
 
   const navigation = useNavigation();
 
+  const [showInfoHaveThisUserPopup, setShowInfoHaveThisUserPopup] =
+  useState(false);
+
 
   return (
     <View style={styles.buttonClickRemoveAccount}>
       <TouchableOpacity
         activeOpacity={0.9}
-        style={
-          !loading
-            ? styles.ChangeButtonRemoveAccount
-            : styles.ChangeButtonRemoveAccountLoading
-        }
-        onPress={() =>
-          !loading
-            ? deleteAccountUser(dispatch, navigation, setToken, idUser)
-            : null
-        }
+        style={styles.ChangeButtonRemoveAccount}
+        onPress={() =>setShowInfoHaveThisUserPopup(true)}
       >
-        {!loading ? (
           <Text style={styles.RemoveAccountText}>Delete Account</Text>
-        ) : (
-          <LoadingSmallSize type={"register"} />
-        )}
       </TouchableOpacity>
+
+
+      {/* alert message */}
+      <CustomAlert
+        displayMode={"infoDelete"}
+        displayMsg={`Are you sure you want to delete Your Account?\nAll your comments topics will be deleted.`}
+        visibility={showInfoHaveThisUserPopup}
+        dismissAlert={setShowInfoHaveThisUserPopup}
+        funcDelete={() => deleteAccountUser(dispatch, navigation, setToken, idUser)}
+        loading={loading}
+      />
     </View>
   );
 };

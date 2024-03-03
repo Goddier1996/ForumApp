@@ -78,11 +78,12 @@ const styles = StyleSheet.create({
 
     // use in showHeaterTitle component
     titleHeater: {
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: -13
     },
     titleHeaterImg: {
-        height: 150,
-        width: 150
+        height: 140,
+        width: 140,
     }
 });
 
