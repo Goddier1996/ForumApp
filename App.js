@@ -15,6 +15,13 @@ import ProfileUser from './screens/ProfileUser';
 import CommentsTopics from './screens/CommentsTopics';
 import Topics from './screens/Topics';
 
+// this for SplashScreen, when loading app show animation
+import { useEffect, useState } from 'react';
+import SplashScreen from './components/tools/SplashScreen';
+
+
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -87,12 +94,25 @@ function StackScreen() {
 }
 
 
+
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading process
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3500); // Adjust the time as needed
+  }, []);
+
 
   return (
     <Provider store={store}>
-      <NavigationContainer >
-        <Menu StackScreen={StackScreen} />
+      <NavigationContainer>
+        {isLoading ? <SplashScreen /> :
+          <Menu StackScreen={StackScreen} />
+        }
       </NavigationContainer>
     </Provider>
   );

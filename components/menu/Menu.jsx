@@ -82,10 +82,10 @@ const Menu = ({ StackScreen }) => {
                 tabBarIcon: ({ focused }) => (
                   <View style={styles.menuOptions}>
                     <Ionicons
-                      style={{marginTop:-6}}
+                      style={{marginTop:-4}}
                     name="log-in-outline"
                     color={focused ? "#e48a33" : "#7c7c7e"}
-                    size={36}
+                    size={37}
                   />
                   <Text
                     style={[
@@ -175,7 +175,7 @@ const Menu = ({ StackScreen }) => {
             tabBarIcon: ({ focused }) => (
               <View style={styles.menuOptions}>
                 <Ionicons
-                  style={{marginTop:-4}}
+                  style={{marginTop:-2}}
                 name="information-circle-outline"
                 color={focused ? "#e48a33" : "#7c7c7e"}
                 size={35}

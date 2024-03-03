@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     positionButtons: {
         flexDirection: "row",
         justifyContent: "space-evenly",
-        marginTop:10
+        marginTop: 10
     },
     buttonAlert: {
         width: "60%",
@@ -114,7 +114,39 @@ const styles = StyleSheet.create({
         color: "white",
         margin: 15,
         fontSize: 15
+    },
+
+
+    // use in SplashScreen component
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#48484c',
+    },
+    image: {
+        width: 250,
+        height: 250,
+    },
+    textAnimationStart: {
+        color: "#ff652f",
+        fontSize: 16,
+        marginTop: 40
+    },
+    bottomView: {
+        marginBottom: 50,
+        alignItems: 'center',
+        position: 'absolute', //Here is the trick
+        bottom: 0, //Here is the trick
+    },
+    textStyle: {
+        color: '#fff',
+        fontSize: 14,
+    },
+    loading: {
+        backgroundColor: "#48484c",
     }
+
 });
 
 

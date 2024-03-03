@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
 
     menuOptions: {
         alignItems: "center",
-        padding:10
+        width:100
     },
     textMenuOptions: {
         fontSize: 10,
