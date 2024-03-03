@@ -138,7 +138,7 @@ const Register = () => {
             <View style={styles.inputBox}>
               <TextInput
                 style={styles.input}
-                placeholder="password"
+                placeholder="Password (min length 6)"
                 onChangeText={setPassword}
                 value={Password}
                 keyboardType="default"
