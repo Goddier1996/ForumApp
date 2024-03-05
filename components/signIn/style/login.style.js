@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignSelf: "center",
         paddingHorizontal: 14,
-        paddingBottom: 30,
+        // paddingBottom: 30,
         shadowColor: "#000",
     },
     inputBox: {
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     loginButtonText: {
         color: "white",
         textAlign: "center",
-        fontSize: 18,
-        fontWeight: "bold",
+        fontSize: 17,
+        // fontWeight: "bold",
     },
     messageUserNeedInputValue: {
         alignItems: "center"
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     // use in DontHaveAccount component
     registerText: {
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 15,
         marginTop: 12,
         color: "rgba(0, 0, 0, 0.475)",
     },
@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     // use in ForgetPassword component
     forgotPasswordText: {
         textAlign: "center",
-        marginTop: 32,
-        fontSize: 16,
+        marginTop: 25,
+        fontSize: 15,
         color: "rgba(0, 0, 0, 0.475)",
     },
     centeredView: {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
         color: "white",
         textAlign: "center",
         fontSize: 15,
-        fontWeight: "bold",
+        // fontWeight: "bold",
     },
     closeForgetPassword: {
         backgroundColor: "red",
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         color: "white",
         textAlign: "center",
         fontSize: 15,
-        fontWeight: "bold",
+        // fontWeight: "bold",
     },
     findTitleUser: {
         alignItems: "center",

@@ -33,9 +33,9 @@ const styles = StyleSheet.create({
     // use in ShowAllCountInfo component
     showCountInfo: {
         flexDirection: "row",
-        flexWrap: "wrap",
+        // flexWrap: "wrap",
         justifyContent: "space-around",
-        paddingBottom: 10,
+        // paddingBottom: 10,
     },
 
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         // paddingTop: 10,
         flexDirection: "row",
         justifyContent: "center",
-        margin: 20,
+        // margin: 20,
     },
     infoForum: {
         fontSize: 14.5,
@@ -55,13 +55,13 @@ const styles = StyleSheet.create({
 
     // use in ShowTitle component
     TitleForum: {
-        paddingBottom: 15,
+        paddingBottom: 5,
         alignItems: "center",
-        justifyContent:"center"
+        justifyContent: "center"
     },
     infoTitle: {
-        height: 75,
-        width: 75,
+        height: 70,
+        width: 70,
     }
 });
 

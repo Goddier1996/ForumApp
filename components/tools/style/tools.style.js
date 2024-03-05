@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     inSiteDeleteTopic: {
         alignItems: "center",
         backgroundColor: "white",
-        height: 250,
+        height: 260,
         width: "90%",
         borderWidth: 1,
         borderColor: "#fff",

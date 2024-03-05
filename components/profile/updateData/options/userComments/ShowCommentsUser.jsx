@@ -36,7 +36,7 @@ const ShowCommentsUser = ({ commentsUserId }) => {
                 alt="comments user"
               />
 
-              <Text style={styles.menuItemText}>My Topic</Text>
+              <Text style={styles.menuItemText}>My Comments</Text>
 
               <Text style={styles.menuItemText}>
                 {commentsUserId.CommentsIdUser.length === 0

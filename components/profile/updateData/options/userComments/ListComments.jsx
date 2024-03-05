@@ -31,7 +31,7 @@ const ListComments = ({
             <DataTable>
               <DataTable.Header style={styles.tableHeader}>
                 <DataTable.Title style={styles.tablePosition}>
-                  <Text style={{ fontSize: 19 }}>Comment's</Text>
+                  <Text>Comment's</Text>
                 </DataTable.Title>
               </DataTable.Header>
 

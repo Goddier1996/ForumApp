@@ -3,6 +3,7 @@ import {
   ImageBackground,
   ScrollView,
   RefreshControl,
+  View
 } from "react-native";
 import LogOut from "../components/profile/tools/LogOut";
 import InfoUser from "../components/profile/showInfoUser/InfoUser";
@@ -15,6 +16,7 @@ import TitlePullDownRefreshScreen from "../components/profile/tools/TitlePullDow
 import ButtonDeleteAccount from "../components/profile/deleteAccount/ButtonDeleteAccount";
 import { userIdTopics } from "../Redux/featuers/topics/topicsIdUser";
 import { userIdComments } from "../Redux/featuers/comments/commentsIdUser";
+import styles from "../components/profile/style/profile.style";
 
 
 
@@ -59,6 +61,9 @@ const ProfileUser = ({ setToken }) => {
       source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
       style={{ width: "100%", height: "100%" }}
     >
+      <View style={styles.container}>
+
+     
       {/* Log out from profile user */}
       <LogOut setToken={setToken} />
 
@@ -87,10 +92,11 @@ const ProfileUser = ({ setToken }) => {
           />
 
           {/* here show title use can pull down to refresh data */}
-          <TitlePullDownRefreshScreen />
+          {/* <TitlePullDownRefreshScreen /> */}
 
         </ScrollView>
-      </SafeAreaView>
+        </SafeAreaView>
+        </View>
     </ImageBackground>
   );
 };

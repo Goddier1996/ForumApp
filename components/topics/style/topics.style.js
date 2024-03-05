@@ -154,15 +154,17 @@ const styles = StyleSheet.create({
         backgroundColor: "#e48a33",
         borderRadius: 10,
         padding: 10,
-        elevation: 2
+        elevation: 2,
     },
     textStyleAddNewTopic: {
         color: "white",
         textAlign: "center",
+        fontSize:14
     },
     textStyleSignIn: {
         color: "#e48a33",
         textAlign: "center",
+        fontSize: 14,
     },
     imageTopic: {
         width: "100%",

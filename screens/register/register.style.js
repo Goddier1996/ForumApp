@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignSelf: "center",
         paddingHorizontal: 14,
-        paddingBottom: 15,
+        // paddingBottom: 15,
         shadowColor: "#000",
     },
     inputBox: {
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: "90%",
-        height: 45,
+        height: 40,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderRadius: 4,
         paddingHorizontal: 10,
@@ -46,18 +46,19 @@ const styles = StyleSheet.create({
     registerButtonText: {
         color: "white",
         textAlign: "center",
-        fontSize: 18,
-        fontWeight: "bold",
+        fontSize: 17,
+        // fontWeight: "bold",
     },
     checkBox: {
         flexDirection: "row",
-        flexWrap: "wrap",
+        // flexWrap: "wrap",
         justifyContent: "center",
         alignItems: "center",
     },
     PasswordsLengthText: {
         color: "red",
-        textAlign: "center"
+        textAlign: "center",
+        fontSize: 11
     },
 
 
@@ -69,7 +70,8 @@ const styles = StyleSheet.create({
     infoRegisterText: {
         width: "80%",
         color: "rgba(0, 0, 0, 0.475)",
-        textAlign: "center"
+        textAlign: "center",
+        fontSize: 10
     },
     infoRegisterBoldText: {
         color: "#e48a33"
@@ -79,11 +81,11 @@ const styles = StyleSheet.create({
     // use in showHeaterTitle component
     titleHeater: {
         alignItems: "center",
-        marginBottom: -13
+        marginBottom: -20
     },
     titleHeaterImg: {
-        height: 140,
-        width: 140,
+        height: 135,
+        width: 135,
     }
 });
 

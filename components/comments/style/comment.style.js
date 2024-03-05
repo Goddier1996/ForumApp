@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
   textStyleAddComment: {
     color: "white",
     textAlign: "center",
-    fontSize: 16,
+    fontSize: 14,
   },
   textStyleUserNeedConnect: {
     color: "#e48a33",
     textAlign: "center",
-    fontSize: 16,
+    fontSize: 14,
   },
 
 

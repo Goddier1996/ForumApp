@@ -4,10 +4,17 @@ import { StyleSheet } from "react-native";
 // This Style use show Profile
 const styles = StyleSheet.create({
 
+
+    container: {
+        flex: 1,
+        justifyContent: "center",
+    },
     // use in LogOut component
     positionLogOut: {
         alignItems: "flex-end",
-        padding: 25,
+        // padding: 25,
+        marginRight: 20,
+        marginTop: 20
     },
     buttonLogOut: {
         alignItems: "center"
@@ -15,7 +22,7 @@ const styles = StyleSheet.create({
 
     // use in InfoUser component
     userInfoSection: {
-        marginBottom: 30,
+        marginBottom: 20,
     },
     title: {
         fontSize: 22,
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     menuItemText: {
-        color: "gray",
+        color: "rgba(0, 0, 0, 0.600)",
         fontSize: 14,
     },
     iconComments: {
@@ -82,8 +89,8 @@ const styles = StyleSheet.create({
     menuWrapperPersonalUserDate: {
         flexDirection: "row",
         justifyContent: "center",
-        marginTop: 30,
-        marginBottom: 30
+        marginTop: 20,
+        marginBottom: 20
     },
 
 
@@ -106,7 +113,7 @@ const styles = StyleSheet.create({
     tableHeader: {
         borderBottomColor: "#e48a33",
         borderBottomWidth: 3,
-        marginBottom: 10,
+        // marginBottom: 10,
     },
     buttonClose: {
         width: 35,
@@ -118,7 +125,7 @@ const styles = StyleSheet.create({
         borderColor: "red"
     },
     Close: {
-        color: "black",
+        color: "rgba(0, 0, 0, 0.600)",
         fontSize: 14,
     },
     tablePosition: {
@@ -126,10 +133,13 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    tablePositionItems: {
+
+    },
     notificationBox: {
         paddingVertical: 20,
         borderRadius: 10,
-        marginBottom: 12,
+        // marginBottom: 12,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderBottomColor: "#69B753",
         borderBottomWidth: 2,
@@ -246,13 +256,13 @@ const styles = StyleSheet.create({
 
 
     // use in TitlePullDownRefreshScreen component
-    titlePosition: {
-        alignItems: "center",
-    },
-    titlePositionStyle: {
-        fontSize: 13,
-        color: "#1e2226"
-    },
+    // titlePosition: {
+    //     alignItems: "center",
+    // },
+    // titlePositionStyle: {
+    //     fontSize: 13,
+    //     color: "#1e2226"
+    // },
 
 
     // use in ButtonDeleteAccount
@@ -263,9 +273,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         marginTop: 5,
         marginBottom: 30,
-        paddingVertical: 4,
+        paddingVertical: 6,
         borderRadius: 4,
-        width: 140,
+        width: 150,
     },
     ChangeButtonRemoveAccountLoading: {
         marginTop: 5,
@@ -276,7 +286,8 @@ const styles = StyleSheet.create({
     },
     RemoveAccountText: {
         textAlign: "center",
-        color: "white"
+        color: "white",
+        fontSize: 15
     }
 });
 

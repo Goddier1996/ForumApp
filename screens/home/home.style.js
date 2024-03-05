@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 
     startImage: {
-        height: 350,
+        height: 315,
     }
 });
 

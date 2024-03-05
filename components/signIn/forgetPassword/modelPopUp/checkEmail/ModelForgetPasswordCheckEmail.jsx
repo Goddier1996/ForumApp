@@ -90,6 +90,7 @@ const ModelForgetPasswordCheckEmail = ({
 
               <View style={styles.buttonsForgetPassword}>
                 <TouchableOpacity
+                  activeOpacity={0.9}
                   style={
                     !dataUser.loading
                       ? styles.checkEmail
@@ -117,6 +118,7 @@ const ModelForgetPasswordCheckEmail = ({
 
                 {!dataUser.loading ? (
                   <TouchableOpacity
+                    activeOpacity={0.9}
                     style={styles.closeForgetPassword}
                     onPress={() =>
                       closeModelPassword(

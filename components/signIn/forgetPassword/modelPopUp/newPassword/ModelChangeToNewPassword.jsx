@@ -143,6 +143,7 @@ const ModelChangeToNewPassword = ({
 
             <View style={styles.buttonsForgetPassword}>
               <TouchableOpacity
+                activeOpacity={0.9}
                 style={
                   !loading
                     ? styles.checkSavePassword
@@ -170,6 +171,7 @@ const ModelChangeToNewPassword = ({
 
               {!loading ? (
                 <TouchableOpacity
+                  activeOpacity={0.9}
                   style={styles.closeForgetPassword}
                   onPress={() =>
                     closeModelPassword(setModalVisible, setPassword, setErrors)
