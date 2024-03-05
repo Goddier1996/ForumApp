@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: "85%",
-        height: 40,
+        height: 48,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderRadius: 4,
         paddingHorizontal: 10,
@@ -36,7 +36,9 @@ const styles = StyleSheet.create({
     loginButton: {
         backgroundColor: "#69B753",
         marginTop: 15,
-        paddingVertical: 8,
+        // paddingVertical: 8,
+        height: 40,
+        justifyContent:"center",
         borderRadius: 4,
         width: 120,
     },
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
     loginButtonText: {
         color: "white",
         textAlign: "center",
-        fontSize: 17,
+        fontSize: 18,
         // fontWeight: "bold",
     },
     messageUserNeedInputValue: {

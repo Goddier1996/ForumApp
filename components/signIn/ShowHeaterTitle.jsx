@@ -5,9 +5,9 @@ const ShowHeaterTitle = () => {
   return (
     <View style={{ alignItems: "center" }}>
       <Image
-        style={{ height: 180, width: 180 }}
+        style={{ height: 179, width: 190 }}
         source={{
-          uri: "https://i.postimg.cc/cHmzpBHg/33.webp",
+          uri: "https://i.postimg.cc/vmKtmrtK/login.webp",
         }}
         alt="login"
       />

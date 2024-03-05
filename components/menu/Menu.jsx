@@ -9,12 +9,10 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { View, Text } from "react-native";
 import styles from "./menu.style";
 
-
 const Tab = createBottomTabNavigator();
 
 const Menu = ({ StackScreen }) => {
-
-
+  
   const [token, setToken] = useState(() => {});
 
   // this function check if user connect to App
@@ -56,14 +54,16 @@ const Menu = ({ StackScreen }) => {
                   color={focused ? "#e48a33" : "#7c7c7e"}
                   size={28}
                 />
-                <Text
-                  style={[
-                    styles.textMenuOptions,
-                    { color: focused ? "#e48a33" : "#7c7c7e" },
-                  ]}
-                >
-                  Home
-                </Text>
+                {focused && (
+                  <Text
+                    style={[
+                      styles.textMenuOptions,
+                      { color: focused ? "#e48a33" : "#7c7c7e" },
+                    ]}
+                  >
+                    Home
+                  </Text>
+                )}
               </View>
             ),
           }}
@@ -75,28 +75,33 @@ const Menu = ({ StackScreen }) => {
           <>
             <Tab.Screen
               options={{
+                // title: null,
+                // headerStyle: {
+                //   backgroundColor: "#1e2226",
+                // },
                 title: null,
-                headerStyle: {
-                  backgroundColor: "#1e2226",
-                },
+                headerShown: false,
                 tabBarIcon: ({ focused }) => (
                   <View style={styles.menuOptions}>
                     <Ionicons
-                      style={{marginTop:-4}}
-                    name="log-in-outline"
-                    color={focused ? "#e48a33" : "#7c7c7e"}
-                    size={37}
-                  />
-                  <Text
-                    style={[
-                      styles.textMenuOptions,
-                        { color: focused ? "#e48a33" : "#7c7c7e" },
-                      {marginTop:-5,marginLeft:8}
-                    ]}
-                  >
-                    Login
-                  </Text>
-                </View>
+                      style={{ marginTop: focused ? -4 : 0 }}
+                      name="log-in-outline"
+                      color={focused ? "#e48a33" : "#7c7c7e"}
+                      size={37}
+                    />
+
+                    {focused && (
+                      <Text
+                        style={[
+                          styles.textMenuOptions,
+                          { color: focused ? "#e48a33" : "#7c7c7e" },
+                          { marginTop: -5, marginLeft: 8 },
+                        ]}
+                      >
+                        Login
+                      </Text>
+                    )}
+                  </View>
                 ),
               }}
               name="Login"
@@ -105,27 +110,31 @@ const Menu = ({ StackScreen }) => {
 
             <Tab.Screen
               options={{
+                // title: null,
+                // headerStyle: {
+                //   backgroundColor: "#1e2226",
+                // },
                 title: null,
-                headerStyle: {
-                  backgroundColor: "#1e2226",
-                },
+                headerShown: false,
                 tabBarIcon: ({ focused }) => (
                   <View style={styles.menuOptions}>
-                  <Ionicons
-                    name="person-add-outline"
-                    color={focused ? "#e48a33" : "#7c7c7e"}
-                    size={28}
-                  />
-                  <Text
-                    style={[
-                      styles.textMenuOptions,
-                        { color: focused ? "#e48a33" : "#7c7c7e" },
-                        {marginLeft:1}
-                    ]}
-                  >
-                    Register
-                  </Text>
-                </View>
+                    <Ionicons
+                      name="person-add-outline"
+                      color={focused ? "#e48a33" : "#7c7c7e"}
+                      size={28}
+                    />
+                    {focused && (
+                      <Text
+                        style={[
+                          styles.textMenuOptions,
+                          { color: focused ? "#e48a33" : "#7c7c7e" },
+                          { marginLeft: 1 },
+                        ]}
+                      >
+                        Register
+                      </Text>
+                    )}
+                  </View>
                 ),
               }}
               name="Register"
@@ -136,26 +145,30 @@ const Menu = ({ StackScreen }) => {
           <>
             <Tab.Screen
               options={{
+                // title: null,
+                // headerStyle: {
+                //   backgroundColor: "#1e2226",
+                // },
                 title: null,
-                headerStyle: {
-                  backgroundColor: "#1e2226",
-                },
+                headerShown: false,
                 tabBarIcon: ({ focused }) => (
                   <View style={styles.menuOptions}>
-                <Ionicons
-                  name="person-outline"
-                  color={focused ? "#e48a33" : "#7c7c7e"}
-                  size={28}
-                />
-                <Text
-                  style={[
-                    styles.textMenuOptions,
-                    { color: focused ? "#e48a33" : "#7c7c7e" },
-                  ]}
-                >
-                  {token.Name}
-                </Text>
-              </View>
+                    <Ionicons
+                      name="person-outline"
+                      color={focused ? "#e48a33" : "#7c7c7e"}
+                      size={28}
+                    />
+                    {focused && (
+                      <Text
+                        style={[
+                          styles.textMenuOptions,
+                          { color: focused ? "#e48a33" : "#7c7c7e" },
+                        ]}
+                      >
+                        {token.Name}
+                      </Text>
+                    )}
+                  </View>
                 ),
               }}
               name="ProfileUser"
@@ -168,28 +181,32 @@ const Menu = ({ StackScreen }) => {
 
         <Tab.Screen
           options={{
+            // title: null,
+            // headerStyle: {
+            //   backgroundColor: "#1e2226",
+            // },
             title: null,
-            headerStyle: {
-              backgroundColor: "#1e2226",
-            },
+            headerShown: false,
             tabBarIcon: ({ focused }) => (
               <View style={styles.menuOptions}>
                 <Ionicons
-                  style={{marginTop:-2}}
-                name="information-circle-outline"
-                color={focused ? "#e48a33" : "#7c7c7e"}
-                size={35}
-              />
-              <Text
-                style={[
-                  styles.textMenuOptions,
-                    { color: focused ? "#e48a33" : "#7c7c7e" },
-                    {marginTop:-4,marginRight:2}
-                ]}
-              >
-                Info
-              </Text>
-            </View>
+                  style={{ marginTop: focused ? -2 : 0 }}
+                  name="information-circle-outline"
+                  color={focused ? "#e48a33" : "#7c7c7e"}
+                  size={35}
+                />
+                {focused && (
+                  <Text
+                    style={[
+                      styles.textMenuOptions,
+                      { color: focused ? "#e48a33" : "#7c7c7e" },
+                      { marginTop: -4, marginRight: 2 },
+                    ]}
+                  >
+                    Info
+                  </Text>
+                )}
+              </View>
             ),
           }}
           name="InfoAbout"
@@ -199,6 +216,5 @@ const Menu = ({ StackScreen }) => {
     </>
   );
 };
-
 
 export default Menu;

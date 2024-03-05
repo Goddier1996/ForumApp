@@ -112,10 +112,10 @@ const styles = StyleSheet.create({
     },
     input: {
         width: "90%",
-        height: 40,
+        height: 48,
         backgroundColor: "rgba(128, 128, 128, 0.200)",
         borderRadius: 10,
-        paddingHorizontal: 10,
+        // paddingHorizontal: 10,
         textAlign: "center",
     },
     buttonClick: {

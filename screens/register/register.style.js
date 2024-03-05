@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: "90%",
-        height: 40,
+        height: 48,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderRadius: 4,
         paddingHorizontal: 10,
@@ -34,8 +34,10 @@ const styles = StyleSheet.create({
     },
     registerButton: {
         backgroundColor: "#69B753",
-        paddingVertical: 8,
+        // paddingVertical: 8,
+        height: 40,
         borderRadius: 4,
+        justifyContent: "center",
         width: 120,
     },
     registerButtonLoading: {
@@ -46,13 +48,13 @@ const styles = StyleSheet.create({
     registerButtonText: {
         color: "white",
         textAlign: "center",
-        fontSize: 17,
+        fontSize: 18,
         // fontWeight: "bold",
     },
     checkBox: {
         flexDirection: "row",
         // flexWrap: "wrap",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
         alignItems: "center",
     },
     PasswordsLengthText: {
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
         width: "80%",
         color: "rgba(0, 0, 0, 0.475)",
         textAlign: "center",
-        fontSize: 10
+        fontSize: 11
     },
     infoRegisterBoldText: {
         color: "#e48a33"
