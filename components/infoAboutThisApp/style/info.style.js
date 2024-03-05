@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     infoForum: {
         fontSize: 14.5,
         color: "rgba(0, 0, 0, 0.475)",
-        width: "90%",
+        width: "87%",
     },
 
 

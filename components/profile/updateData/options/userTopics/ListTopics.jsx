@@ -25,10 +25,10 @@ const ListTopics = ({
           <DataTable>
             <DataTable.Header style={styles.tableHeader}>
               <DataTable.Title style={styles.tablePosition}>
-                Topic
+                <Text style={{fontSize:14}}>Topic</Text>
               </DataTable.Title>
               <DataTable.Title style={styles.tablePosition}>
-                Date Publish
+                <Text style={{fontSize:14}}>Date Publish</Text>
               </DataTable.Title>
             </DataTable.Header>
 

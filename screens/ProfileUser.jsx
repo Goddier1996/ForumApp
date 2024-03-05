@@ -3,7 +3,7 @@ import {
   ImageBackground,
   ScrollView,
   RefreshControl,
-  View
+  View,
 } from "react-native";
 import LogOut from "../components/profile/tools/LogOut";
 import InfoUser from "../components/profile/showInfoUser/InfoUser";
@@ -19,16 +19,13 @@ import { userIdComments } from "../Redux/featuers/comments/commentsIdUser";
 import styles from "../components/profile/style/profile.style";
 
 
-
 const ProfileUser = ({ setToken }) => {
-
 
   // use redux
   const userIdData = useSelector((state) => state.userIdData);
   const topicsUserId = useSelector((state) => state.topicsUserId);
   const commentsUserId = useSelector((state) => state.commentsUserId);
   const dispatch = useDispatch();
-
 
   const getUserData = async () => {
     const savedUser = await AsyncStorage.getItem("user");
@@ -62,41 +59,37 @@ const ProfileUser = ({ setToken }) => {
       style={{ width: "100%", height: "100%" }}
     >
       <View style={styles.container}>
+        <SafeAreaView>
+          <ScrollView
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
+          >
+            {/* Log out from profile user */}
+            <LogOut setToken={setToken} />
 
-     
-      {/* Log out from profile user */}
-      <LogOut setToken={setToken} />
+            {/* show info user */}
+            <InfoUser dataUser={userIdData} />
 
-      <SafeAreaView>
-        <ScrollView
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-          }
-        >
-          {/* show info user */}
-          <InfoUser dataUser={userIdData} />
+            {/* show user options updated data and remove topics and comments */}
+            <UserOptions
+              dataUser={userIdData}
+              setToken={setToken}
+              topicsUserId={topicsUserId}
+              commentsUserId={commentsUserId}
+            />
 
+            {/* here user can delete account */}
+            <ButtonDeleteAccount
+              idUser={userIdData.UserId._id}
+              setToken={setToken}
+            />
 
-          {/* show user options updated data and remove topics and comments */}
-          <UserOptions
-            dataUser={userIdData}
-            setToken={setToken}
-            topicsUserId={topicsUserId}
-            commentsUserId={commentsUserId}
-          />
-
-          {/* here user can delete account */}
-          <ButtonDeleteAccount
-            idUser={userIdData.UserId._id}
-            setToken={setToken}
-          />
-
-          {/* here show title use can pull down to refresh data */}
-          {/* <TitlePullDownRefreshScreen /> */}
-
-        </ScrollView>
+            {/* here show title use can pull down to refresh data */}
+            {/* <TitlePullDownRefreshScreen /> */}
+          </ScrollView>
         </SafeAreaView>
-        </View>
+      </View>
     </ImageBackground>
   );
 };
