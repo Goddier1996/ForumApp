@@ -8,7 +8,6 @@ https://github.com/Goddier1996/ForumApp/assets/59862302/47144af3-ded6-41d0-9819-
 ### This app is built with technologies :
 - React Native
 - Expo
-- Redux
 - Redux-toolkit
 - Node.js
 - Express
