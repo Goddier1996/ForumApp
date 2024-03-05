@@ -1,7 +1,9 @@
+## Project Type Community Forum App
 
 ![Untitled-1](https://github.com/Goddier1996/ForumApp/assets/59862302/991f563c-6edf-42c7-8a90-77d29808acdc)
 
-## Project Type Community Forum App
+### Video about this app
+https://github.com/Goddier1996/ForumApp/assets/59862302/47144af3-ded6-41d0-9819-ab07198042ac
 
 ### This app is built with technologies :
 - React Native
@@ -25,6 +27,7 @@ And I decided to build an app with React Native to learn how everything works, b
 - Each category has topics created by users.
 - In addition to each cluster there are comments.
 - And Register & Login and info screen.
+- Forgot password, user can create new password if forgot.
 
 ### User options in this app
 - User can add new Topic and Comment.
