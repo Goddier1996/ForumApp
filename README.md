@@ -20,7 +20,6 @@ https://github.com/Goddier1996/Server_Forum_App
 I wanted to learn a little more about React technology, I built a wide variety of websites with React.
 And I decided to build an app with React Native to learn how everything works, because it's very similar to regular React.
 
-
 ### This app has several options
 - There are a wide variety of categories to choose from.
 - Each category has topics created by users.
@@ -32,6 +31,3 @@ And I decided to build an app with React Native to learn how everything works, b
 - In profile screen user can delete topic and comments he crete.
 - And updated personal data.
 - User Can Delete account.
-
-
-
