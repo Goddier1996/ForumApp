@@ -8,10 +8,6 @@ import store from './Redux/store/store';
 // import all screen this app
 import Home from './screens/home/Home';
 import Menu from "./components/menu/Menu"
-import InfoAbout from './screens/InfoAbout';
-import Login from './screens/Login';
-import Register from './screens/register/Register';
-import ProfileUser from './screens/ProfileUser';
 import CommentsTopics from './screens/CommentsTopics';
 import Topics from './screens/Topics';
 
@@ -39,26 +35,6 @@ function StackScreen() {
         }}
         name="HomePage"
         component={Home}
-      />
-
-      <Stack.Screen
-        name="InfoAbout"
-        component={InfoAbout}
-      />
-
-      <Stack.Screen
-        name="Login"
-        component={Login}
-      />
-
-      <Stack.Screen
-        name="Register"
-        component={Register}
-      />
-
-      <Stack.Screen
-        name="ProfileUser"
-        component={ProfileUser}
       />
 
       <Stack.Screen

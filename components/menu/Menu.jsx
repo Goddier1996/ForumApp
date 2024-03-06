@@ -75,7 +75,6 @@ const Menu = ({ StackScreen }) => {
           <>
             <Tab.Screen
               options={{
-                // title: null,
                 // headerStyle: {
                 //   backgroundColor: "#1e2226",
                 // },
@@ -110,9 +109,10 @@ const Menu = ({ StackScreen }) => {
 
             <Tab.Screen
               options={{
-                // title: null,
                 // headerStyle: {
                 //   backgroundColor: "#1e2226",
+                //   height: 55,
+                //    borderRadius:100
                 // },
                 title: null,
                 headerShown: false,
@@ -145,10 +145,10 @@ const Menu = ({ StackScreen }) => {
           <>
             <Tab.Screen
               options={{
-                // title: null,
-                // headerStyle: {
-                //   backgroundColor: "#1e2226",
-                // },
+                headerStyle: {
+                  backgroundColor: "white",
+                  height: 25,
+                },
                 title: null,
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
@@ -181,10 +181,6 @@ const Menu = ({ StackScreen }) => {
 
         <Tab.Screen
           options={{
-            // title: null,
-            // headerStyle: {
-            //   backgroundColor: "#1e2226",
-            // },
             title: null,
             headerShown: false,
             tabBarIcon: ({ focused }) => (
