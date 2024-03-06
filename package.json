@@ -22,6 +22,7 @@
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-native": "0.73.4",
+    "react-native-dotenv": "^3.4.11",
     "react-native-elements": "^3.4.3",
     "react-native-image-blur-loading": "^1.2.1",
     "react-native-indicators": "^0.17.0",

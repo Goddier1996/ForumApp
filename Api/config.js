@@ -1,5 +1,7 @@
+import { EXPO_PUBLIC_API_URL } from '@env'
+
 export const Config = {
     API: {
-        BASE: process.env.EXPO_PUBLIC_API_URL
+        BASE: EXPO_PUBLIC_API_URL
     }
 }
