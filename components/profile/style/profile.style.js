@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 // This Style use show Profile
 const styles = StyleSheet.create({
 
-
     container: {
         flex: 1,
         justifyContent: "center",
@@ -12,9 +11,7 @@ const styles = StyleSheet.create({
     // use in LogOut component
     positionLogOut: {
         alignItems: "flex-end",
-        // padding: 25,
-        marginRight: 20,
-        marginTop: 20
+        marginRight: 35,
     },
     buttonLogOut: {
         alignItems: "center"
