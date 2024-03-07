@@ -1,6 +1,6 @@
 ## Project Type Community Forum App
+![Untitled-1](https://github.com/Goddier1996/ForumApp/assets/59862302/29111a6c-9407-447a-84a4-f49f7839f1ec)
 
-![Untitled-1](https://github.com/Goddier1996/ForumApp/assets/59862302/991f563c-6edf-42c7-8a90-77d29808acdc)
 
 ### Video about this app
 
