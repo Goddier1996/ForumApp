@@ -1,27 +1,24 @@
-import { View, ImageBackground } from "react-native";
+import { View } from "react-native";
 import InfoAboutApp from "../components/infoAboutThisApp/showInfoAboutApp/InfoAboutApp";
 import ShowAllCountInfo from "../components/infoAboutThisApp/showCountInfo/ShowAllCountInfo";
-import ShowTitle from "../components/infoAboutThisApp/showInfoAboutApp/ShowTitle";
 import styles from "../components/infoAboutThisApp/style/info.style";
+import ShowHeaterTitle from "../components/tools/TitleHeaterTop/ShowHeaterTitle";
 
 
 const InfoAbout = () => {
   return (
-    <ImageBackground
-      source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
-      style={{ width: "100%", height: "100%" }}
-    >
-      <View style={styles.container}>
-        {/* show title info */}
-        <ShowTitle />
+    <>
+      {/* show title info */}
+      <ShowHeaterTitle type={"Info"} img={"https://i.postimg.cc/3NvjSCMy/info1.webp"} />
 
+      <View style={styles.container}>
         {/* show all count info */}
         <ShowAllCountInfo />
 
         {/* here user can read info about this app */}
         <InfoAboutApp />
       </View>
-    </ImageBackground>
+    </>
   );
 };
 

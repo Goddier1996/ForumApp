@@ -1,6 +1,5 @@
 import {
   SafeAreaView,
-  ImageBackground,
   ScrollView,
   RefreshControl,
   View,
@@ -12,11 +11,11 @@ import { useCallback, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserId } from "../Redux/featuers/users/infoIdUser";
-import TitlePullDownRefreshScreen from "../components/profile/tools/TitlePullDownRefreshScreen";
 import ButtonDeleteAccount from "../components/profile/deleteAccount/ButtonDeleteAccount";
 import { userIdTopics } from "../Redux/featuers/topics/topicsIdUser";
 import { userIdComments } from "../Redux/featuers/comments/commentsIdUser";
 import styles from "../components/profile/style/profile.style";
+import ShowHeaterTitle from "../components/tools/TitleHeaterTop/ShowHeaterTitle";
 
 
 const ProfileUser = ({ setToken }) => {
@@ -54,10 +53,9 @@ const ProfileUser = ({ setToken }) => {
 
 
   return (
-    <ImageBackground
-      source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
-      style={{ width: "100%", height: "100%" }}
-    >
+    <>
+      <ShowHeaterTitle type={"profileUser"} img={"https://i.postimg.cc/sxbJJHvG/user-prfile1.webp"} />
+      
       <View style={styles.container}>
         <SafeAreaView>
           <ScrollView
@@ -85,12 +83,10 @@ const ProfileUser = ({ setToken }) => {
               setToken={setToken}
             />
 
-            {/* here show title use can pull down to refresh data */}
-            {/* <TitlePullDownRefreshScreen /> */}
           </ScrollView>
         </SafeAreaView>
       </View>
-    </ImageBackground>
+    </>
   );
 };
 

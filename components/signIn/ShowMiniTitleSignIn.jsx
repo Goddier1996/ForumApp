@@ -1,11 +1,10 @@
-import { View,Image } from "react-native";
+import { View, Image } from "react-native";
 
-
-const ShowHeaterTitle = () => {
+const ShowMiniTitleSignIn = () => {
   return (
     <View style={{ alignItems: "center" }}>
       <Image
-        style={{ height: 179, width: 190 }}
+        style={{ height: 140, width: 150 }}
         source={{
           uri: "https://i.postimg.cc/vmKtmrtK/login.webp",
         }}
@@ -15,5 +14,4 @@ const ShowHeaterTitle = () => {
   );
 };
 
-
-export default ShowHeaterTitle;
+export default ShowMiniTitleSignIn;

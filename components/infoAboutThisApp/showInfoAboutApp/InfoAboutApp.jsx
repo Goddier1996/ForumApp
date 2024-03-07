@@ -6,18 +6,19 @@ const InfoAboutApp = () => {
   return (
     <View style={styles.about}>
       <Text style={styles.infoForum}>
-        This forum contains a variety of categories.{"\n"}
+        In this application you can see a variety of categories and topics
+        depending on the selected category.{"\n"}
+        Each topic has comments from users who respond to that topic question.
         {"\n"}
-        Each category has topics, in addition a user can add a new topic in the
-        category of his choice.{"\n"}
+        The advantage of the app is a community forum, Any user can register and
+        create a new topic and write a comment according to the category he
+        wants from the phone without entering the websites.{"\n"}
         {"\n"}
-        Each topic knows comments from users who will comment on your topic, in
-        addition a user can comment on someone else's topic.{"\n"}
-        {"\n"}A user can manage the messages and topics, a user can delete , and
-        update the personal details.{"\n"}
-        {"\n"}
-        Admin manages all messages, topics, users and categories, in addition
-        admin can add a new category.
+        Application options :{"\n"}- A user can register.{"\n"}- User login.
+        {"\n"}- User can recover the password if forgotten.{"\n"}- A user can
+        delete the topic he created{"\n"}- User can delete the comment.{"\n"}-
+        User can delete account.{"\n"}- A user can update his information.{"\n"}
+        - User can add new topic and comment.
       </Text>
     </View>
   );

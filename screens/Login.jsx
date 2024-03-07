@@ -4,7 +4,6 @@ import {
   TextInput,
   Keyboard,
   TouchableOpacity,
-  ImageBackground,
   TouchableWithoutFeedback,
 } from "react-native";
 import { useState } from "react";
@@ -17,12 +16,12 @@ import { useNavigation } from "@react-navigation/native";
 import CustomAlert from "../components/tools/customAlert/CustomAlert";
 import LoadingSmallSize from "../components/tools/loading/LoadingSmallSize";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import ShowHeaterTitle from "../components/signIn/ShowHeaterTitle";
+import ShowHeaterTitle from "../components/tools/TitleHeaterTop/ShowHeaterTitle";
+import ShowMiniTitleSignIn from "../components/signIn/ShowMiniTitleSignIn";
 
 
 
 const Login = ({ setToken }) => {
-
   const [Login, setLogin] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -54,12 +53,10 @@ const Login = ({ setToken }) => {
     return Object.keys(errors).length === 0;
   };
 
-
   return (
-    <ImageBackground
-      source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
-      style={{ width: "100%", height: "100%" }}
-    >
+    <>
+      <ShowHeaterTitle type={"login"} img={"https://i.postimg.cc/GpTpsMvs/login1.webp"} />
+
       <View style={styles.container}>
         <TouchableWithoutFeedback
           style={styles.container}
@@ -68,7 +65,7 @@ const Login = ({ setToken }) => {
         >
           <View style={styles.authBox}>
 
-            <ShowHeaterTitle />
+            <ShowMiniTitleSignIn />
 
             <View style={styles.inputBox}>
               <TextInput
@@ -140,7 +137,7 @@ const Login = ({ setToken }) => {
         {/* if user don't register this app move to register screen */}
         <DontHaveAccount />
       </View>
-    </ImageBackground>
+    </>
   );
 };
 

@@ -12,9 +12,7 @@ const styles = StyleSheet.create({
         width: "80%",
         borderRadius: 20,
         alignSelf: "center",
-        paddingHorizontal: 14,
-        // paddingBottom: 15,
-        shadowColor: "#000",
+        backgroundColor: "#f2f2f2"
     },
     inputBox: {
         marginTop: 10,
@@ -34,7 +32,6 @@ const styles = StyleSheet.create({
     },
     registerButton: {
         backgroundColor: "#69B753",
-        // paddingVertical: 8,
         height: 40,
         borderRadius: 4,
         justifyContent: "center",
@@ -49,11 +46,9 @@ const styles = StyleSheet.create({
         color: "white",
         textAlign: "center",
         fontSize: 18,
-        // fontWeight: "bold",
     },
     checkBox: {
         flexDirection: "row",
-        // flexWrap: "wrap",
         justifyContent: "space-evenly",
         alignItems: "center",
     },
@@ -70,7 +65,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     infoRegisterText: {
-        width: "80%",
+        width: "85%",
         color: "rgba(0, 0, 0, 0.475)",
         textAlign: "center",
         fontSize: 11
@@ -78,17 +73,6 @@ const styles = StyleSheet.create({
     infoRegisterBoldText: {
         color: "#e48a33"
     },
-
-
-    // use in showHeaterTitle component
-    titleHeater: {
-        alignItems: "center",
-        marginBottom: -20
-    },
-    titleHeaterImg: {
-        height: 135,
-        width: 135,
-    }
 });
 
 

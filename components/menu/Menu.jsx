@@ -11,6 +11,7 @@ import styles from "./menu.style";
 
 const Tab = createBottomTabNavigator();
 
+
 const Menu = ({ StackScreen }) => {
   
   const [token, setToken] = useState(() => {});
@@ -75,9 +76,6 @@ const Menu = ({ StackScreen }) => {
           <>
             <Tab.Screen
               options={{
-                // headerStyle: {
-                //   backgroundColor: "#1e2226",
-                // },
                 title: null,
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
@@ -109,11 +107,6 @@ const Menu = ({ StackScreen }) => {
 
             <Tab.Screen
               options={{
-                // headerStyle: {
-                //   backgroundColor: "#1e2226",
-                //   height: 55,
-                //    borderRadius:100
-                // },
                 title: null,
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
@@ -145,12 +138,8 @@ const Menu = ({ StackScreen }) => {
           <>
             <Tab.Screen
               options={{
-                headerStyle: {
-                  backgroundColor: "white",
-                  height: 25,
-                },
-                title: null,
                 headerShown: false,
+                title: null,
                 tabBarIcon: ({ focused }) => (
                   <View style={styles.menuOptions}>
                     <Ionicons

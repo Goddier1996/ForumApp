@@ -7,10 +7,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const Home = () => {
   return (
-    <ImageBackground
-      source={{ uri: "https://i.postimg.cc/SsvsfCh8/11.webp" }}
-      style={{ width: "100%", height: "100%" }}
-    >
+    <>
       <ImageBackground
         style={styles.startImage}
         source={{ uri: "https://i.postimg.cc/P5Ck19q6/22.webp" }}
@@ -24,7 +21,7 @@ const Home = () => {
 
       {/* here show all Categories */}
       <ShowAllCategories />
-    </ImageBackground>
+    </>
   );
 };
 

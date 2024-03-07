@@ -8,14 +8,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
+        alignItems:"center",
     },
     authBox: {
         width: "80%",
-        borderRadius: 20,
-        alignSelf: "center",
-        paddingHorizontal: 14,
-        // paddingBottom: 30,
-        shadowColor: "#000",
+        backgroundColor:"#f2f2f2"
     },
     inputBox: {
         marginTop: 10,
