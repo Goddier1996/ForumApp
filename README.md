@@ -4,7 +4,7 @@
 
 ### Video about this app
 
-https://github.com/Goddier1996/ForumApp/assets/59862302/ad3580bd-b6ed-4bce-b5d8-c438bf9a8cfe
+https://github.com/Goddier1996/ForumApp/assets/59862302/c2184937-715f-4909-b505-f8186f9d21db
 
 ### This app is built with technologies :
 - React Native
