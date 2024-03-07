@@ -3,7 +3,8 @@
 ![Untitled-1](https://github.com/Goddier1996/ForumApp/assets/59862302/991f563c-6edf-42c7-8a90-77d29808acdc)
 
 ### Video about this app
-https://github.com/Goddier1996/ForumApp/assets/59862302/47144af3-ded6-41d0-9819-ab07198042ac
+
+https://github.com/Goddier1996/ForumApp/assets/59862302/ad3580bd-b6ed-4bce-b5d8-c438bf9a8cfe
 
 ### This app is built with technologies :
 - React Native
