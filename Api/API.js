@@ -18,5 +18,6 @@ export const API = {
         POST: `${Config.API.BASE}/api/users/Register`,
         LOGIN: `${Config.API.BASE}/api/users/login`,
         FORGET: `${Config.API.BASE}/api/users/Forget`,
+        // UPLOAD: `${Config.API.BASE}/api/users/upload`,
     }
 }

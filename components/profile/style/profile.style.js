@@ -28,15 +28,14 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: "row",
-        marginBottom: 5,
     },
     positionImgProfile: {
         alignItems: "center",
         justifyContent: "center"
     },
     imgProfileUser: {
-        height: 75,
-        width: 75,
+        height: 90,
+        width: 90,
         borderRadius: 50,
     },
     positionTitle: {
@@ -110,7 +109,6 @@ const styles = StyleSheet.create({
     tableHeader: {
         borderBottomColor: "#e48a33",
         borderBottomWidth: 3,
-        // marginBottom: 10,
     },
     buttonClose: {
         width: 35,
@@ -130,13 +128,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    tablePositionItems: {
-
-    },
     notificationBox: {
         paddingVertical: 20,
         borderRadius: 10,
-        // marginBottom: 12,
         backgroundColor: "rgba(128, 128, 128, 0.140)",
         borderBottomColor: "#69B753",
         borderBottomWidth: 2,
@@ -250,16 +244,20 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     },
-
-
-    // use in TitlePullDownRefreshScreen component
-    // titlePosition: {
-    //     alignItems: "center",
-    // },
-    // titlePositionStyle: {
-    //     fontSize: 13,
-    //     color: "#1e2226"
-    // },
+    buttonClickChooseImg: {
+        display: "flex",
+        alignItems: "flex-end",
+        justifyContent: "center"
+    },
+    registerButtonTextChooseImg: {
+        position: "absolute",
+        // alignItems: "center"
+    },
+    styleChooseImg: {
+        height: 75,
+        width: 75,
+        borderRadius: 50,
+    },
 
 
     // use in ButtonDeleteAccount

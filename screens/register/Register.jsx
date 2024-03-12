@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   Keyboard,
+  Image,
 } from "react-native";
 import { useState } from "react";
 import { CheckBox } from "@rneui/themed";
@@ -12,15 +13,19 @@ import styles from "./register.style";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
-import { registerUser, validateEmailInput } from "./registerFunction";
+import {
+  pickImage,
+  registerUser,
+  validateEmailInput,
+} from "./registerFunction";
 import LoadingSmallSize from "../../components/tools/loading/LoadingSmallSize";
 import CustomAlert from "../../components/tools/customAlert/CustomAlert";
 import ShowButtonInfoTitle from "../../components/register/ShowButtonInfoTitle";
 import ShowHeaterTitle from "../../components/tools/TitleHeaterTop/ShowHeaterTitle";
 
 
-const Register = () => {
 
+const Register = () => {
 
   const navigation = useNavigation();
 
@@ -79,6 +84,10 @@ const Register = () => {
       errors.Email = (
         <Ionicons name="information-circle" color={"#e48a33"} size={30} />
       );
+    if (!LinkFileFoto)
+      errors.LinkFileFoto = (
+        <Ionicons name="information-circle" color={"#e48a33"} size={30} />
+      );
     if (!gender)
       errors.gender = (
         <Ionicons name="information-circle" color={"#e48a33"} size={30} />
@@ -97,7 +106,10 @@ const Register = () => {
 
   return (
     <>
-      <ShowHeaterTitle type={"Register"} img={"https://i.postimg.cc/tg43QHQG/register1.webp"} />
+      <ShowHeaterTitle
+        type={"Register"}
+        img={"https://i.postimg.cc/tg43QHQG/register1.webp"}
+      />
 
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={true}>
@@ -158,15 +170,34 @@ const Register = () => {
               {errors.Email ? errors.Email : null}
             </View>
 
-            <View style={styles.inputBox}>
-              <TextInput
-                style={styles.input}
-                placeholder="*No need to add a Photo Link"
-                onChangeText={setLinkFileFoto}
-                value={LinkFileFoto}
-                keyboardType="url"
-                placeholderTextColor={"black"}
-              />
+            <View style={styles.buttonClickChooseImg}>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                style={styles.buttonChooseImg}
+                onPress={() => pickImage(setLinkFileFoto)}
+              >
+                <Text style={styles.registerButtonTextChooseImg}>
+                  Upload Image
+                </Text>
+              </TouchableOpacity>
+
+              <View>
+                {LinkFileFoto ? (
+                  <Image
+                    source={{
+                      uri: LinkFileFoto,
+                    }}
+                    style={styles.styleChooseImg}
+                  />
+                ) : (
+                  <View style={styles.styleChooseImgNullImg}>
+                    <Text style={styles.nullImage}>Empty</Text>
+                  </View>
+                )}
+              </View>
+
+              {/* here show message user need input value */}
+              {errors.LinkFileFoto ? errors.LinkFileFoto : null}
             </View>
 
             <View style={styles.checkBox}>
@@ -179,7 +210,6 @@ const Register = () => {
                 onPress={genderMale}
                 containerStyle={{ backgroundColor: null, borderWidth: null }}
               />
-
               <CheckBox
                 center
                 title="Female"
@@ -243,11 +273,11 @@ const Register = () => {
             ""
           )}
         </View>
+
         <ShowButtonInfoTitle />
       </View>
     </>
   );
 };
-
 
 export default Register;

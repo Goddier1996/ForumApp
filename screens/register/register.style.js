@@ -47,6 +47,45 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 18,
     },
+    buttonClickChooseImg: {
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        marginTop: 10,
+    },
+    buttonChooseImg: {
+        backgroundColor: "#e48a33",
+        height: 35,
+        borderRadius: 4,
+        justifyContent: "center",
+        width: 125,
+    },
+    registerButtonTextChooseImg: {
+        color: "white",
+        textAlign: "center",
+        fontSize: 16,
+    },
+    styleChooseImg: {
+        height: 45,
+        width: 45,
+        borderRadius: 50,
+    },
+    styleChooseImgNullImg: {
+        height: 45,
+        width: 45,
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: "rgba(0, 0, 0, 0.475)",
+        alignItems: "center",
+        display: "flex",
+        justifyContent: "center"
+    },
+    nullImage: {
+        color: "rgba(0, 0, 0, 0.475)",
+        textAlign: "center",
+        fontSize: 12,
+    },
     checkBox: {
         flexDirection: "row",
         justifyContent: "space-evenly",

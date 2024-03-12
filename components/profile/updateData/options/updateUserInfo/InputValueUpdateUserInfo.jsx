@@ -6,11 +6,15 @@ import {
   TextInput,
   Keyboard,
   TouchableWithoutFeedback,
+  Image,
 } from "react-native";
 import styles from "../../../style/profile.style";
 import { useEffect, useState } from "react";
 import CloseButton from "../tools/CloseButton";
-import { validateEmailInput } from "../../../../../screens/register/registerFunction";
+import {
+  pickImage,
+  validateEmailInput,
+} from "../../../../../screens/register/registerFunction";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
@@ -27,7 +31,6 @@ const InputValueUpdateUserInfo = ({
   setToken,
 }) => {
 
-
   const navigation = useNavigation();
 
   // Redux
@@ -42,7 +45,6 @@ const InputValueUpdateUserInfo = ({
   const [Password, setPassword] = useState("");
   const [Email, setEmail] = useState("");
   const [LinkFileFoto, setLinkFileFoto] = useState("");
-
 
 
   const [errors, setErrors] = useState({});
@@ -67,10 +69,15 @@ const InputValueUpdateUserInfo = ({
       errors.Email = (
         <Ionicons name="information-circle" color={"#e48a33"} size={30} />
       );
+    if (!LinkFileFoto)
+      errors.LinkFileFoto = (
+        <Ionicons name="information-circle" color={"#e48a33"} size={30} />
+      );
 
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
+
 
   useEffect(() => {
     setName(infoUser.UserId.Name);
@@ -97,13 +104,34 @@ const InputValueUpdateUserInfo = ({
             ) : null}
 
             <View style={styles.titleUpdate}>
-              <Text style={styles.userUpdate}>
-                {infoUser.UserId.Name} Update
-                {"\n"}your personal Data
-              </Text>
+              <Text style={styles.userUpdate}>Update personal Data</Text>
             </View>
 
             <View style={styles.positionInputValue}>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                style={styles.buttonClickChooseImg}
+                onPress={() => pickImage(setLinkFileFoto)}
+              >
+                <Image
+                  source={{
+                    uri: LinkFileFoto,
+                  }}
+                  style={styles.styleChooseImg}
+                />
+
+                <Text style={styles.registerButtonTextChooseImg}>
+                  <Ionicons
+                    name="arrow-up-circle-outline"
+                    color={"#e48a33"}
+                    size={35}
+                  />
+                </Text>
+
+                {/* here show message user need input value */}
+                {errors.LinkFileFoto ? errors.LinkFileFoto : null}
+              </TouchableOpacity>
+
               <View style={styles.inputBox}>
                 <TextInput
                   style={styles.input}
@@ -156,17 +184,6 @@ const InputValueUpdateUserInfo = ({
                 {/* here show message user need input value */}
                 {errors.Email ? errors.Email : null}
               </View>
-            </View>
-
-            <View style={styles.inputBox}>
-              <TextInput
-                style={styles.input}
-                placeholder="add Foto Link"
-                onChangeText={setLinkFileFoto}
-                value={LinkFileFoto}
-                keyboardType="url"
-                placeholderTextColor={"black"}
-              />
             </View>
 
             <View style={styles.buttonClick}>

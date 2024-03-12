@@ -1,7 +1,65 @@
 import { userRegister } from "../../Redux/featuers/users/registerUser";
+import * as ImagePicker from 'expo-image-picker';
 
 
-export function registerUser(validateForm,
+
+export function showAlert() {
+    Alert.alert(
+        "Permission Required",
+        "Allow to access photos and media on your device?.",
+        [
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+        ],
+        { cancelable: false }
+    );
+};
+
+
+export async function pickImage(setLinkFileFoto) {
+
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (status !== 'granted') {
+        showAlert();
+    }
+    else {
+        // No permissions request is necessary for launching the image library
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 0.5,
+            base64: true
+        });
+
+        if (!result.cancelled) {
+            // console.log(result.assets[0].base64)
+            handleUpload(result.assets[0].base64, setLinkFileFoto);
+        }
+    }
+};
+
+
+export function handleUpload(image, setLinkFileFoto) {
+
+    const data = new FormData();
+    data.append('file', `data:image/;base64,${image}`);
+    data.append('upload_preset', 'images_User'); // Replace with your Cloudinary upload preset
+
+    // console.log(data)
+
+    fetch(`https://api.cloudinary.com/v1_1/dprkqkjnz/image/upload`, {
+        method: 'POST',
+        body: data
+    }).then(res => res.json()).
+        then(data => {
+            // console.log(data.secure_url)
+            setLinkFileFoto(data.secure_url)
+        })
+}
+
+
+export async function registerUser(validateForm,
     Login,
     Name,
     Password,
