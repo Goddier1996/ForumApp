@@ -1,10 +1,11 @@
 ## Project Type Community Forum App
-![Untitled-1](https://github.com/Goddier1996/ForumApp/assets/59862302/29111a6c-9407-447a-84a4-f49f7839f1ec)
+![baground app](https://github.com/Goddier1996/ForumApp/assets/59862302/6d8f2c85-d4aa-4c5c-a95b-984db73976a6)
+
 
 
 ### Video about this app
+https://github.com/Goddier1996/ForumApp/assets/59862302/e101f7cf-d5d0-4592-9d54-3c98a290ddbf
 
-https://github.com/Goddier1996/ForumApp/assets/59862302/c2184937-715f-4909-b505-f8186f9d21db
 
 ### This app is built with technologies :
 - React Native
