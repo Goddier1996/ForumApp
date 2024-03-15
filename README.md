@@ -11,6 +11,7 @@ https://github.com/Goddier1996/ForumApp/assets/59862302/e101f7cf-d5d0-4592-9d54-
 - React Native
 - Expo
 - Redux-toolkit
+- Cloundinary
 - Node.js
 - Express
 - MongoDB
