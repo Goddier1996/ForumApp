@@ -3,7 +3,7 @@ import styles from "../style/comment.style";
 
 const ShowCountComments = ({ countComment }) => {
   return (
-          <View
+    <View
       style={
         countComment ? styles.showCountComment : styles.showCountCommentNotHave
       }
@@ -12,5 +12,6 @@ const ShowCountComments = ({ countComment }) => {
     </View>
   );
 };
+
 
 export default ShowCountComments;

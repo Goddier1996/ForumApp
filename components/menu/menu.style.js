@@ -10,9 +10,7 @@ const styles = StyleSheet.create({
     textMenuOptions: {
         fontSize: 10,
         textAlign: "center",
-        
     }
-
 });
 
 

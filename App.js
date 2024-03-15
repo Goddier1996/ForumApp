@@ -17,8 +17,6 @@ import SplashScreen from './components/tools/SplashScreen';
 
 
 
-
-
 const Stack = createNativeStackNavigator();
 
 

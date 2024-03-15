@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { checkIfHaveThisEmailInDataBase } from '../../../Api/LoadDataFromApi';
 import { ConnectForgetPassword } from '../../../Api/AddUpdateDataFromApi';
+
 
 const initialState = {
     loading: false,
