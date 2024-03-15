@@ -1,5 +1,6 @@
 import { userRegister } from "../../Redux/featuers/users/registerUser";
 import * as ImagePicker from 'expo-image-picker';
+import { TYPE_DATA_UPLOAD_CLOUNDINARY, URL_DATA_UPLOAD_CLOUNDINARY } from '@env';
 
 
 
@@ -44,11 +45,11 @@ export function handleUpload(image, setLinkFileFoto) {
 
     const data = new FormData();
     data.append('file', `data:image/;base64,${image}`);
-    data.append('upload_preset', 'images_User'); // Replace with your Cloudinary upload preset
+    data.append('upload_preset', TYPE_DATA_UPLOAD_CLOUNDINARY); // Replace with your Cloudinary upload preset
 
     // console.log(data)
 
-    fetch(`https://api.cloudinary.com/v1_1/dprkqkjnz/image/upload`, {
+    fetch(URL_DATA_UPLOAD_CLOUNDINARY, {
         method: 'POST',
         body: data
     }).then(res => res.json()).
