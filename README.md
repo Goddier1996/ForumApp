@@ -20,19 +20,19 @@ https://github.com/Goddier1996/ForumApp/assets/59862302/e101f7cf-d5d0-4592-9d54-
 ### Server Link Git:
 https://github.com/Goddier1996/Server_Forum_App
 
-### Why i create this app ?
-I wanted to learn a little more about React technology, I built a wide variety of websites with React.
-And I decided to build an app with React Native to learn how everything works, because it's very similar to regular React.
 
-### This app has several options
-- There are a wide variety of categories to choose from.
-- Each category has topics created by users.
-- In addition to each cluster there are comments.
-- And Register & Login and info screen.
-- Forgot password, user can create new password if forgot.
+### App Community Forum (Android & IOS)
+App Community Forum (Android & IOS)
+In this application, users can explore a variety of categories and topics based on their selected category.
+Each topic includes user comments where members can respond to the topic's question.
 
-### User options in this app
-- User can add new Topic and Comment.
-- In profile screen user can delete topic and comments he crete.
-- And updated personal data.
-- User Can Delete account.
+### Key Features & Advantages:
+📌 Community Forum – Any user can register, create new topics, and post comments directly from their phone, without needing to visit a website.
+
+### Application Features:
+✔️ User registration and login.
+✔️ Password recovery in case of a forgotten password.
+✔️ Create, edit, and delete topics.
+✔️ Post, edit, and delete comments.
+✔️ Full account management, including the option to delete an account.
+✔️ Update user profile information.
