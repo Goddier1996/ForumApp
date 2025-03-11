@@ -27,12 +27,20 @@ In this application, users can explore a variety of categories and topics based 
 Each topic includes user comments where members can respond to the topic's question.
 
 ### Key Features & Advantages:
+<br/>
 📌 Community Forum – Any user can register, create new topics, and post comments directly from their phone, without needing to visit a website.
+<br/>
 
 ### Application Features:
+<br/>
 ✔️ User registration and login.
+<br/>
 ✔️ Password recovery in case of a forgotten password.
+<br/>
 ✔️ Create, edit, and delete topics.
+<br/>
 ✔️ Post, edit, and delete comments.
+<br/>
 ✔️ Full account management, including the option to delete an account.
+<br/>
 ✔️ Update user profile information.
